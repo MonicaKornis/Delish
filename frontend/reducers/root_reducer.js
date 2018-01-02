@@ -1,4 +1,4 @@
-import { combineReducers } from 'react-redux';
+import { combineReducers } from 'redux';
 import sessionsReducer from './session_reducer';
 import errorsReducer from './errors_reducer';
 
@@ -7,4 +7,4 @@ const rootReducer = combineReducers({
     session: sessionsReducer
 });
 
-export default rootReducer; 
+export default rootReducer;

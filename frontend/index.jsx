@@ -12,6 +12,6 @@ document.addEventListener('DOMContentLoaded',() => {
   const root = document.getElementById('root');
   const store = configureStore();
   window.getState = store.getState;
-  window.dispatch = store.dispatch; 
+  window.dispatch = store.dispatch;
   ReactDOM.render(<h1>Welcome to Delish!</h1>,root);
 });
