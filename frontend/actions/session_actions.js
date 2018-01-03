@@ -11,28 +11,46 @@ const receiveCurrentUser = (user) => {
 };
 
 const receiveErrors = (errors) => {
+  debugger
   return{
     type: RECEIVE_SESSION_ERRORS,
     errors
   };
 };
 
-export const signup = user => dispatch => {
-  return SessionApiUtil.signup(user).then( user => dispatch(receiveCurrentUser(user),
-  errors => dispatch(receiveErrors(errors.responseJSON))));
-};
-
-// export const signin = user => dispatch => {
-//   return SessionApiUtil.login(user).then( user => dispatch(receiveCurrentUser(user),
+// export const signup = user => dispatch => {
+//   return SessionApiUtil.signup(user).then( user => dispatch(receiveCurrentUser(user),
 //   errors => dispatch(receiveErrors(errors.responseJSON))));
 // };
 
-export const login = user => dispatch => {
-  return SessionApiUtil.login(user).then( user => dispatch(receiveCurrentUser(user),
-  errors => dispatch(receiveErrors(errors.responseJSON))));
+export const signup = user => dispatch => {
+  return SessionApiUtil.signup(user).then( user => {
+    return dispatch(receiveCurrentUser(user))
+  }, errors => {
+    return dispatch(receiveErrors(errors.responseJSON));
+  }
+  );
 };
 
-export const logout = () => dispatch => {
-  return SessionApiUtil.logput().then( response => dispatch(receiveCurrentUser(null),
-  errors => dispatch(receiveErrors(errors.responseJSON))));
+export const login = user => dispatch => {
+  return SessionApiUtil.login(user).then( user => {
+    return dispatch(receiveCurrentUser(user))
+  }, errors => {
+    return dispatch(receiveErrors(errors.responseJSON));
+  }
+  );
+};
+
+// export const logout = () => dispatch => {
+//   return SessionApiUtil.logput().then( response => dispatch(receiveCurrentUser(null),
+//   errors => dispatch(receiveErrors(errors.responseJSON))));
+// };
+
+export const logout = user => dispatch => {
+  return SessionApiUtil.logout().then( response => {
+    return dispatch(receiveCurrentUser(null));
+  }, errors => {
+    return dispatch(receiveErrors(errors.responseJSON));
+  }
+  );
 };

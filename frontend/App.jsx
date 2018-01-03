@@ -1,5 +1,6 @@
 import React from 'react';
 import GreetingContainer from './components/session/greeting_container';
+import { AuthRoute } from './util/route_util';
 import SessionFormContainer from './components/session/session_form_container';
 import {
   Route,
@@ -10,10 +11,14 @@ const App = () => (
   <div>
     <header>
     <h1> Welcome to Delish! </h1>
-    <GreetingContainer />
+      <Route path="/login" />
+      <Route path="/signup" />
     </header>
-    <Route path="/login" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
+
+
+    <AuthRoute path="/login" component={SessionFormContainer} />
+    <AuthRoute path="/signup" component={SessionFormContainer} />
+    <Route exact path="/" component={GreetingContainer} />
   </div>
 );
 

@@ -7,6 +7,10 @@ class Greeting extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
   }
 
+  componendDidMount(){
+    this.props.removeErrors();
+  }
+
   handleLogout(e) {
     e.preventDefault();
     this.props.logout();
@@ -14,11 +18,11 @@ class Greeting extends React.Component {
 
   userGreeting() {
     return(
-      <nav class='user-greeting'>
+      <nav className='user-greeting'>
         <p> Welcome, {(this.props.currentUser.email).split('@')[0]}!</p>
         <br></br>
         <p> View your recipes </p>
-        <button onClick={() => this.props.logout}> Logout</button>
+        <button onClick={this.handleLogout}> Logout</button>
       </nav>
     );
   }

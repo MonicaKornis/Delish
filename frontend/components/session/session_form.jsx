@@ -15,7 +15,8 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({},this.state);
-    this.props.processForm(user).then( () => this.setState({email: '', password: ''}));
+    this.props.processForm(user).then( () => this.props.history.push('/'));
+      // () => this.setState({email: '', password: ''}));
   }
 
   update(field) {
@@ -35,7 +36,7 @@ class SessionForm extends React.Component {
       <ul>
         {this.props.errors.map((error,i) =>
           <li key={i}>{error}</li>
-        )};
+        )}
       </ul>
     );
   }
@@ -67,3 +68,10 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
+// {if(this.props.errors !== null) {
+//   return
+// }}
+//
+//
+//
+// {if }
