@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { RECEIVE_CURRENT_USER } from './actions/session_actions';
-=======
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
->>>>>>> front-end-auth
 
 const _nullUser = Object.freeze({
   currentUser: null
