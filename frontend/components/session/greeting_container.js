@@ -1,4 +1,4 @@
-import react from 'React';
+import React from 'react';
 import { connect } from 'react-redux';
 import { logout, receiveErrors } from '../../actions/session_actions';
 import Greeting from './greeting';

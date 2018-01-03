@@ -8,14 +8,6 @@
    z-index: 1;
 }
 
-// .modal-window {
-//   height: 100%;
-//   display: none;
-//   overflow: hidden;
-//   position: relative;
-//   z-index: 4;
-// }
-
 .session-form {
   display: flex;
   margin: 0 auto;
@@ -30,7 +22,8 @@
   z-index: 3;
   border: 0.5px solid black;
   box-sizing: border-box;
-  justify-content: center; 
+  justify-content: center;
+  padding-top: 10px;
 }
 
 .login-form-box {
@@ -45,6 +38,7 @@
   background-color: #fff;
   border: 1px solid #deddd5;
   color: #222;
+  font-family: Arial,Helvetica,sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
   height: 40px;
