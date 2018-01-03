@@ -25,7 +25,7 @@ class SessionForm extends React.Component {
 
   headerNav() {
     if(this.props.formType === 'login'){
-      return (<Link to="/signup"> Sign Up </Link>);
+      return (<div className=''><Link to="/signup"> Sign Up </Link></div>);
     } else {
       return(<Link to="/login">Log In </Link>);
     }
@@ -46,22 +46,24 @@ class SessionForm extends React.Component {
     return (
       <div className='session-form-container'>
         {this.headerNav()}
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Join Delish Cooking
-          <br/>
-          Please {this.props.formType} or {this.headerNav()}
-          {this.errors()}
+        <div className="session-form">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            <h1>Join Delish cooking!</h1>
+            <br/>
+            Please {this.props.formType} or {this.headerNav()}
+            {this.errors()}
 
-          <label> Email:
-            <input type="text" value={this.state.email} onChange={this.update('email')}/>
-          </label>
+            <label> Email:
+              <input className='modal-input' type="text" value={this.state.email} onChange={this.update('email')}/>
+            </label>
 
-          <label> Password:
-            <input type="password" value={this.state.password} onChange={this.update('password')}/>
-          </label>
-           <br/>
-        <input className='button' type="submit" value={buttonVal}/>
-        </form>
+            <label> Password:
+              <input className='modal-input' type="password" value={this.state.password} onChange={this.update('password')}/>
+            </label>
+             <br/>
+          <input className='button' type="submit" value={buttonVal}/>
+          </form>
+        </div>
       </div>
     );
   }

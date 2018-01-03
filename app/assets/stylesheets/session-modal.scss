@@ -1,7 +1,59 @@
 .session-form-container {
-  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+   background: rgba(0, 0, 0, 0.7);
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   z-index: 1;
+}
+
+// .modal-window {
+//   height: 100%;
+//   display: none;
+//   overflow: hidden;
+//   position: relative;
+//   z-index: 4;
+// }
+
+.session-form {
+  display: flex;
+  margin: 0 auto;
+  font-family: 'Domine', serif;
+  align-items: center;
+  background-color: rgba(257, 257, 257, .95);
   position: absolute;
-  width: 50%;
-  height: 80%;
-  margin: auto;
+  left: 30%;
+  right: 30%;
+  width: 45%;
+  height: 90%;
+  z-index: 3;
+  border: 0.5px solid black;
+  box-sizing: border-box;
+  justify-content: center; 
+}
+
+.login-form-box {
+  align-items: center;
+}
+
+.button {
+  background-color: #f19e92;
+}
+
+.model-input {
+  background-color: #fff;
+  border: 1px solid #deddd5;
+  color: #222;
+  font-weight: 300;
+  font-size: 1.5rem;
+  height: 40px;
+  letter-spacing: .3px;
+  margin-top: 4px;
+  padding: 10px;
+  width: 100%;
+}
+
+h1 {
+  font-weight: bold;
 }
