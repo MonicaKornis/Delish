@@ -25,15 +25,15 @@ class SessionForm extends React.Component {
 
   headerNav() {
     if(this.props.formType === 'login'){
-      return (<div className=''><Link to="/signup"> Sign Up </Link></div>);
+      return (<Link className='sessionButton' to="/signup"> Sign Up </Link>);
     } else {
-      return(<Link to="/login">Log In </Link>);
+      return(<Link className='sessionButton' to="/login">Log In </Link>);
     }
   }
 
   errors() {
     return (
-      <ul>
+      <ul className='errors'>
         {this.props.errors.map((error,i) =>
           <li key={i}>{error}</li>
         )}
@@ -45,20 +45,22 @@ class SessionForm extends React.Component {
     const buttonVal = this.props.formType === 'login' ? 'Sign In' : 'Create Account';
     return (
       <div className='session-form-container'>
-        {this.headerNav()}
         <div className="session-form">
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <h1>Join Delish cooking!</h1>
             <br/>
-            Please {this.props.formType} or {this.headerNav()}
+              {
+                buttonVal === 'Sign In' ? <h2 className='greeting'>Don't already have an account? {this.headerNav()}</h2>
+              : <h2 className='greeting'> Already have an account? {this.headerNav()}</h2>
+              }
             {this.errors()}
 
             <label> Email:
-              <input className='modal-input' type="text" value={this.state.email} onChange={this.update('email')}/>
+              <input className='modal-input' placeholder='Email' type="text" value={this.state.email} onChange={this.update('email')}/>
             </label>
 
             <label> Password:
-              <input className='modal-input' type="password" value={this.state.password} onChange={this.update('password')}/>
+              <input className='modal-input' placeholder='Password' type="password" value={this.state.password} onChange={this.update('password')}/>
             </label>
              <br/>
           <input className='button' type="submit" value={buttonVal}/>
@@ -70,10 +72,3 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
-// {if(this.props.errors !== null) {
-//   return
-// }}
-//
-//
-//
-// {if }

@@ -1,3 +1,4 @@
+
 .session-form-container {
   position: fixed;
    background: rgba(0, 0, 0, 0.7);
@@ -6,6 +7,7 @@
    left: 0;
    right: 0;
    z-index: 1;
+   display: flex;
 }
 
 .session-form {
@@ -28,10 +30,16 @@
 
 .login-form-box {
   align-items: center;
+  border: 1px grey;
 }
 
 .button {
-  background-color: #f19e92;
+  background-color: #e33d26;
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+  font-family: 'Domine', serif;
+  font-style: bold;
 }
 
 .model-input {
@@ -46,8 +54,21 @@
   margin-top: 4px;
   padding: 10px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
   font-weight: bold;
+  font-size: 35px;
+}
+
+.sessionButton {
+  color: #e33d26;
+  font-weight: bold;
+}
+
+.errors {
+  font-size: 13px;
+  color: #e33d26;
 }
