@@ -15,7 +15,7 @@ class Greeting extends React.Component {
   userGreeting() {
     return(
       <nav class='user-greeting'>
-        <p> Welcome, {(this.props.currentUser.username).split('@')[0]}!</p>
+        <p> Welcome, {(this.props.currentUser.email).split('@')[0]}!</p>
         <br></br>
         <p> View your recipes </p>
         <button onClick={() => this.props.logout}> Logout</button>
