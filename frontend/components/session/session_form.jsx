@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {email: '', password: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componendDidMount(){
@@ -16,13 +17,13 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({},this.state);
     this.props.processForm(user).then( () => this.props.history.push('/'));
+
   }
 
-  demoSubmit(e) {
+  demoLogin(e) {
     e.preventDefault();
     const user = Object.assign({},{ email: 'monicamonica@gmail.com', password: 'password123'});
     this.props.processForm(user).then( () => this.props.history.push('/'));
-      // () => this.setState({email: '', password: ''}));
   }
 
   update(field) {
@@ -49,18 +50,23 @@ class SessionForm extends React.Component {
 
   render() {
     const buttonVal = this.props.formType === 'login' ? 'Sign In' : 'Create Account';
+    const demoLogin = this.props.formType === 'login' ?
+        <button className="button" onClick={this.demoLogin}>
+      Log in with demo</button> : <div></div> ;
+
+
     return (
       <div className='session-form-container'>
         <div className="session-form">
           <form onSubmit={this.handleSubmit} className="login-form-box">
 
-          <h1>Join Delish cooking!</h1>
-            <br/>
+          <h1 className='welcomeMessage'>Join Delish cooking!</h1>
               {
                 buttonVal === 'Sign In' ? <h2 className='greeting'>Don't already have an account? {this.headerNav()}</h2>
               : <h2 className='greeting'> Already have an account? {this.headerNav()}</h2>
               }
             {this.errors()}
+
 
             <label> Email:
               <input className='modal-input' placeholder='Email' type="text" value={this.state.email} onChange={this.update('email')}/>
@@ -71,7 +77,9 @@ class SessionForm extends React.Component {
             </label>
              <br/>
           <input className='button' type="submit" value={buttonVal}/>
+          {demoLogin}
           </form>
+
         </div>
       </div>
     );

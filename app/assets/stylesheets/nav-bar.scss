@@ -30,6 +30,8 @@
   padding-top: 15px;
   padding-left: 35px;
   padding-right: 45px;
+  display: flex;
+
 }
 
 .subscribe {
@@ -43,15 +45,32 @@
   text-decoration: none;
 }
 
-
-
 .welcomeMessage {
+  font-size: .75rem;
   color: black;
-  font-weight: bold; 
-  font-size: .6rem;
-  letter-spacing: .5px;
+  letter-spacing: inherit;
   line-height: 1.1em;
   text-align: center;
   text-transform: uppercase;
   margin: 14px auto 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 14px auto 0;
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  list-style-type: none;
+}
+
+.logoutButton {
+  float: right;
+  position: relative;
+  font: inherit;
+  color:inherit;
+  border:none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }

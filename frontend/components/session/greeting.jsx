@@ -18,13 +18,15 @@ class Greeting extends React.Component {
 
   userGreeting() {
     return(
-      <div class="main-nav">
+      <div className="main-nav">
         <div className='formImage'>
           <img src={window.staticImages.navImage}/>
         </div>
-        <nav class="right-nav">
-            <li className='welcomeMessage'> Your Recipe Box <br/> {(this.props.currentUser.email).split('@')[0]}</li>
-          <button className='logoutButton' onClick={this.handleLogout}> Logout</button>
+        <nav className="right-nav">
+            <li className='subscribe'> Your Recipe Box: {(this.props.currentUser.email).split('@')[0]}</li>
+            <li className='subscribe'>
+              <button className='logoutButton' onClick={this.handleLogout}> Logout</button>
+            </li>
         </nav>
       </div>
     );
