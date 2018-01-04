@@ -10,7 +10,6 @@ import {
 const App = () => (
   <div>
     <header>
-    <h1> Welcome to Delish! </h1>
       <Route path="/login" />
       <Route path="/signup" />
     </header>

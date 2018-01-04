@@ -5,5 +5,9 @@
       user: current_user
     ).html_safe %>
   <% end %>
+  window.staticImages = {
+   formImage: "<%= image_url("dinner-salad_925x.jpg") %>",
+   navImage: "<%= image_url("cooking.png") %>"
+ }
 </script>
 <main id="root"></main>

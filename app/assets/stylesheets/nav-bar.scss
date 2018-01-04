@@ -1,12 +1,39 @@
-// .header-nav {
-//   position: absolute;
-//   display:flex;
-// 	justify-content: space-between;
-// 	padding: 10px 0;
-// 	border-bottom: 1px solid grey;
-// }
-//
-// .right-nav {
-//   color: red;
-//   font-family: 'Domine', serif;
-// }
+.main-nav {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 500;
+  font-family: 'Domine', serif;
+}
+
+.formImage {
+  display: block;
+  float: left;
+  padding-left: 16px;
+  position: relative;
+  max-width: 124px;
+  max-height: 42px;
+  padding-right: 17px;
+  padding: 8px 46px 8px 21px;
+  border-right: 1px solid #ccc;
+}
+
+
+.right-nav {
+  box-sizing: border-box;
+  height: 100%;
+  text-align: right;
+}
+
+.welcomeMessage {
+  font-size: .6rem;
+  letter-spacing: .5px;
+  line-height: 1.1em;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 14px auto 0; 
+}

@@ -47,7 +47,8 @@ class SessionForm extends React.Component {
       <div className='session-form-container'>
         <div className="session-form">
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            <h1>Join Delish cooking!</h1>
+
+          <h1>Join Delish cooking!</h1>
             <br/>
               {
                 buttonVal === 'Sign In' ? <h2 className='greeting'>Don't already have an account? {this.headerNav()}</h2>
@@ -72,3 +73,5 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
+
+//            <img className='formImage' src={window.staticImages.formImage}></img>

@@ -1,4 +1,3 @@
-
 .session-form-container {
   position: fixed;
    background: rgba(0, 0, 0, 0.7);
@@ -40,6 +39,7 @@
   font-size: 15px;
   font-family: 'Domine', serif;
   font-style: bold;
+  text-decoration: none;
 }
 
 .model-input {
@@ -63,9 +63,16 @@ h1 {
   font-size: 35px;
 }
 
+.formImage {
+  height: 200px
+  // background: 50%/cover no-repeat;
+  // background-position: -55px -390px;
+}
+
 .sessionButton {
   color: #e33d26;
   font-weight: bold;
+  font-family: sans-serif;
 }
 
 .errors {
