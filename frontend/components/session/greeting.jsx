@@ -20,12 +20,10 @@ class Greeting extends React.Component {
     return(
       <div class="main-nav">
         <div className='formImage'>
-          <img className='formImage' src={window.staticImages.navImage}></img>
+          <img src={window.staticImages.navImage}/>
         </div>
         <nav class="right-nav">
-          <a>
-            <li className='welcomeMessage'> Your Recipe Box - {(this.props.currentUser.email).split('@')[0]}</li>
-          </a>
+            <li className='welcomeMessage'> Your Recipe Box <br/> {(this.props.currentUser.email).split('@')[0]}</li>
           <button className='logoutButton' onClick={this.handleLogout}> Logout</button>
         </nav>
       </div>
@@ -39,8 +37,8 @@ class Greeting extends React.Component {
           <img src={window.staticImages.navImage}/>
         </div>
         <nav className="right-nav">
-          <Link to='/signup'>Subscribe</Link>
-          <Link to='/login'>Login</Link>
+          <Link className='subscribe' to='/signup'>Subscribe</Link>  &nbsp;&nbsp;
+          <Link className='subscribe' to='/login'>Login</Link>
         </nav>
       </div>
     );

@@ -11,6 +11,7 @@
 }
 
 .formImage {
+  border-right: 1px solid #ccc;
   display: block;
   float: left;
   padding-left: 16px;
@@ -19,7 +20,6 @@
   max-height: 42px;
   padding-right: 17px;
   padding: 8px 46px 8px 21px;
-  border-right: 1px solid #ccc;
 }
 
 
@@ -27,13 +27,31 @@
   box-sizing: border-box;
   height: 100%;
   text-align: right;
+  padding-top: 15px;
+  padding-left: 35px;
+  padding-right: 45px;
 }
 
+.subscribe {
+  font-size: .75rem;
+  color: black;
+  letter-spacing: .5px;
+  line-height: 1.1em;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 14px auto 0;
+  text-decoration: none;
+}
+
+
+
 .welcomeMessage {
+  color: black;
+  font-weight: bold; 
   font-size: .6rem;
   letter-spacing: .5px;
   line-height: 1.1em;
   text-align: center;
   text-transform: uppercase;
-  margin: 14px auto 0; 
+  margin: 14px auto 0;
 }
