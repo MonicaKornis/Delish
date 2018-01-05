@@ -11,7 +11,6 @@ const receiveCurrentUser = (user) => {
 };
 
 const receiveErrors = (errors) => {
-  debugger
   return{
     type: RECEIVE_SESSION_ERRORS,
     errors
@@ -25,7 +24,7 @@ const receiveErrors = (errors) => {
 
 export const signup = user => dispatch => {
   return SessionApiUtil.signup(user).then( user => {
-    return dispatch(receiveCurrentUser(user))
+    return dispatch(receiveCurrentUser(user));
   }, errors => {
     return dispatch(receiveErrors(errors.responseJSON));
   }
@@ -34,7 +33,7 @@ export const signup = user => dispatch => {
 
 export const login = user => dispatch => {
   return SessionApiUtil.login(user).then( user => {
-    return dispatch(receiveCurrentUser(user))
+    return dispatch(receiveCurrentUser(user));
   }, errors => {
     return dispatch(receiveErrors(errors.responseJSON));
   }

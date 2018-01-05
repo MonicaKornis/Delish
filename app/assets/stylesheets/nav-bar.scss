@@ -31,7 +31,7 @@
   padding-left: 35px;
   padding-right: 45px;
   display: flex;
-
+  justify-content: flex-end;
 }
 
 .subscribe {
@@ -41,7 +41,7 @@
   line-height: 1.1em;
   text-align: center;
   text-transform: uppercase;
-  margin: 14px auto 0;
+  margin: 5px;
   text-decoration: none;
 }
 
@@ -52,10 +52,10 @@
   line-height: 1.1em;
   text-align: center;
   text-transform: uppercase;
-  margin: 14px auto 0;
+  margin: 5px auto 0;
   text-decoration: none;
   text-transform: uppercase;
-  margin: 14px auto 0;
+  margin: 5px;
   display: flex;
   flex-direction: row;
 }
@@ -66,6 +66,7 @@ li {
 
 .logoutButton {
   float: right;
+  text-transform: uppercase;
   position: relative;
   font: inherit;
   color:inherit;

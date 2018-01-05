@@ -4,6 +4,13 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
 
+  has_many :authored_recipes,
+  class_name: 'Recipe',
+  foreign_key: :author_id,
+  primary_key: :id
+
+  has_many :likes
+
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end

@@ -2,6 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './root';
 import configureStore from './store/store.js';
+import * as RecipeApiUtil from './util/recipe_util';
+import { fetchRecipes, fetchRecipe, createRecipe, updateRecipe } from './actions/recipe_actions';
+
+window.fetchRecipes = fetchRecipes;
+window.fetchRecipe = fetchRecipe;
+window.createRecipe = createRecipe;
+window.updateRecipe = updateRecipe;
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -19,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // : take off window
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);

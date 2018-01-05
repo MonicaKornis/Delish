@@ -1,11 +1,12 @@
 .session-form-container {
   position: fixed;
    background: rgba(0, 0, 0, 0.7);
+   height: 100%;
    top: 0;
    bottom: 0;
    left: 0;
    right: 0;
-   z-index: 1;
+   z-index: 2;
    display: flex;
 }
 
@@ -21,7 +22,7 @@
   right: 30%;
   width: 45%;
   height: 90%;
-  z-index: 3;
+  z-index: 4;
   border: 0.5px solid black;
   box-sizing: border-box;
   justify-content: center;
