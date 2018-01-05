@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RecipeIndexItem = ({recipe}) => (
-    <div className='recipeIndexItem'>
+    <div className='col-recipe-index'>
       <Link to={`/recipes/${recipe.id}`}/>
       <img className="recipeIndexImage" src={recipe.image_url}/>
       <div className='recipeInfo'>

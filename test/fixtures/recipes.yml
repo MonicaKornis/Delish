@@ -4,7 +4,7 @@ one:
   title: MyString
   description: MyString
   author_id: 1
-  ingredients: 
+  ingredients:
   cooking_time: 1
   img_url: MyString
 
@@ -12,6 +12,6 @@ two:
   title: MyString
   description: MyString
   author_id: 1
-  ingredients: 
+  ingredients:
   cooking_time: 1
   img_url: MyString

@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  validates :title, :description, :author, :ingredients, :cooking_time, :img_url, presence: true
+  validates :title, :description, :author, :ingredients, :cooking_time, presence: true
 
   belongs_to :author,
   class_name: 'User',

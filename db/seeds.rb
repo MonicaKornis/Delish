@@ -16,10 +16,12 @@ User.create!({email: 'MonicaKornis@gmail.com', password: 'password123'})
 end
 
 30.times do
-  Recipe.create!(title: Faker::Food.dish,
+  recipe = Recipe.new(title: Faker::Food.dish,
                 description: "A fragrant dish seasoned with butter, sage, and garlic",
                 author_id: User.find_by(email: 'MonicaKornis@gmail.com').id,
                 cooking_time: rand(32..59),
-                img_url: 'https://burst.shopifycdn.com/photos/wild-salmon-dinner_925x@2x.jpg',
                 ingredients: [Faker::Food.ingredient,Faker::Food.ingredient,Faker::Food.spice])
+                file=File.open('./app/assets/images/toast.jpg')
+                recipe.image = file
+                recipe.save!
 end
