@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const RecipeIndexItem = ({recipe}) => (
     <div className='recipeIndexItem'>
       <Link to={`/recipes/${recipe.id}`}/>
-      <img className="recipeIndexImage" src={recipe.img}/>
+      <img className="recipeIndexImage" src={recipe.image_url}/>
       <div className='recipeInfo'>
         <h3>{recipe.title}</h3>
         <h4> By Monica Kornis </h4>

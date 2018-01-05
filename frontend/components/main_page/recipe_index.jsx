@@ -17,7 +17,16 @@ class RecipeIndex extends React.Component {
     );
     return (
       <div className='recipeIndex'>
-        <h1> Header Image </h1>
+        <div className='image'>
+          <img src={window.staticImages.featureImage}/>
+        </div>
+        <br></br>
+        <br></br>
+
+          <div className='indexText'>
+            <img src={window.staticImages.indexText}/>
+          </div>
+
         <div className = 'index-header'>
           <h1>"Find Your Next Culinary Masterpiece"</h1>
           <p>"Free Recipes, Guides and Tips For Easy, Delicious Cooking"</p>
