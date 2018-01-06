@@ -4,24 +4,16 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 30px;
+  width: 75%;
+  margin: auto;
 }
 
 .col-recipe-index {
-  padding: 1px;
-  flex: 1;
+  padding: 5px;
+  flex-basis: 175px;
+  flex-grow: 4;
   width: 235px;
   height: 278px;
   display: block;
   position: relative;
-}
-
-@media (max-width: 400px) {
-  .flex-grid,
-  .flex-grid-thirds {
-    display: block;
-    .col {
-      width: 100%;
-      margin: 0 0 10px 0;
-    }
-  }
 }
