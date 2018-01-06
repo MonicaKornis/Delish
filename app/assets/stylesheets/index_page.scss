@@ -1,3 +1,21 @@
+.index-header {
+  margin: auto;
+}
+
+.index-header h1 {
+  font-family: 'Domine', serif;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 24px;
+  margin-left: 70px;
+}
+
+.index-header p {
+  font-size: 10px;
+  font-family: 'Domine', serif;
+}
+
+
 #index-text-id {
   margin: auto;
   width: 35%
@@ -33,6 +51,6 @@
 }
 
 .col-recipe-index:hover {
-  transform: scale(1.05, 1.05);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  // transform: scale(1.006, 1.006);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }

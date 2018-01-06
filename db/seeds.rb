@@ -21,11 +21,20 @@ end
                 author_id: User.find_by(email: 'MonicaKornis@gmail.com').id,
                 cooking_time: rand(32..59),
                 ingredients: [Faker::Food.ingredient,Faker::Food.ingredient,Faker::Food.spice])
-                file=File.open('./app/assets/images/#{}')
+                file=File.open('./app/assets/images/toast.jpg')
                 recipe.image = file
                 recipe.save!
 end
 
-(1..30).each do |num|
- "#{}"
-end
+# (1..30).each do |num|
+#   path = "./app/assets/images/#{num}.jpg"
+#   recipe = Recipe.new(title: Faker::Food.dish,
+#                 description: "A fragrant dish seasoned with butter, sage, and garlic",
+#                 author_id: User.find_by(email: 'MonicaKornis@gmail.com').id,
+#                 cooking_time: rand(32..59),
+#                 ingredients: [Faker::Food.ingredient,Faker::Food.ingredient,Faker::Food.spice])
+#                 file=File.open(path)
+#                 recipe.image = file
+#                 recipe.save!
+#
+# end

@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module CookingAppClone
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.paperclip_defaults = {
       :storage => :s3,
       :s3_credentials => {

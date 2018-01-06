@@ -27,9 +27,9 @@ class RecipeIndex extends React.Component {
             <img src={window.staticImages.indexText}/>
           </div>
 
-        <div className = 'index-header'>
-          <h1></h1>
-          <p></p>
+        <div className='index-header'>
+          <h1>"Find Your Next Culinary Masterpiece"</h1>
+          <p>"Free Recipes, Guides and Tips For Easy, Delicious Cooking"</p>
         </div>
           <div className="flex-recipe-grid">
             // {recipeItems}
