@@ -4,7 +4,7 @@ const recipeErrorsReducer = (oldState=[],action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_RECIPE_ERRORS:
-        return action.errors;
+      return action.errors;
     case RECEIVE_RECIPE:
       return oldState;
     default:

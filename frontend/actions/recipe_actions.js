@@ -26,7 +26,6 @@ const receiveRecipeErrors = (errors) => {
 
 
 export const fetchRecipes = () => dispatch => {
-  debugger
   return RecipeApiUtil.fetchRecipes().then(recipes => {
     return dispatch(receiveAllRecipes(recipes));
   }, errors => {

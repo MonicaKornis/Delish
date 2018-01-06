@@ -1,3 +1,7 @@
+.image {
+  margin: auto;
+}
+
 .index-header {
   margin: auto;
 }
@@ -36,21 +40,85 @@
   width: 80%;
   margin: auto;
 }
-.flex-recipe-grid > * {
-  margin: 1em;
-}
+// .flex-recipe-grid > * {
+//   margin: 1em;
+//   width: 140px;
+// }
 
 .col-recipe-index {
-  padding: 6px;
-  flex-basis: 122px;
-  flex-grow: 4;
-  width: 235px;
-  height: 210px;
+  padding: 4px;
+  margin-bottom: 12px;
+  // flex-basis: 112px;
+  // flex-grow: 1;
+  width: 140px;
+  // width: 235px;
+  // height: 210px;
   display: block;
   position: relative;
 }
 
 .col-recipe-index:hover {
   // transform: scale(1.006, 1.006);
-  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  box-shadow:1px 1px 4px #706E6F;
+  // box-shadow: 0px -2px 84px -23px rgba(0,0,0,1);
+}
+
+.recipeInfo {
+  box-sizing: border-box;
+  outline: 0;
+  display: block;
+  font-weight: 500;
+  display: block;
+  cursor: pointer;
+}
+
+.title-wrapper {
+  height: 40px;
+  overflow: hidden;
+}
+
+#recipeName {
+  // overflow: hidden;
+  font-family: 'franklin-700';
+  // font-size: 300px;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  line-height: 1.06em;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  // font-size: 1.17em;
+  padding-bottom: 1px;
+  margin-bottom: 1px;
+  padding-top: 1px;
+  margin-top: 1px;
+}
+
+#author {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 10px;
+  font-weight: lighter;
+  color: black;
+}
+
+.recipeFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+#cookingTime {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 7px;
+  font-weight: lighter;
+  color: grey;
+  margin-top: 20px;
+  margin-bottom: 1px;
+}
+
+.bookmark {
+  margin-right: 15px;
+  width: .3px;
+  margin-top: 16px;
 }

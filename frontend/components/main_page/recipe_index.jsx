@@ -12,9 +12,9 @@ class RecipeIndex extends React.Component {
   }
 
   render() {
-    const recipeItems = this.props.recipes.map( (recipe) =>
-      <RecipeIndexItem className="col-recipe-index" recipe={recipe} key={recipe.id}/>
-    );
+    // const recipeItems = this.props.recipes.map( (recipe,index) =>
+    //   <RecipeIndexItem className="col-recipe-index" recipe={recipe} key={index+1}/>
+    // );
     return (
       <div className='recipeIndex'>
         <div className='image'>
@@ -28,15 +28,13 @@ class RecipeIndex extends React.Component {
           </div>
 
         <div className='index-header'>
-          <h1>"Find Your Next Culinary Masterpiece"</h1>
-          <p>"Free Recipes, Guides and Tips For Easy, Delicious Cooking"</p>
         </div>
           <div className="flex-recipe-grid">
-            // {recipeItems}
+
 
             {
-              this.props.recipes.map( (recipe) =>
-                <RecipeIndexItem recipe={recipe} key={recipe.id}/>
+              this.props.recipes.map( (recipe,index) =>
+                <RecipeIndexItem recipe={recipe} key={index+1}/>
               )
 
             }

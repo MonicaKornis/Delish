@@ -5,7 +5,7 @@ import RecipeIndex from './recipe_index';
 
 const mapStateToProps = (state) => {
   return {
-    recipes: Object.values(state.recipes)
+    recipes: Object.values(state.entities.recipes)
   };
 };
 
