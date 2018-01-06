@@ -21,7 +21,11 @@ end
                 author_id: User.find_by(email: 'MonicaKornis@gmail.com').id,
                 cooking_time: rand(32..59),
                 ingredients: [Faker::Food.ingredient,Faker::Food.ingredient,Faker::Food.spice])
-                file=File.open('./app/assets/images/toast.jpg')
+                file=File.open('./app/assets/images/#{}')
                 recipe.image = file
                 recipe.save!
+end
+
+(1..30).each do |num|
+ "#{}"
 end
