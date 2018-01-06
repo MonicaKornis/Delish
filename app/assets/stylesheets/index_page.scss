@@ -1,19 +1,38 @@
+#index-text-id {
+  margin: auto;
+  width: 35%
+}
+
+#index-text-id:hover {
+  // border-bottom: 2px solid black;
+  box-shadow: inset 0px 0px 0px 3px black;
+  box-sizing: border-box;
+}
+
 .flex-recipe-grid {
   background-color: white;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 30px;
-  width: 75%;
+  width: 80%;
   margin: auto;
+}
+.flex-recipe-grid > * {
+  margin: 1em;
 }
 
 .col-recipe-index {
-  padding: 5px;
-  flex-basis: 175px;
+  padding: 6px;
+  flex-basis: 122px;
   flex-grow: 4;
   width: 235px;
-  height: 278px;
+  height: 210px;
   display: block;
   position: relative;
+}
+
+.col-recipe-index:hover {
+  transform: scale(1.05, 1.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
