@@ -4,7 +4,7 @@ import { fetchRecipe } from '../../actions/recipe_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-  recipe: state.entities.recipes[1]
+  recipe: state.entities.recipes[ownProps.match.params.recipeId]
   };
 };
 
