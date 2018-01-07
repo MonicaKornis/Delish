@@ -1,20 +1,24 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import RecipeIndexItem from './recipe_index_item';
 import SessionFormContainer from '../session/session_form_container';
 
 class RecipeIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchRecipes();
   }
 
+  handleClick(recipeId) {
+    this.props.history.push(`/recipes/${recipeId}`);
+  }
+
+
   render() {
-    // const recipeItems = this.props.recipes.map( (recipe,index) =>
-    //   <RecipeIndexItem className="col-recipe-index" recipe={recipe} key={index+1}/>
-    // );
     return (
       <div className='recipeIndex'>
         <div className='image'>
@@ -34,9 +38,9 @@ class RecipeIndex extends React.Component {
 
             {
               this.props.recipes.map( (recipe,index) =>
-                <RecipeIndexItem recipe={recipe} key={index+1}/>
+                <RecipeIndexItem recipe={recipe} key={index+1} id={recipe.id}
+                  onClick={() => this.handleClick(recipe.id)}/>
               )
-
             }
           </div>
       </div>

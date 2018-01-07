@@ -6,7 +6,8 @@ const recipesReducer = (oldState={}, action) => {
     case RECEIVE_ALL_RECIPES:
       return action.recipes;
     case RECEIVE_RECIPE:
-      return Object.assign(newState,oldState,{[action.recipe.id]: action.recipe});
+      debugger
+      return Object.assign(newState,oldState,{1: action.recipe});
     default:
       return oldState;
   }
