@@ -34,6 +34,7 @@ class RecipeShow extends React.Component {
               <br></br>
               <br></br>
               <h1>{recipe.title}</h1>
+              <h1></h1>
           </div>
         </div>
       );

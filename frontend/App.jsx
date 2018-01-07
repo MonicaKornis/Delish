@@ -20,7 +20,8 @@ const App = () => (
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <Route path="/recipes/:recipeId" component={RecipeShowContainer} />
-    <Route path="/" component={GreetingContainer} />
+    <Route exact path="/" component={GreetingContainer} />
+    <Route path="/recipes/:recipeId" component={GreetingContainer} />
     <Route exact path="/" component={RecipeIndexContainer} />
   </div>
 );
