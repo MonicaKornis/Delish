@@ -14,7 +14,7 @@ const RecipeIndexItem = ({recipe}) => (
 
         <div className='recipeFooter'>
           <h5 id='cookingTime'> {`${recipe.cooking_time} minutes`}</h5>
-          <i className="fa fa-bookmark-o bookmark"></i>
+          <i className="fa fa-bookmark-o" id='bookmark'></i>
         </div>
       </div>
   </div>

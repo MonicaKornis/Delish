@@ -8,7 +8,6 @@ class RecipeShow extends React.Component {
   }
 
   componentDidMount(){
-    debugger
     let id = parseInt(this.props.match.params.recipeId);
     this.props.fetchRecipe(id);
   }
@@ -28,13 +27,14 @@ class RecipeShow extends React.Component {
       }
 
       return (
-        <div>
-          <br></br>
-          <br></br>
-            <br></br>
-            <br></br>
-          <h3>{recipe.title}</h3>
-          <p>{recipe.description}</p>
+        <div className='recipeContainer'>
+          <div className='recipe'>
+            <header className='recipeTitle'></header>
+              <br></br>
+              <br></br>
+              <br></br>
+              <h1>{recipe.title}</h1>
+          </div>
         </div>
       );
 

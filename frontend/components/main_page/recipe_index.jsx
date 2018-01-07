@@ -6,16 +6,16 @@ import SessionFormContainer from '../session/session_form_container';
 class RecipeIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchRecipes();
   }
 
-  handleClick(recipeId) {
-    this.props.history.push(`/recipes/${recipeId}`);
-  }
+  // handleClick(recipeId) {
+  //   this.props.history.push(`/recipes/${recipeId}`);
+  // }
 
 
   render() {
@@ -38,8 +38,7 @@ class RecipeIndex extends React.Component {
 
             {
               this.props.recipes.map( (recipe,index) =>
-                <RecipeIndexItem recipe={recipe} key={index+1} id={recipe.id}
-                  onClick={() => this.handleClick(recipe.id)}/>
+                <RecipeIndexItem recipe={recipe} key={index+1} id={recipe.id}/>
               )
             }
           </div>

@@ -108,6 +108,8 @@
 .recipeFooter {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+
 }
 
 #cookingTime {
@@ -117,10 +119,4 @@
   color: grey;
   margin-top: 20px;
   margin-bottom: 1px;
-}
-
-.bookmark {
-  margin-right: 15px;
-  width: .3px;
-  margin-top: 16px;
 }
