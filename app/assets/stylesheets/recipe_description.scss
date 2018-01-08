@@ -1,0 +1,67 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#DIV_1 {
+    box-sizing: border-box;
+    color: rgb(34, 34, 34);
+    height: 400.836px;
+    width: 95%;
+    perspective-origin: 500px 275.918px;
+    transform-origin: 500px 275.918px;
+    border: 0px none rgb(34, 34, 34);
+    font: Georgia, "Times New Roman", serif;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}/*#DIV_1*/
+
+#DIV_2 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(34, 34, 34);
+    cursor: default;
+    height: 551.836px;
+    position: relative;
+    width: 600.691px;
+    column-rule-color: rgb(34, 34, 34);
+    perspective-origin: 171.836px 275.918px;
+    transform-origin: 171.836px 275.918px;
+    margin: 0px 0px 15px;
+    overflow: hidden;
+    padding: 0px 0px 20px;
+}/*#DIV_2*/
+
+#description {
+    box-sizing: border-box;
+    height: 427.5px;
+    width: 343.691px;
+    perspective-origin: 171.836px 213.75px;
+    transform-origin: 171.836px 213.75px;
+    border: 0px none rgb(34, 34, 34);
+    margin: 0px 0px 15px;
+    font-family: 'Domine', serif;
+    font-size: 12px;
+    font-weight: normal;
+    width: 200px;
+}/*#P_3*/
+
+#P_4 {
+    box-sizing: border-box;
+    color: rgb(34, 34, 34);
+    cursor: default;
+    height: 47.5px;
+    width: 343.691px;
+    column-rule-color: rgb(34, 34, 34);
+    perspective-origin: 171.836px 23.75px;
+    transform-origin: 171.836px 23.75px;
+    font-family: 'cheltenham-300';
+    margin: 0px 0px 15px;
+}/*#P_4*/
+
+#recipeImage {
+  float: right;
+  margin: 0 auto 20px 30px;
+  width: 62.63158%;
+}

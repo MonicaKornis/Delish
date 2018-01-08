@@ -9,6 +9,29 @@
        font-style: normal;
 }
 
+
+@font-face {
+  font-family: 'Cheltenham-BT';
+  src: font-url('/assets/Cheltenham-BT.eot');
+  src: font-url('/assets/Cheltenham-BT.eot?iefix') format('eot'),
+       font-url('/assets/Cheltenham-BT.woff') format('woff'),
+       font-url('/assets/Cheltenham-BT.ttf') format('truetype'),
+       font-url('/assets/Cheltenham-BT.svg#webfont') format('svg');
+       font-weight: normal;
+       font-style: normal;
+}
+
+@font-face {
+  font-family: 'cheltenham-500';
+  src: font-url('/assets/cheltenham-500.eot');
+  src: font-url('/assets/cheltenham-500.eot?iefix') format('eot'),
+       font-url('/assets/cheltenham-500.woff') format('woff'),
+       font-url('/assets/cheltenham-500.ttf') format('truetype'),
+       font-url('/assets/cheltenham-500.svg#webfont') format('svg');
+       font-weight: normal;
+       font-style: normal;
+}
+
 @font-face {
   font-family: 'imperial-600';
   src: font-url('/assets/imperial-600.eot');
