@@ -1,6 +1,6 @@
 .recipeContainer {
   width: 95%;
-  margin-left: 15px;
+  margin-left: 20px;
 }
 
 #header-1 {
@@ -37,7 +37,6 @@
     transform-origin: 0px 0px;
     caret-color: rgb(34, 34, 34);
     border: 0px none rgb(34, 34, 34);
-    font: normal normal 500 normal 12px / normal nyt-franklin, Arial, Helvetica, sans-serif;
     outline: rgb(34, 34, 34) none 0px;
 }/*#HEADER_1:after*/
 
@@ -54,7 +53,6 @@
     transform-origin: 0px 0px;
     caret-color: rgb(34, 34, 34);
     border: 0px none rgb(34, 34, 34);
-    font: normal normal 500 normal 12px / normal nyt-franklin, Arial, Helvetica, sans-serif;
     outline: rgb(34, 34, 34) none 0px;
 }/*#HEADER_1:before*/
 
@@ -71,9 +69,7 @@
     column-rule-color: rgb(110, 157, 213);
     perspective-origin: 19.8828px 6.25px;
     transform-origin: 19.8828px 6.25px;
-    caret-color: rgb(110, 157, 213);
     border: 0px none rgb(110, 157, 213);
-    font: normal normal 500 normal 12.96px / normal nyt-karnak-display-130124, nyt-stymie, Georgia, "Times New Roman", serif;
     margin: 10px 0px 0px;
     outline: rgb(110, 157, 213) none 0px;
 }/*#A_2*/
@@ -90,7 +86,6 @@
     transform-origin: 358.125px 30px;
     caret-color: rgb(34, 34, 34);
     border: 0px none rgb(34, 34, 34);
-    font: normal normal 500 normal 12px / normal nyt-franklin, Arial, Helvetica, sans-serif;
     margin: 10px 0px 0px;
     outline: rgb(34, 34, 34) none 0px;
     padding: 0px 0px 15px;
@@ -112,7 +107,7 @@
     font-family: 'Cheltenham-BT';
     font-weight: lighter;
     margin-bottom: 5px;
-    outline: rgb(34, 34, 34) none 0px;
+    // outline: rgb(34, 34, 34) none 0px;
 }/*#H1_4*/
 
 #div-4 {
@@ -120,16 +115,16 @@
     color: rgb(34, 34, 34);
     height: 103.984px;
     text-align: left;
-    text-decoration: none solid rgb(34, 34, 34);
-    width: 716.25px;
+    // text-decoration: none solid rgb(34, 34, 34);
+    width: 877px;
     column-rule-color: rgb(34, 34, 34);
     perspective-origin: 358.125px 51.9922px;
     transform-origin: 358.125px 51.9922px;
     caret-color: rgb(34, 34, 34);
-    border: 0px none rgb(34, 34, 34);
+    // border: 0px none rgb(34, 34, 34);
     font: 'franklin-300';
     margin: 0px 0px 35px;
-    outline: rgb(34, 34, 34) none 0px;
+    // outline: rgb(34, 34, 34) none 0px;
 }/*#DIV_5*/
 
 #name-header {
@@ -161,7 +156,6 @@
     column-rule-color: rgb(0, 0, 0);
     caret-color: rgb(0, 0, 0);
     border: 0px none rgb(0, 0, 0);
-    font: normal normal 700 normal 16px / 18px nyt-franklin, Arial, Helvetica, sans-serif;
     outline: rgb(0, 0, 0) none 0px;
 }/*#A_7*/
 
@@ -201,7 +195,6 @@
     transform-origin: 358.125px 25.7422px;
     caret-color: rgb(34, 34, 34);
     border: 0px none rgb(34, 34, 34);
-    font: normal normal 500 normal 15px / 19px nyt-franklin, Arial, Helvetica, sans-serif;
     margin: 0px;
     outline: rgb(34, 34, 34) none 0px;
     padding: 0px;
@@ -257,7 +250,6 @@
     transform-origin: 328.125px 9.375px;
     caret-color: rgb(34, 34, 34);
     border: 0px none rgb(34, 34, 34);
-    font: normal normal 500 normal 15px / 19px nyt-franklin, Arial, Helvetica, sans-serif;
     list-style: none outside none;
     outline: rgb(34, 34, 34) none 0px;
     margin-top: 2px;
@@ -276,18 +268,80 @@
     transform-origin: 358.125px 10.3711px;
     caret-color: rgb(34, 34, 34);
     border: 0px none rgb(34, 34, 34);
-    font: normal normal 500 normal 15px / 19px nyt-franklin, Arial, Helvetica, sans-serif;
-    list-style: none outside none;
     outline: rgb(34, 34, 34) none 0px;
     overflow: hidden;
 }
 
 #recipe-image{
   width: 80%;
+  margin-right: 20px;
 }
 
 #description {
   font-family: 'Domine', serif;
   font-size: 15px;
   font-weight: bold;
+}
+
+.recipe-instructions {
+    margin-top: 10px;
+    margin: 0 auto;
+    padding: 0 0 35px;
+}
+
+.recipe-ingredients-wrap {
+    float: left;
+    margin-bottom: 0;
+    padding-right: 1em;
+    width: 32.31579%;
+    margin-bottom: 800px;
+    display: block;
+    box-sizing: border-box;
+}
+
+.recipe-ingredients {
+  margin-left: 12px;
+}
+
+
+.ingredient {
+  font-family: 'Libre Franklin';
+  vertical-align: top;
+  line-height: 18.6px;
+  font-size: 13px;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+#ingredientTitle {
+  display: block;
+  font-family: 'karnak-400';
+  font-size: 13px;
+  font-weight: lighter;
+}
+
+.steps {
+  margin-top: 20px;
+  font-family: 'franklin-500';
+  font-size: 14px;
+  font-style: bold;
+  margin-top: 30px;
+}
+
+#preparation {
+  font-family: 'karnak-400';
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#stepLabel {
+  font-family: 'franklin-300';
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#step {
+  margin-bottom: 16px; 
+
 }

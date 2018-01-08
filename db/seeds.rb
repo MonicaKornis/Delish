@@ -24,7 +24,7 @@ end
                 'Mix the yolk with 1 teaspoon cold water; cover, and refrigerate until needed.',
                 'Place one circle of dough on a baking sheet lined with parchment paper. Spread the filling evenly over the dough, leaving a 1-inch border bare. Press the charm into the filling. Moisten the border with cold water, position the second circle of dough over the filling and press around the border with your fingertips to seal well.',
                 'With the point of a paring knife, etch a design into the top of the galette, taking care not to pierce the dough. Cut 6 small slits in the top as steam vents.'],
-                ingredients: [Faker::Food.ingredient,Faker::Food.ingredient,Faker::Food.spice,Faker::Food.ingredient,Faker::Food.ingredient,Faker::Food.spice])
+                ingredients: ['5/6 cup ' + Faker::Food.ingredient,'1/4 cup ' + Faker::Food.ingredient,  '1/2 tbs ' + Faker::Food.spice, '1/2 cup ' + Faker::Food.ingredient, '1/2 cup ' + Faker::Food.ingredient, '3/4 tbs ' + Faker::Food.spice])
                 file=File.open('./app/assets/images/toast.jpg')
                 recipe.image = file
                 recipe.save!

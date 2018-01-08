@@ -21,27 +21,30 @@ class RecipeShow extends React.Component {
 
   render() {
     // debugger
+
+    if (!this.props.recipe) return <div> </div>;
+
     let recipe = this.props.recipe;
     let ingredients = [];
     let steps = [];
 
     if(this.props.recipe) {
       ingredients = this.props.recipe.ingredients.map( (ingredient,idx) =>
-      <li key={idx}>{`${idx+1}: ${ingredient}`}</li>
+      <li className='ingredient' key={idx}> <span id='quantity'> {`${ingredient.slice(0,3)}`}</span><span id='ingredient-name'>{`${ingredient.slice(3)}`}</span></li>
       );
     }
 
     if (recipe.steps) {
       steps = recipe.steps.map((step, idx) => (
         <div key={idx}>
-          <li>Step {idx+1}</li>
-          <li>{step}</li>
+          <li id='stepLabel'>Step {idx+1}</li>
+          <li id='step'>{step}</li>
         </div>
       ));
     }
 
-
       return (
+
         <div className='recipeContainer'>
           <br></br>
             <br></br>
@@ -89,20 +92,24 @@ class RecipeShow extends React.Component {
                    </div>
 
 
-              <section className="recipe-instructions">
+          <div className="recipe-instructions">
+
+              <section className='recipe-ingredients-wrap'>
                 <div className = "ingredients">
-                  <h3>INGREDIENTS</h3>
-                    <ul >
+                  <h3 id='ingredientTitle'>INGREDIENTS</h3>
+                    <ul className='recipe-ingredients'>
                       {ingredients}
                     </ul>
                 </div>
+              </section>
+
                 <div className = "steps">
-                  <h3>PREPARATION</h3>
-                    <ul >
+                  <h3 id='preparation'>PREPARATION</h3>
+                    <ul>
                       {steps}
                     </ul>
                 </div>
-              </section>
+        </div>
 
               <section className="comments-container">
                 <h3>Cooking Notes</h3>
