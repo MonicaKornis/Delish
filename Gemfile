@@ -35,6 +35,7 @@ gem 'figaro'
 gem 'aws-sdk'
 gem 'font-awesome-sass'
 # Use Capistrano for deployment
+gem 'faker'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
@@ -43,7 +44,6 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'faker'
 end
 
 group :development do
