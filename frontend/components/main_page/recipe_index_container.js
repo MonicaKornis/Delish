@@ -5,7 +5,7 @@ import { fetchRecipes, likeRecipe, unlikeRecipe } from '../../actions/recipe_act
 import RecipeIndex from './recipe_index';
 
 const mapStateToProps = (state,ownProps) => {
-  let likedRecipeIds = state.session.currentUser.likedRecipeIds || [];
+  let likedRecipeIds = state.session.currentUser ? state.session.currentUser.likedRecipeIds : [];
   return {
     recipes: Object.values(state.entities.recipes),
     likedRecipes: likedRecipeIds,

@@ -40,12 +40,30 @@ class RecipeIndex extends React.Component {
 
 
   render() {
-    // debugger
-    return (
-      <div className='recipeIndex'>
+    debugger
+    let recipeIndexImage;
+    if(this.props.match.path !== '/recipes/recipe-box') {
+      recipeIndexImage = (
+      <div>
         <div className='image'>
           <img src={window.staticImages.featureImage}/>
         </div>
+        <br></br>
+        <br></br>
+
+        </div>
+      );
+    } else {
+      recipeIndexImage = (
+        <div></div>
+      );
+    }
+
+    return (
+      <div className='recipeIndex'>
+        {recipeIndexImage}
+        <br></br>
+        <br></br>
         <br></br>
         <br></br>
 
