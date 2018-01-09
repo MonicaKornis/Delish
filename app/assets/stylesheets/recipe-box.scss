@@ -1,0 +1,40 @@
+.recipe-box {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 30px;
+  width: 79.5%;
+  height: 100%;
+  margin: auto;
+  margin-left: 80px;
+}
+
+#recipe-box-container {
+  z-index: 1px;
+  border-top: 2px solid grey;
+}
+
+.recipeBoxHeader {
+  justify-content: center;
+  margin-left: 120px;
+  margin-bottom: -40px;
+  border-bottom: 1px solid grey;
+  width: 74%;
+}
+
+#savedRecipes {
+  font-family: 'franklin-700';
+  justify-content: flex-start;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 55px;
+}
+
+#savedRecipeCount {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 12px;
+  font-weight: lighter;
+  color: grey;
+  margin-top: 20px;
+  margin-bottom: 1px;
+}

@@ -40,10 +40,16 @@ class RecipeIndex extends React.Component {
 
 
   render() {
-    debugger
-    let recipeIndexImage;
+    let recipeIndexHeader;
+    let recipeCount = this.props.recipes ? this.props.recipes.length : 0;
+    let mainClass;
+    let containerId;
+
+
     if(this.props.match.path !== '/recipes/recipe-box') {
-      recipeIndexImage = (
+      mainClass = 'flex-recipe-grid';
+      containerId = 'main';
+      recipeIndexHeader = (
       <div>
         <div className='image'>
           <img src={window.staticImages.featureImage}/>
@@ -51,29 +57,36 @@ class RecipeIndex extends React.Component {
         <br></br>
         <br></br>
 
+          <div id='index-text-id'>
+            <img src={window.staticImages.indexText}/>
+          </div>
         </div>
       );
     } else {
-      recipeIndexImage = (
-        <div></div>
+      containerId = 'recipe-box-container';
+      mainClass = 'recipe-box';
+      recipeIndexHeader = (
+        <div className='recipeBoxHeader'>
+          <br></br>
+          <br></br>
+          <br></br>
+          <h2 id='savedRecipes'>Your Saved Recipes </h2>
+          <span id='savedRecipeCount'>{`${recipeCount} Saved Recipes`}</span>
+        </div>
       );
     }
 
     return (
-      <div className='recipeIndex'>
-        {recipeIndexImage}
-        <br></br>
-        <br></br>
+      <div className='recipeIndex' id={containerId}>
+        {recipeIndexHeader}
         <br></br>
         <br></br>
 
-          <div id='index-text-id'>
-            <img src={window.staticImages.indexText}/>
-          </div>
+
 
         <div className='index-header'>
         </div>
-          <div className="flex-recipe-grid">
+          <div className={mainClass}>
 
 
             {
