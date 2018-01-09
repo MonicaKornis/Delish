@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import Root from './root';
 import configureStore from './store/store.js';
 import * as RecipeApiUtil from './util/recipe_util';
-import { fetchRecipes, fetchRecipe, createRecipe, updateRecipe } from './actions/recipe_actions';
+import { fetchRecipes, fetchRecipe, createRecipe, updateRecipe, likeRecipe, unlikeRecipe } from './actions/recipe_actions';
 
 window.fetchRecipes = fetchRecipes;
 window.fetchRecipe = fetchRecipe;
 window.createRecipe = createRecipe;
 window.updateRecipe = updateRecipe;
+window.likeRecipe = likeRecipe;
+window.unlikeRecipe = unlikeRecipe;
 
 
 document.addEventListener("DOMContentLoaded", () => {

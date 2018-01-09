@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy, :show]
     resources :recipes, only: [:index, :show, :create, :update]
+    post 'recipes/:recipe_id/likes', to: 'recipes#likes'
+    delete 'recipes/:recipe_id/likes', to: "recipes#remove_like"
   end
 
   root to: 'static_pages#root'

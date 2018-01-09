@@ -17,7 +17,7 @@ class Api::RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.update_attributes(recipe_params)
     if @recipe.save!
-      render "api/recipes/show"
+      render :show
     else
       render json: @recipe.errors.full_messages, status: 422
     end
@@ -28,7 +28,15 @@ class Api::RecipesController < ApplicationController
   end
 
   def likes
-    Like.create(user_id: current_user.id, likeable_type: 'Recipe', likeable_id: params[:id])
+    @like = Like.create(user_id: current_user.id, likeable_type: 'Recipe', likeable_id: params[:recipe_id])
+  end
+
+  def remove_like
+    @like = Recipe.find(params[:recipe_id]).likes.find_by(user_id: current_user.id)
+    if @like
+      @like.destroy
+    end
+    render :likes
   end
 
   def recipe_params

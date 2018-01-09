@@ -35,3 +35,21 @@ export const updateRecipe = (recipe) => {
     })
   );
 };
+
+export const likeRecipe = (recipeId) => {
+  return (
+    $.ajax({
+      method: 'POST',
+      url: `api/recipes/${recipeId}/likes`
+    })
+  );
+};
+
+export const unlikeRecipe = (recipeId) => {
+  return (
+    $.ajax({
+      method: 'DELETE',
+      url: `api/recipes/${recipeId}/likes`
+    })
+  );
+};

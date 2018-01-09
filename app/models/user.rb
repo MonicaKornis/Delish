@@ -11,6 +11,11 @@ class User < ApplicationRecord
 
   has_many :likes
 
+  has_many :liked_recipes,
+    through: :likes,
+    source: :likeable,
+    source_type: "Recipe"
+
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end

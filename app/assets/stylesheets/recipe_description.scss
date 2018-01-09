@@ -15,6 +15,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid black;
+    margin-top: 20px
 }/*#DIV_1*/
 
 #DIV_2 {
@@ -31,6 +32,7 @@ html, body {
     margin: 0px 0px 15px;
     overflow: hidden;
     padding: 0px 0px 20px;
+    margin-top: 25px;
 }/*#DIV_2*/
 
 #description {
@@ -64,4 +66,23 @@ html, body {
   float: right;
   margin: 0 auto 20px 30px;
   width: 62.63158%;
+}
+
+#recipeSave {
+  background-clip: border-box;
+  background-color: #e65f51;
+  border-radius: 3px;
+  border-right: 1px solid #e65f51;
+  color: #fff;
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: .8rem;
+  height: 34px;
+  letter-spacing: .06em;
+  line-height: 32px;
+  position: relative;
+  word-spacing: -.15em;
+  margin-top: 20px;
+  cursor: pointer;
 }

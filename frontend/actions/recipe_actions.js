@@ -2,6 +2,8 @@ import * as RecipeApiUtil from '../util/recipe_util';
 export const RECEIVE_ALL_RECIPES = 'RECEIVE_ALL_RECIPES';
 export const RECEIVE_RECIPE = 'RECEIVE_RECIPE';
 export const RECEIVE_RECIPE_ERRORS = 'RECEIVE_RECIPE_ERRORS';
+export const RECEIVE_RECIPE_LIKE = 'RECEIVE_RECIPE_LIKE';
+export const RECEIVE_RECIPE_UNLIKE = 'RECEIVE_RECIPE_UNLIKE';
 
 const receiveAllRecipes = (recipes) => {
   return {
@@ -24,6 +26,19 @@ const receiveRecipeErrors = (errors) => {
   };
 };
 
+const recieveLike = (payload) => {
+  return {
+    type: RECEIVE_RECIPE_LIKE,
+    payload
+  };
+};
+
+const recieveUnlike= (payload) => {
+  return {
+    type: RECEIVE_RECIPE_UNLIKE,
+    payload
+  };
+};
 
 export const fetchRecipes = () => dispatch => {
   return RecipeApiUtil.fetchRecipes().then(recipes => {
@@ -58,5 +73,19 @@ export const updateRecipe = (recipe) => dispatch => {
   }, errors => {
     return dispatch(receiveRecipeErrors(errors.responseJSON));
   }
+  );
+};
+
+export const likeRecipe = (recipeId) => dispatch => {
+  return RecipeApiUtil.likeRecipe(recipeId).then( like => {
+    return dispatch(recieveLike(like));
+    }
+  );
+};
+
+export const unlikeRecipe = (recipeId) => dispatch => {
+  return RecipeApiUtil.unlikeRecipe(recipeId).then( unlike => {
+    return dispatch(recieveUnlike(unlike));
+    }
   );
 };

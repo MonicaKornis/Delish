@@ -5,6 +5,8 @@ import {Link} from 'react-router-dom';
 class RecipeShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { buttonMessage: this.props.buttonMessage };
+    this.handleLike = this.handleLike.bind(this);
   }
 
   componentDidMount(){
@@ -19,14 +21,29 @@ class RecipeShow extends React.Component {
     }
   }
 
+  handleLike(recipeId){
+    if(this.props.likedRecipes.includes(recipeId)) {
+      return (e) => {
+        this.setState({ buttonMessage: 'Save To Recipe Box'});
+        return this.props.unlikeRecipe(recipeId);
+      };
+    } else {
+      return (e) => {
+        this.setState({ buttonMessage: 'Saved'});
+        return this.props.likeRecipe(recipeId);
+      };
+    }
+  }
+
+
   render() {
-    // debugger
 
     if (!this.props.recipe) return <div> </div>;
 
     let recipe = this.props.recipe;
     let ingredients = [];
     let steps = [];
+    let buttonLabel = 'Save To Recipe Box';
 
     if(this.props.recipe) {
       ingredients = this.props.recipe.ingredients.map( (ingredient,idx) =>
@@ -42,6 +59,7 @@ class RecipeShow extends React.Component {
         </div>
       ));
     }
+
 
       return (
 
@@ -73,7 +91,13 @@ class RecipeShow extends React.Component {
         			<li id="LI_13">
         			 <span id="SPAN_15">Time</span> <span id="SPAN_16">{`  ${recipe.cooking_time} minutes`}</span>
         			</li>
+              <div id='saveButton'>
+                <span onClick={this.handleLike(this.props.recipe.id)} id='recipeSave'>{this.state.buttonMessage}</span>
+              </div>
         		</ul>
+
+
+
         	</div>
         </header>
           <div className='subHeader'>
@@ -89,6 +113,7 @@ class RecipeShow extends React.Component {
   			                  {recipe.description}
   		                 </p>
   	                  </div>
+
                    </div>
 
 

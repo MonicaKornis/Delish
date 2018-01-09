@@ -6,19 +6,41 @@ import SessionFormContainer from '../session/session_form_container';
 class RecipeIndex extends React.Component {
   constructor(props) {
     super(props);
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleLike= this.handleLike.bind(this);
+    this.handleColor = this.handleColor.bind(this);
+    // this.state = { likedRecipes: this.props.likedRecipes };
   }
 
   componentDidMount(){
     this.props.fetchRecipes();
   }
 
-  // handleClick(recipeId) {
-  //   this.props.history.push(`/recipes/${recipeId}`);
-  // }
+
+  handleLike(recipeId){
+    if(this.props.likedRecipes.includes(recipeId)) {
+      return (e) => {
+
+        // this.setState({likedRecipes: this.state.likedRecipes.});
+        return this.props.unlikeRecipe(recipeId);
+      };
+    } else {
+      return (e) => {
+        return this.props.likeRecipe(recipeId);
+      };
+    }
+  }
+
+  handleColor(recipeId) {
+    if(this.props.likedRecipes.includes(recipeId)) {
+        return "red";
+    } else {
+      return "white";
+    }
+  }
 
 
   render() {
+    // debugger
     return (
       <div className='recipeIndex'>
         <div className='image'>
@@ -38,7 +60,7 @@ class RecipeIndex extends React.Component {
 
             {
               this.props.recipes.map( (recipe,index) =>
-                <RecipeIndexItem recipe={recipe} key={index+1} id={recipe.id}/>
+                <RecipeIndexItem recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
               )
             }
           </div>

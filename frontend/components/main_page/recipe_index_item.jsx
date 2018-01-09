@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const RecipeIndexItem = ({recipe}) => (
+const RecipeIndexItem = ({recipe, action, color}) => (
   <div className='col-recipe-index'>
       <img className="recipeIndexImage" src={recipe.image_url}/>
 
@@ -14,7 +14,7 @@ const RecipeIndexItem = ({recipe}) => (
 
         <div className='recipeFooter'>
           <h5 id='cookingTime'> {`${recipe.cooking_time} minutes`}</h5>
-          <i className="fa fa-bookmark-o" id='bookmark'></i>
+          <i className="fa fa-bookmark-o" id='bookmark' onClick={action(recipe.id)} id={color}></i>
         </div>
       </div>
   </div>
