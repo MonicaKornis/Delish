@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
     post 'recipes/:recipe_id/likes', to: 'recipes#likes'
     delete 'recipes/:recipe_id/likes', to: "recipes#remove_like"
+
+    # post 'comments/:comment_id/likes' to: 'comments#likes'
+    # post 'comments/:comment_id/likes' to: 'comment#remove_like'
   end
 
   root to: 'static_pages#root'

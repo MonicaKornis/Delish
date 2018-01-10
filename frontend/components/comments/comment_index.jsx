@@ -16,8 +16,9 @@ class CommentIndex extends React.Component {
               return (
                 <div id='note'>
                   <div id='note-header'>
-                    <a id='comment-author'>{comment.author}</a>
+                    <a id='comment-author'>{comment.authorName}</a>
                   </div>
+                  <div id='comment-body'>{comment.title}</div>
                   <div id='comment-body'>{comment.body}</div>
                   <div id='note-footer'>
                     <div id='likes'>

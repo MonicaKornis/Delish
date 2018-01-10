@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import CommentIndexContainer from '../comments/comment_index_container';
+import CommentFormContainer from '../comments/comment_form_container';
+
 
 class RecipeShow extends React.Component {
   constructor(props) {
@@ -139,6 +141,7 @@ class RecipeShow extends React.Component {
               <section className="comments-container">
                 <h3>Cooking Notes</h3>
                 <section className='commentsSection'>
+                  <CommentFormContainer recipeId={this.props.recipe.id} />
                   <CommentIndexContainer commentIds={recipe.commentIds}/>
                 </section>
               </section>
