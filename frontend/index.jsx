@@ -4,6 +4,7 @@ import Root from './root';
 import configureStore from './store/store.js';
 import * as RecipeApiUtil from './util/recipe_util';
 import { fetchRecipes, fetchRecipe, createRecipe, updateRecipe, likeRecipe, unlikeRecipe } from './actions/recipe_actions';
+import { createComment, updateComment, deleteComment } from './actions/comment_actions';
 
 window.fetchRecipes = fetchRecipes;
 window.fetchRecipe = fetchRecipe;
@@ -11,6 +12,9 @@ window.createRecipe = createRecipe;
 window.updateRecipe = updateRecipe;
 window.likeRecipe = likeRecipe;
 window.unlikeRecipe = unlikeRecipe;
+window.createComment = createComment;
+window.updateComment = updateComment;
+window.deleteComment = deleteComment;
 
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -45,6 +45,14 @@ class RecipeIndex extends React.Component {
     let mainClass;
     let containerId;
 
+    let first10 = this.props.recipes.map((recipe,index) => {
+      if(index < 10) {
+        return (
+          <RecipeIndexItem recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
+          );
+      }
+    });
+
 
     if(this.props.match.path !== '/recipes/recipe-box') {
       mainClass = 'flex-recipe-grid';
@@ -60,6 +68,7 @@ class RecipeIndex extends React.Component {
           <div id='index-text-id'>
             <img src={window.staticImages.indexText}/>
           </div>
+
         </div>
       );
     } else {

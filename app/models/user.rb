@@ -16,6 +16,16 @@ class User < ApplicationRecord
     source: :likeable,
     source_type: "Recipe"
 
+  has_many :liked_comments,
+  through: :likes,
+  source: :likeable,
+  source_type: 'Comment'
+
+  has_many :authored_comments,
+  class_name: 'Comment',
+  foreign_key: :author_id,
+  primary_key: :id
+
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end

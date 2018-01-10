@@ -19,7 +19,7 @@ export const fetchRecipe = (id) => {
 export const createRecipe = (recipe) => {
   return(
     $.ajax({
-      method: 'GET',
+      method: 'POST',
       url: `api/recipes`,
       data: { recipe: recipe }
     })

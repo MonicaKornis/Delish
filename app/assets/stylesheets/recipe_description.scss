@@ -14,7 +14,7 @@ html, body {
     font: Georgia, "Times New Roman", serif;
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid black;
+    // border-bottom: 2px solid black;
     margin-top: 20px
 }/*#DIV_1*/
 
@@ -34,6 +34,26 @@ html, body {
     padding: 0px 0px 20px;
     margin-top: 25px;
 }/*#DIV_2*/
+
+@media screen and (min-width: 1010px ) {
+  #DIV_2 {
+    margin-right: 455px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 750px ) and (max-width: 1009px) {
+  #DIV_2 {
+    margin-right: 255px;
+    margin-top: 40px;
+  }
+}
+
+#top-border {
+  border-bottom: 2px solid black;
+  width: 99%
+  // padding-bottom: 30px;
+}
 
 #description {
     box-sizing: border-box;
@@ -85,4 +105,11 @@ html, body {
   word-spacing: -.15em;
   margin-top: 20px;
   cursor: pointer;
+}
+
+
+@media screen and (min-width: 900px ) {
+  #subHeader {
+    margin-right: 200px;
+  }
 }

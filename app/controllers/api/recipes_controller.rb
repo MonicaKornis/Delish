@@ -6,7 +6,7 @@ class Api::RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.author_id = current_user.id
-    if @recipe.save!
+    if @recipe.save
       render "api/recipes/show"
     else
       render json: @recipe.errors.full_messages, status: 422
@@ -25,6 +25,10 @@ class Api::RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    # debugger
+    # if !@recipe
+    #   render json: @recipe.errors.full_messages, status: 404
+    # end
   end
 
   def likes
