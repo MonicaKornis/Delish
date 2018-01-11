@@ -277,21 +277,17 @@
 $break-small: 320px;
 $break-large: 757px;
 
-// #recipe-image{
-//   width: 80%;
-//   margin-right: 20px;
-//   }
-// }
 
 @media screen and (min-width: 757px ) and (max-width: 1000px ) {
   #recipeImage {
-    max-width: 540px;
+    max-width: 640px;
   }
 }
 
 @media screen and (min-width: 1000px ) and (max-width: 1400px ) {
   #recipeImage {
     max-width: 760px;
+    // height: 700px;
   }
 }
 

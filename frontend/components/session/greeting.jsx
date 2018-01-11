@@ -23,7 +23,7 @@ class Greeting extends React.Component {
           <img src={window.staticImages.navImage}/>
         </div>
         <nav className="right-nav">
-            <li className='subscribe'> Your Recipe Box: {(this.props.currentUser.email).split('@')[0]}</li>
+            <Link to='/recipes/recipe-box' className='subscribe'> Your Recipe Box: {(this.props.currentUser.email).split('@')[0]}</Link>
             <li className='subscribe'>
               <button className='logoutButton' onClick={this.handleLogout}> Logout</button>
             </li>

@@ -3,7 +3,7 @@ import React from 'react';
 class CommentForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { title: '', body: '', recipe_id: this.props.recipeId};
+    this.state = { title: 'Title', body: 'Body', recipe_id: this.props.recipeId};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
@@ -11,7 +11,7 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createComment(this.state);
-    this.setState({ title: '', body: '', recipe_id: this.props.recipeId});
+    this.setState({ title: 'Title', body: 'Body', recipe_id: this.props.recipeId});
   }
 
   update(field) {
@@ -22,16 +22,16 @@ class CommentForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h3> Title
-            <input type='text' onChange={this.update('title')} value={this.state.title}/>
+          <h3>
+          <input id='input' type='text' onChange={this.update('title')} value={this.state.title}/>
           </h3>
 
-          <h3> Body
-            <textarea onChange={this.update('body')} value={this.state.body}/>
+          <h3>
+          <textarea id='input' onChange={this.update('body')} value={this.state.body}/>
           </h3>
 
 
-          <input type='submit' value="Create Comment"/>
+          <input className='form-button' id='input' type='submit' value="Create Comment"/>
         </form>
       </div>
     );

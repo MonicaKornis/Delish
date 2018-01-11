@@ -25,17 +25,17 @@ class Api::CommentsController < ApplicationController
     end
   end
 
-  # def likes
-  #   @like = Like.create(user_id: current_user.id, likeable_type: 'Comment', likeable_id: params[:comment_id])
-  # end
-  #
-  # def remove_like
-  #   @like = Like.find(params[:comment_id]).likes.find_by(user_id: current_user.id)
-  #   if @like
-  #     @like.destroy
-  #   end
-  #   render :likes
-  # end
+  def likes
+    @like = Like.create(user_id: current_user.id, likeable_type: 'Comment', likeable_id: params[:comment_id])
+  end
+
+  def remove_like
+    @like = Comment.find(params[:comment_id]).likes.find_by(user_id: current_user.id)
+    if @like
+      @like.destroy
+    end
+    render :likes
+  end
 
   def comment_params
     params.require(:comment).permit(:title, :body, :recipe_id)

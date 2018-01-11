@@ -1,0 +1,133 @@
+.input {
+  color: #222;
+}
+
+#input {
+  font-size: 16px;
+  font-family: 'franklin-300';
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#form-input {
+  margin: auto;
+  width: 80%;
+  float: left;
+}
+
+textarea {
+  width: 70%;
+}
+
+section.comments-container {
+  clear: both;
+  margin-top: -60px;
+  margin-left: 310px;
+  border: 1px solid #ccc;
+  width: 70%;
+  height: 200px;
+}
+
+.commentsSection {
+  margin-left: 30px;
+  margin-right: 20px;
+}
+
+#cooking-notes {
+  font-family: 'karnak-400';
+  font-size: 1.08em;
+  letter-spacing: 1px;
+  padding: 17px 0 18px;
+  text-transform: uppercase;
+  margin: auto;
+  margin-left: 30px;
+}
+
+.formContainer {
+   // transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+   float: left;
+   margin-right: 40px;
+   width: 100%
+}
+
+#input.form-button {
+  width: 80%;
+  margin-left: 70px;
+  margin-right: 20px;
+  // margin: auto;
+  font-family: 'franklin-300';
+  font-style: lighter;
+  // foncolor: grey;
+  background-color: white;
+  float: bottom;
+  border: 1px solid #ccc
+
+}
+
+.cooking-notes-container {
+  width: 80%;
+  border: 1px solid #ccc;
+  margin-left: 310px;
+  margin-top: 60px;
+  display: flex;
+  margin-bottom: 30px;
+  flex-direction: column;
+  margin-right: 40px;
+}
+
+#note-header {
+  font-family: 'Libre Franklin';
+  font-size: 15px;
+  font-weight: bolder;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 5px;
+}
+
+#comment-author {
+  margin-right: 5px;
+  border-right: .5px solid grey;
+  padding-right: 5px;
+}
+
+#date {
+  color: grey;
+}
+
+.cooking-notes {
+  padding-left: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#likes {
+  color: grey;
+}
+
+#comment-title {
+  font-family: 'Libre Franklin';
+  font-size: 15px;
+  font-weight: bolder;
+  color: black;
+  padding-bottom: 3px;
+  margin-right: 3px;
+
+}
+
+#note {
+  padding-bottom: 26px;
+}
+
+#comment-body {
+  font-family: 'Libre Franklin';
+  font-size: 15px;
+  font-weight: lighter;
+  color: grey;
+  padding-bottom: 5px;
+  margin-right: 7px;
+}
+
+.fa-thumbs-up {
+  cursor: pointer;
+}

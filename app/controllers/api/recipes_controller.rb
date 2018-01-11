@@ -25,10 +25,6 @@ class Api::RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    # debugger
-    # if !@recipe
-    #   render json: @recipe.errors.full_messages, status: 404
-    # end
   end
 
   def likes

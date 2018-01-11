@@ -7,8 +7,9 @@ import CommentFormContainer from '../comments/comment_form_container';
 class RecipeShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { buttonMessage: this.props.buttonMessage };
+    this.state = { buttonMessage: this.props.buttonMessage};
     this.handleLike = this.handleLike.bind(this);
+    // this.handleCommentLike = this.handleCommentLike.bind(this);
   }
 
   componentDidMount(){
@@ -36,6 +37,8 @@ class RecipeShow extends React.Component {
       };
     }
   }
+
+
 
 
   render() {
@@ -136,14 +139,17 @@ class RecipeShow extends React.Component {
                       {steps}
                     </ul>
                 </div>
-        </div>
+              </div>
 
               <section className="comments-container">
-                <h3>Cooking Notes</h3>
+                <h3 id='cooking-notes'>Cooking Notes</h3>
                 <section className='commentsSection'>
                   <CommentFormContainer recipeId={this.props.recipe.id} />
-                  <CommentIndexContainer commentIds={recipe.commentIds}/>
                 </section>
+              </section>
+
+              <section id='index' className='commentsContainer'>
+              <CommentIndexContainer commentIds={recipe.commentIds}/>
               </section>
           </div>
         </div>

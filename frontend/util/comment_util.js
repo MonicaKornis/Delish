@@ -28,3 +28,21 @@ export const deleteComment = (commentId) => {
     })
   );
 };
+
+export const likeComment = (commentId) => {
+  return (
+    $.ajax({
+      method: 'POST',
+      url: `api/comments/${commentId}/likes`
+    })
+  );
+};
+
+export const unlikeComment =(commentId) => {
+  return(
+    $.ajax({
+      method: 'DELETE',
+      url: `api/comments/${commentId}/likes`
+    })
+  );
+};
