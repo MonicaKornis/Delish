@@ -41,17 +41,14 @@ class RecipeIndex extends React.Component {
 
   render() {
     let recipeIndexHeader;
+    let recipeIndexFooter;
     let recipeCount = this.props.recipes ? this.props.recipes.length : 0;
+    let authoredCount = this.props.authoredRecipeIds ? this.props.authoredRecipeIds.length : 0;
+    let authoredRecipes = this.props.authoredRecipes || [];
+    let AuthoredRecipeItems = (<div></div>);
     let mainClass;
     let containerId;
 
-    let first10 = this.props.recipes.map((recipe,index) => {
-      if(index < 10) {
-        return (
-          <RecipeIndexItem recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
-          );
-      }
-    });
 
 
     if(this.props.match.path !== '/recipes/recipe-box') {
@@ -83,6 +80,33 @@ class RecipeIndex extends React.Component {
           <span id='savedRecipeCount'>{`${recipeCount} Saved Recipes`}</span>
         </div>
       );
+
+
+      recipeIndexFooter = (
+        <div className='recipeBoxHeader footer'>
+          <br></br>
+          <br></br>
+          <br></br>
+          <h2 id='savedRecipes'>Your Authored Recipes </h2>
+          <span id='savedRecipeCount'>{`${authoredRecipes.length} Authored Recipes`}</span>
+            <br></br>
+            <br></br>
+
+
+        </div>
+      );
+
+      AuthoredRecipeItems = (
+        <div className={mainClass}>
+
+          {
+            this.props.authoredRecipes.map( (recipe,index) =>
+              <RecipeIndexItem recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
+            )
+          }
+
+        </div>
+      );
     }
 
     return (
@@ -95,6 +119,7 @@ class RecipeIndex extends React.Component {
 
         <div className='index-header'>
         </div>
+
           <div className={mainClass}>
 
 
@@ -104,6 +129,16 @@ class RecipeIndex extends React.Component {
               )
             }
           </div>
+        {recipeIndexFooter}
+
+        <div className='index-header'>
+        </div>
+
+        <br></br>
+        <br></br>
+
+        {AuthoredRecipeItems}
+
       </div>
     );
   }

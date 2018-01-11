@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => {
   recipe: state.entities.recipes[ownProps.match.params.recipeId],
   likedRecipes: state.session.currentUser.likedRecipeIds,
   buttonMessage: buttonMessage,
-
   };
 };
 

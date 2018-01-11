@@ -16,12 +16,15 @@ export const fetchRecipe = (id) => {
   );
 };
 
-export const createRecipe = (recipe) => {
+export const createRecipe = (formData) => {
   return(
     $.ajax({
       method: 'POST',
       url: `api/recipes`,
-      data: { recipe: recipe }
+      contentType: false,
+      processData: false,
+      dataType: 'json',
+      data:  formData,
     })
   );
 };

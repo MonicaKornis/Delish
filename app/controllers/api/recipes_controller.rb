@@ -7,7 +7,7 @@ class Api::RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.author_id = current_user.id
     if @recipe.save
-      render "api/recipes/show"
+      render :show
     else
       render json: @recipe.errors.full_messages, status: 422
     end

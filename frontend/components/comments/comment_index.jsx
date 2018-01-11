@@ -27,7 +27,6 @@ class CommentIndex extends React.Component {
   }
 
 
-
   render(){
     if(this.props.comments.length === 0) return <div></div>;
     // let commentLikes = this.props.likedComments.length;
@@ -38,7 +37,6 @@ class CommentIndex extends React.Component {
           <ul>
             {this.props.comments.map(  comment => {
               let commentId = comment.id;
-              let likes = this.state[commentId] > 0 ? this.state[commentId] : 0;
               let commentAuthor = comment.authorName ? comment.authorName : 'Anonymous';
               return (
                 <div id='note'>
@@ -51,7 +49,7 @@ class CommentIndex extends React.Component {
                   <div id='note-footer'>
                     <div id='likes'>
                       <i class="fa fa-thumbs-up" onClick={this.handleCommentLike(comment.id)} id={this.state.commentIcon} aria-hidden="true"></i>
-                      <span id='like-text'>{`${likes} people like this`}</span>
+                      <span id='like-text'>{`${comment.numLikes} people like this`}</span>
                     </div>
                   </div>
                 </div>

@@ -9,6 +9,7 @@ json.comments do
     json.set! comment.id do
       json.extract! comment, :title, :body, :recipe_id, :id
       json.authorName comment.author.name
+      json.numLikes comment.likes.length
     end
   end
 end

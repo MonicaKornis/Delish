@@ -17,10 +17,6 @@ const receiveErrors = (errors) => {
   };
 };
 
-// export const signup = user => dispatch => {
-//   return SessionApiUtil.signup(user).then( user => dispatch(receiveCurrentUser(user),
-//   errors => dispatch(receiveErrors(errors.responseJSON))));
-// };
 
 export const signup = user => dispatch => {
   return SessionApiUtil.signup(user).then( user => {

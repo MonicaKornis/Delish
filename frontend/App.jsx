@@ -5,6 +5,8 @@ import SessionFormContainer from './components/session/session_form_container';
 import RecipeBoxContainer from './components/recipe_box/recipe_box_container';
 import RecipeIndexContainer from './components/main_page/recipe_index_container';
 import RecipeShowContainer from './components/recipe_show/recipe_show_container';
+import RecipeFormContainer from './components/recipe_form/recipe_form_container';
+
 import {
   Route,
   HashRouter
@@ -29,6 +31,8 @@ const App = () => (
     <Route exact path="/signup" component={RecipeIndexContainer} />
     <Route exact path="/signup" component={GreetingContainer} />
     <Route exact path="/login" component={GreetingContainer} />
+
+    <Route path="/recipes/recipe-box" component={RecipeFormContainer}/>
   </div>
 );
 

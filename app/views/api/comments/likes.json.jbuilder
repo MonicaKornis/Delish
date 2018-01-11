@@ -1,1 +1,1 @@
-json.extract! @like, :likeable_id, :id
+json.extract! @like, :likeable_id

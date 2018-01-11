@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_RECIPE_LIKE, RECEIVE_RECIPE_UNLIKE } from '../actions/recipe_actions';
+import { RECEIVE_RECIPE_LIKE, RECEIVE_RECIPE_UNLIKE, RECEIVE_RECIPE } from '../actions/recipe_actions';
 import { RECEIVE_COMMENT_LIKE, REMOVE_COMMENT_LIKE } from '../actions/comment_actions';
 
 
@@ -35,8 +35,13 @@ const sessionsReducer = (state = _nullUser, action) => {
     case REMOVE_COMMENT_LIKE:
       currentUser = state.currentUser;
       if(currentUser.likedCommentIds) {
-        currentUser.likedRecipeIds = currentUser.likedCommentIds.filter( id => id !== action.payload.likeable_id);
+        currentUser.likedCommentIds = currentUser.likedCommentIds.filter( id => id !== action.payload.likeable_id);
       }
+      return Object.assign({}, {currentUser});
+    case RECEIVE_RECIPE:
+      currentUser = state.currentUser;
+      currentUser.authoredRecipeIds = currentUser.authoredRecipeIds || [];
+      currentUser.authoredRecipeIds.push(action.recipe.id);
   default:
     return state;
   }

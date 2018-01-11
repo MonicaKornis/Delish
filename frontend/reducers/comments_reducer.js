@@ -1,4 +1,4 @@
-import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions.js';
+import { RECEIVE_COMMENT, REMOVE_COMMENT, RECEIVE_COMMENT_LIKE, REMOVE_COMMENT_LIKE } from '../actions/comment_actions.js';
 import { RECEIVE_RECIPE } from '../actions/recipe_actions';
 
 const commentsReducer = (oldState = {}, action) => {
@@ -12,6 +12,14 @@ const commentsReducer = (oldState = {}, action) => {
       return newState;
     case RECEIVE_RECIPE:
       return Object.assign(newState,oldState,action.comments);
+    case RECEIVE_COMMENT_LIKE:
+      newState = Object.assign(newState,oldState);
+      newState[action.payload.likeable_id].numLikes += 1;
+      return newState;
+    case REMOVE_COMMENT_LIKE:
+      newState = Object.assign(newState,oldState);
+      newState[action.payload.likeable_id].numLikes -= 1;
+    return newState;
     default:
       return oldState;
   }
