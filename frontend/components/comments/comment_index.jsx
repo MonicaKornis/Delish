@@ -38,6 +38,7 @@ class CommentIndex extends React.Component {
             {this.props.comments.map(  comment => {
               let commentId = comment.id;
               let likes = this.state[commentId] > 0 ? this.state[commentId] : 0;
+              let commentAuthor = comment.authorName ? comment.authorName : 'Anonymous';
               return (
                 <div id='note'>
                   <div id='note-header'>

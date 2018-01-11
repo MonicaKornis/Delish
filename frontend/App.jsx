@@ -25,6 +25,10 @@ const App = () => (
     <Route path="/recipes/:recipeId" component={GreetingContainer} />
     <Route path="/recipes/:recipeId" component={RecipeShowContainer} />
     <Route exact path="/" component={RecipeIndexContainer} />
+    <Route exact path="/login" component={RecipeIndexContainer} />
+    <Route exact path="/signup" component={RecipeIndexContainer} />
+    <Route exact path="/signup" component={GreetingContainer} />
+    <Route exact path="/login" component={GreetingContainer} />
   </div>
 );
 
