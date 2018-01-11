@@ -141,8 +141,9 @@ class RecipeShow extends React.Component {
                 </div>
               </div>
 
+              <div id='form-and-comments'>
               <section className="comments-container">
-                <h3 id='cooking-notes'>Cooking Notes</h3>
+                <h3 id='cooking-notes'>Create A Note</h3>
                 <section className='commentsSection'>
                   <CommentFormContainer recipeId={this.props.recipe.id} />
                 </section>
@@ -151,6 +152,7 @@ class RecipeShow extends React.Component {
               <section id='index' className='commentsContainer'>
               <CommentIndexContainer commentIds={recipe.commentIds}/>
               </section>
+              </div>
           </div>
         </div>
       );

@@ -33,6 +33,7 @@ class CommentIndex extends React.Component {
     // let commentLikes = this.props.likedComments.length;
     return(
       <div className='cooking-notes-container'>
+        <h3 id='cooking-comments-header'>Cooking Notes</h3>
         <div className='cooking-notes'>
           <ul>
             {this.props.comments.map(  comment => {

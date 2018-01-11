@@ -15,16 +15,23 @@
   float: left;
 }
 
+#form-and-comments {
+  width: 60%;
+  // margin-left: 310px;
+
+}
+
 textarea {
   width: 70%;
 }
 
 section.comments-container {
   clear: both;
+  width: 70%;
   margin-top: -60px;
   margin-left: 310px;
   border: 1px solid #ccc;
-  width: 70%;
+  width: 80%;
   height: 200px;
 }
 
@@ -41,6 +48,17 @@ section.comments-container {
   text-transform: uppercase;
   margin: auto;
   margin-left: 30px;
+}
+
+#cooking-comments-header {
+  font-family: 'karnak-400';
+  font-size: 1.08em;
+  letter-spacing: 1px;
+  padding: 17px 0 18px;
+  text-transform: uppercase;
+  margin: auto;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
 .formContainer {
@@ -96,8 +114,8 @@ section.comments-container {
 }
 
 .cooking-notes {
-  padding-left: 40px;
-  padding-top: 40px;
+  padding-left: 30px;
+  padding-top: 10px;
   padding-bottom: 40px;
 }
 
@@ -130,4 +148,16 @@ section.comments-container {
 
 .fa-thumbs-up {
   cursor: pointer;
+}
+
+#comment-title {
+  padding-left: 2px;
+}
+
+#comment-body {
+  padding-left: 4px;
+}
+
+#note-footer {
+  padding-left: 2px;
 }
