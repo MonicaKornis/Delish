@@ -38,6 +38,7 @@
   justify-content: flex-end;
 }
 
+
 .subscribe {
   font-size: .75rem;
   color: black;
@@ -78,4 +79,23 @@ li {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+}
+
+#delish {
+  font-family: 'karnak-400';
+  font-size: 30px;
+  color: black;
+  margin-left: 10px;
+}
+
+#delish:hover {
+  color: #e33d26;
+}
+
+.subscribe:hover {
+  color: #e33d26;
+}
+
+.logoutButton:hover {
+  color: #e33d26;
 }

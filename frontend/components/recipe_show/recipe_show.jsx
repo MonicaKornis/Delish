@@ -110,15 +110,15 @@ class RecipeShow extends React.Component {
 
 
                   <div id="DIV_1">
-  	                 <div id="DIV_2">
+
                        <div id="recipeImage">
-                         <img src={recipe.image_url} />
+                         <img id='img' src={recipe.image_url} />
                        </div>
 
   		                 <p id="description">
   			                  {recipe.description}
   		                 </p>
-  	                  </div>
+
 
                    </div>
 

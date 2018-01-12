@@ -13,14 +13,14 @@ class Greeting extends React.Component {
 
   handleLogout(e) {
     e.preventDefault();
-    this.props.logout();
+    this.props.logout().then(() => this.props.history.push('/'));
   }
 
   userGreeting() {
     return(
       <div className="main-nav">
         <div className='formImage'>
-          <img src={window.staticImages.navImage}/>
+          <Link to='/' id='delish'>DELISH</Link>
         </div>
         <nav className="right-nav">
             <Link to='/recipes/recipe-box' className='subscribe'> Your Recipe Box: {(this.props.currentUser.email).split('@')[0]}</Link>
