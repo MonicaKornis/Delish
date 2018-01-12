@@ -49,6 +49,7 @@ class RecipeShow extends React.Component {
     let ingredients = [];
     let steps = [];
     let buttonLabel = 'Save To Recipe Box';
+    let author = this.props.recipe.author ? this.props.recipe.author : 'Anonymous';
 
     if(this.props.recipe) {
       ingredients = this.props.recipe.ingredients.map( (ingredient,idx) =>
@@ -85,7 +86,7 @@ class RecipeShow extends React.Component {
 
             <div id='name'>
         		<h3 id="name-header">
-        			 <a><span id="span-name">Monica Kornis</span></a>
+        			 <a><span id="span-name">{author}</span></a>
         		</h3>
           </div>
 

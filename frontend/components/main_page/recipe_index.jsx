@@ -2,13 +2,40 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import RecipeIndexItem from './recipe_index_item';
 import SessionFormContainer from '../session/session_form_container';
+import RecipeFormContainer from '../recipe_form/recipe_form_container';
+// const Modal = require('react-modal');
+import Modal from 'react-modal';
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+
+
 
 class RecipeIndex extends React.Component {
   constructor(props) {
     super(props);
     this.handleLike= this.handleLike.bind(this);
     this.handleColor = this.handleColor.bind(this);
-    // this.state = { likedRecipes: this.props.likedRecipes };
+    this.state = { modalOpen: false };
+    this.closeModal = this.closeModal.bind(this);
+    this.openModal = this.openModal.bind(this);
+  }
+
+  closeModal() {
+    this.setState({modalOpen: false});
+  }
+
+  openModal() {
+    this.setState({modalOpen: true});
   }
 
   componentDidMount(){
@@ -76,7 +103,9 @@ class RecipeIndex extends React.Component {
           <br></br>
           <br></br>
           <br></br>
+
           <h2 id='savedRecipes'>Your Saved Recipes </h2>
+          <button id='modal-button' onClick={this.openModal}>Create A Recipe</button>
           <span id='savedRecipeCount'>{`${recipeCount} Saved Recipes`}</span>
         </div>
       );
@@ -101,7 +130,7 @@ class RecipeIndex extends React.Component {
 
           {
             this.props.authoredRecipes.map( (recipe,index) =>
-              <RecipeIndexItem recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
+              <RecipeIndexItem author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
             )
           }
 
@@ -110,12 +139,23 @@ class RecipeIndex extends React.Component {
     }
 
     return (
+
       <div className='recipeIndex' id={containerId}>
+
+
         {recipeIndexHeader}
         <br></br>
         <br></br>
 
 
+            <Modal
+              isOpen={this.state.modalOpen}
+              onRequestClose={this.closeModal}
+              style={customStyles}>
+
+
+             <RecipeFormContainer closeModal={this.closeModal}/>
+            </Modal>
 
         <div className='index-header'>
         </div>
@@ -125,7 +165,7 @@ class RecipeIndex extends React.Component {
 
             {
               this.props.recipes.map( (recipe,index) =>
-                <RecipeIndexItem recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
+                <RecipeIndexItem author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
               )
             }
           </div>
@@ -139,6 +179,7 @@ class RecipeIndex extends React.Component {
 
         {AuthoredRecipeItems}
 
+          <br></br>
       </div>
     );
   }

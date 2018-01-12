@@ -32,7 +32,6 @@ const App = () => (
     <Route exact path="/signup" component={GreetingContainer} />
     <Route exact path="/login" component={GreetingContainer} />
 
-    <Route path="/recipes/recipe-box" component={RecipeFormContainer}/>
   </div>
 );
 
