@@ -1,24 +1,28 @@
-# README
+# DELISH 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Delish is a full-stack application that allows users to browse, bookmark, and share recipes. It was inspired by the New York Times Cooking App. It was build using React, Redux, Rails and PostgreSQL. 
 
-Things you may want to cover:
+##Features 
+  * Secure User Authentication 
+  * Each user has a recipe box where they are able to view their bookmarked and authored recipes. 
+  * Users can share useful tips and tricks with other users by leaving 'cooking notes' on each recipe. 
+  * Users can upvote cooking notes that they find useful. 
+  * Users can upload their favorite recipes to share with others. 
+ 
+ ##Technologies 
+  * Ruby on Rails 
+  * React 
+  * Redux 
+  * PostgreSQL
+  
+ ##Future Implementations 
+  * Search bar that enables users to search for recipes based on title, ingredient, or cooking technique. 
+  * Star Ratings 
+  * Tags/Categories that users can apply to each recipe and are displayed on each recipes show page. 
+  * 'Cooking Guides' that showcase specific how-tos and cooking techniques. 
+ 
+ ##Image Gallery 
 
-* Ruby version
 
-* System dependencies
+  
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
