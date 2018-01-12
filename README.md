@@ -9,19 +9,19 @@ Delish is a full-stack application that allows users to browse, bookmark, and sh
   * Users can upvote cooking notes that they find useful. 
   * Users can upload their favorite recipes to share with others. 
  
- ##Technologies 
+##Technologies 
   * Ruby on Rails 
   * React 
   * Redux 
   * PostgreSQL
   
- ##Future Implementations 
+##Future Implementations 
   * Search bar that enables users to search for recipes based on title, ingredient, or cooking technique. 
   * Star Ratings 
   * Tags/Categories that users can apply to each recipe and are displayed on each recipes show page. 
   * 'Cooking Guides' that showcase specific how-tos and cooking techniques. 
  
- ##Image Gallery 
+##Image Gallery 
 
 
   
