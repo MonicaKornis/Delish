@@ -46,8 +46,6 @@ class RecipeIndex extends React.Component {
   handleLike(recipeId){
     if(this.props.likedRecipes.includes(recipeId)) {
       return (e) => {
-
-        // this.setState({likedRecipes: this.state.likedRecipes.});
         return this.props.unlikeRecipe(recipeId);
       };
     } else {
@@ -186,7 +184,3 @@ class RecipeIndex extends React.Component {
 }
 
 export default RecipeIndex;
-
-//
-// <h1>"Find Your Next Culinary Masterpiece"</h1>
-// <p>"Free Recipes, Guides and Tips For Easy, Delicious Cooking"</p>

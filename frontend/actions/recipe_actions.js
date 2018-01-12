@@ -61,6 +61,7 @@ export const fetchRecipe = (id) => dispatch => {
 
 export const createRecipe = (recipe) => dispatch => {
   return RecipeApiUtil.createRecipe(recipe).then(recipe => {
+    debugger
     return dispatch(receiveRecipe(recipe));
   }, errors => {
     return dispatch(receiveRecipeErrors(errors.responseJSON));
