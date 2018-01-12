@@ -36,7 +36,7 @@ class Greeting extends React.Component {
     return(
       <div className="main-nav">
         <div className='formImage'>
-          <img src={window.staticImages.navImage}/>
+          <Link to='/' id='delish'>DELISH</Link>
         </div>
         <nav className="right-nav">
           <Link className='subscribe' to='/signup'>Subscribe</Link>  &nbsp;&nbsp;

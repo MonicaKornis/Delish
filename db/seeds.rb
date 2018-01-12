@@ -25,7 +25,7 @@ titles = ['','Cinnamon Rolls With Icing', 'Soy-Sauce-Pickled Eggs','Omelet With 
           'Kale-Sauce Pasta','Panettone Bread Pudding', 'Cake With Marshmallow Frosting','Roasted Squash With Coconut']
 
  (1..30).each do |num|
-   path = "./app/assets/images/#{num}.jpg"
+   # path = "./app/assets/images/#{num}.jpg"
    recipe = Recipe.new(title: titles[num],
                 description: "Easy, healthful and infinitely adaptable, grain bowls are equally ideal for feeding a family (picky eaters can build it to suit their own tastes) and using up leftovers in the fridge. You could also cook up the ingredients at the beginning of the week, and mix and match ingredients at will as the week progresses",
                 author_id: User.find_by(email: 'MonicaKornis@gmail.com').id,
@@ -35,7 +35,7 @@ titles = ['','Cinnamon Rolls With Icing', 'Soy-Sauce-Pickled Eggs','Omelet With 
                 'Place one circle of dough on a baking sheet lined with parchment paper. Spread the filling evenly over the dough, leaving a 1-inch border bare. Press the charm into the filling. Moisten the border with cold water, position the second circle of dough over the filling and press around the border with your fingertips to seal well.',
                 'With the point of a paring knife, etch a design into the top of the galette, taking care not to pierce the dough. Cut 6 small slits in the top as steam vents.'],
                 ingredients: ['5/6 cup ' + Faker::Food.ingredient,'1/4 cup ' + Faker::Food.ingredient,  '1/2 tbs ' + Faker::Food.spice, '1/2 cup ' + Faker::Food.ingredient, '1/2 cup ' + Faker::Food.ingredient, '3/4 tbs ' + Faker::Food.spice])
-                file=File.open(path)
+                file=File.open("./app/assets/images/#{num}.jpg")
                 recipe.image = file
                 recipe.save!
 end
