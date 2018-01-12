@@ -277,7 +277,7 @@
 $break-small: 320px;
 $break-large: 757px;
 
-// 
+//
 // @media screen and (min-width: 757px ) and (max-width: 1000px ) {
 //   #recipeImage {
 //     max-width: 940px;
@@ -294,7 +294,7 @@ $break-large: 757px;
 #img {
   width: 120%;
   bottom: 200px;
-  z-index: 2;
+  // z-index: 2;
   bottom: 70px;
   position: relative;
 }
