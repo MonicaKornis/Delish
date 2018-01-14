@@ -13,7 +13,8 @@ class Greeting extends React.Component {
 
   handleLogout(e) {
     e.preventDefault();
-    this.props.logout().then(() => this.props.history.push('/'));
+    this.props.history.push('/');
+    this.props.logout();
   }
 
   userGreeting() {
