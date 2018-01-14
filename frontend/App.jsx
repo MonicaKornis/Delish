@@ -6,6 +6,8 @@ import RecipeBoxContainer from './components/recipe_box/recipe_box_container';
 import RecipeIndexContainer from './components/main_page/recipe_index_container';
 import RecipeShowContainer from './components/recipe_show/recipe_show_container';
 import RecipeFormContainer from './components/recipe_form/recipe_form_container';
+import RecipeBackgroundContainer from './components/recipe_box/recipe_background_container';
+
 
 import {
   Route,
@@ -31,7 +33,9 @@ const App = () => (
 
     <Route exact path="/" component={RecipeIndexContainer} />
     <Route exact path="/signup" component={GreetingContainer} />
+    <Route exact path="/signup" component={RecipeBackgroundContainer} />
     <Route exact path="/login" component={GreetingContainer} />
+    <Route exact path="/login" component={RecipeBackgroundContainer} />
 
   </div>
 );

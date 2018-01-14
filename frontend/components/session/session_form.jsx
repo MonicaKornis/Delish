@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+
 class SessionForm extends React.Component {
   constructor(props){
     super(props);
@@ -12,6 +13,8 @@ class SessionForm extends React.Component {
   componendDidMount(){
     this.props.removeErrors();
   }
+
+
 
   handleSubmit(e) {
     e.preventDefault();

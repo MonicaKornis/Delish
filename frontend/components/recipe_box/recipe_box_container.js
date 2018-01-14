@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchRecipes, likeRecipe, unlikeRecipe } from '../../actions/recipe_actions';
-import RecipeBox from './recipe_box';
 import RecipeIndex from '../main_page/recipe_index';
 
 const mapStateToProps = (state) => {

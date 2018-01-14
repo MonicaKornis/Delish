@@ -36,13 +36,6 @@ class RecipeIndex extends React.Component {
     this.setState({recipeModalOpen: true});
   }
 
-  // openSessionModal() {
-  //   this.setState({sessionModalOpen: true});
-  // }
-  //
-  // closeSessionModal() {
-  //   this.setState({sessionModalOpen: true});
-  // }
 
   componentDidMount(){
     this.props.fetchRecipes();
