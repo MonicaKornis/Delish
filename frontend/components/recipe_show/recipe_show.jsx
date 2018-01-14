@@ -32,7 +32,7 @@ class RecipeShow extends React.Component {
       };
     } else {
       return (e) => {
-        this.setState({ buttonMessage: 'Saved'});
+        this.setState({ buttonMessage: 'Remove From Recipe Box'});
         return this.props.likeRecipe(recipeId);
       };
     }

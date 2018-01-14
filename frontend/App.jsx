@@ -22,13 +22,14 @@ const App = () => (
 
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
+
     <Route path="/recipes/recipe-box" component={RecipeBoxContainer} />
     <Route exact path="/" component={GreetingContainer} />
+
     <Route path="/recipes/:recipeId" component={GreetingContainer} />
     <Route path="/recipes/:recipeId" component={RecipeShowContainer} />
+
     <Route exact path="/" component={RecipeIndexContainer} />
-    <Route exact path="/login" component={RecipeIndexContainer} />
-    <Route exact path="/signup" component={RecipeIndexContainer} />
     <Route exact path="/signup" component={GreetingContainer} />
     <Route exact path="/login" component={GreetingContainer} />
 
@@ -36,3 +37,6 @@ const App = () => (
 );
 
 export default App;
+
+// <Route exact path="/login" component={RecipeIndexContainer} />
+// <Route exact path="/signup" component={RecipeIndexContainer} />

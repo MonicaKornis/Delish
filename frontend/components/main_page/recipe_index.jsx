@@ -26,7 +26,6 @@ class RecipeIndex extends React.Component {
     this.state = { recipeModalOpen: false };
     this.closeRecipeModal = this.closeRecipeModal.bind(this);
     this.openRecipeModal = this.openRecipeModal.bind(this);
-
   }
 
   closeRecipeModal() {
@@ -36,6 +35,14 @@ class RecipeIndex extends React.Component {
   openRecipeModal() {
     this.setState({recipeModalOpen: true});
   }
+
+  // openSessionModal() {
+  //   this.setState({sessionModalOpen: true});
+  // }
+  //
+  // closeSessionModal() {
+  //   this.setState({sessionModalOpen: true});
+  // }
 
   componentDidMount(){
     this.props.fetchRecipes();
@@ -64,6 +71,7 @@ class RecipeIndex extends React.Component {
 
 
   render() {
+
     let recipeIndexHeader;
     let recipeIndexFooter;
     let recipeCount = this.props.recipes ? this.props.recipes.length : 0;
@@ -72,8 +80,6 @@ class RecipeIndex extends React.Component {
     let AuthoredRecipeItems = (<div></div>);
     let mainClass;
     let containerId;
-
-
 
     if(this.props.match.path !== '/recipes/recipe-box') {
       mainClass = 'flex-recipe-grid';
@@ -135,6 +141,7 @@ class RecipeIndex extends React.Component {
       );
     }
 
+
     return (
 
       <div className='recipeIndex' id={containerId}>
@@ -162,7 +169,7 @@ class RecipeIndex extends React.Component {
 
             {
               this.props.recipes.map( (recipe,index) =>
-                <RecipeIndexItem author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
+                <RecipeIndexItem currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
               )
             }
           </div>
