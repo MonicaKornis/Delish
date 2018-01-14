@@ -18,24 +18,23 @@ const customStyles = {
 };
 
 
-
-
 class RecipeIndex extends React.Component {
   constructor(props) {
     super(props);
     this.handleLike= this.handleLike.bind(this);
     this.handleColor = this.handleColor.bind(this);
-    this.state = { modalOpen: false };
-    this.closeModal = this.closeModal.bind(this);
-    this.openModal = this.openModal.bind(this);
+    this.state = { recipeModalOpen: false };
+    this.closeRecipeModal = this.closeRecipeModal.bind(this);
+    this.openRecipeModal = this.openRecipeModal.bind(this);
+
   }
 
-  closeModal() {
-    this.setState({modalOpen: false});
+  closeRecipeModal() {
+    this.setState({recipeModalOpen: false});
   }
 
-  openModal() {
-    this.setState({modalOpen: true});
+  openRecipeModal() {
+    this.setState({recipeModalOpen: true});
   }
 
   componentDidMount(){
@@ -103,7 +102,7 @@ class RecipeIndex extends React.Component {
           <br></br>
 
           <h2 id='savedRecipes'>Your Saved Recipes </h2>
-          <button id='modal-button' onClick={this.openModal}>Create A Recipe</button>
+          <button id='modal-button' onClick={this.openRecipeModal}>Create A Recipe</button>
           <span id='savedRecipeCount'>{`${recipeCount} Saved Recipes`}</span>
         </div>
       );
@@ -128,7 +127,7 @@ class RecipeIndex extends React.Component {
 
           {
             this.props.authoredRecipes.map( (recipe,index) =>
-              <RecipeIndexItem author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
+              <RecipeIndexItem currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
             )
           }
 
@@ -147,12 +146,12 @@ class RecipeIndex extends React.Component {
 
 
             <Modal
-              isOpen={this.state.modalOpen}
-              onRequestClose={this.closeModal}
+              isOpen={this.state.recipeModalOpen}
+              onRequestClose={this.closeRecipeModal}
               style={customStyles}>
 
 
-             <RecipeFormContainer closeModal={this.closeModal}/>
+             <RecipeFormContainer closeRecipeModal={this.closeRecipeModal}/>
             </Modal>
 
         <div className='index-header'>
