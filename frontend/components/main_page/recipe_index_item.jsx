@@ -7,7 +7,7 @@ const RecipeIndexItem = ({recipe, action, color, author, currentUser}) => (
 
       <div className='recipeInfo'>
         <div className='titleWrapper'>
-          <Link to={`/recipes/${recipe.id}`} id='recipeName'>{recipe.title}</Link>
+          <Link to={ currentUser ? `/recipes/${recipe.id}` : '/login'} id='recipeName'>{recipe.title}</Link>
           <h4 id='author'> By {author} </h4>
         </div>
 

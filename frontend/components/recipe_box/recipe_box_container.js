@@ -26,7 +26,8 @@ const mapStateToProps = (state) => {
     recipes: recipes,
     likedRecipes: state.session.currentUser.likedRecipeIds,
     authoredRecipeIds: state.session.currentUser.authoredRecipeIds,
-    authoredRecipes: authoredRecipes
+    authoredRecipes: authoredRecipes,
+    currentUser: state.session.currentUser
   };
 };
 
