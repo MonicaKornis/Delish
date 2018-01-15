@@ -6,7 +6,7 @@
   * Secure User Authentication 
   * Each user has a recipe box where they are able to view their bookmarked and authored recipes. 
   
-      ![alt text](https://media.giphy.com/media/l0HUn5xOuyKujQt0Y/giphy.gif)
+        [[https://i.imgur.com/NOgpj8n.jpg]]
     
     
   * Users can share useful tips and tricks with other users by leaving 'cooking notes' on each recipe. 
