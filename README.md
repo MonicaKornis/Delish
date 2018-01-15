@@ -1,6 +1,6 @@
 # DELISH 
 
-[Delish](https://delish-app.herokuapp.com/) is a full-stack application that allows users to browse, bookmark, and share recipes. It was inspired by [New York Times Cooking](cooking.nytimes.com). It was build using React, Redux, Rails and PostgreSQL. 
+[Delish](https://delish-app.herokuapp.com/) is a full-stack application that allows users to browse, bookmark, and share recipes. It was inspired by [New York Times Cooking](cooking.nytimes.com). Delish was build using React, Redux, Rails and PostgreSQL. 
 
 ## Features 
   * Secure User Authentication 
