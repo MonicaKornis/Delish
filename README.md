@@ -2,7 +2,7 @@
 
 [Delish](https://delish-app.herokuapp.com/) is a full-stack application that allows users to browse, bookmark, and share recipes. It was inspired by [New York Times Cooking](cooking.nytimes.com). Delish was build using React, Redux, Rails and PostgreSQL. 
    
-       ![Bilby Stampede](https://i.imgur.com/undefined.png)
+       ![Bilby Stampede](https://i.imgur.com/XJyMahE.jpg)
 
 ## Features 
   * Secure User Authentication 
@@ -13,7 +13,7 @@
   
   * Each recipe has a show page, which contains the recipe's description, author, yield, time to prepare, and ingredients.
  
-       ![Bilby Stampede](https://i.imgur.com/undefined.png)
+       ![Bilby Stampede](https://i.imgur.com/yDIZFbQ.jpg)
     
   * At the bottom of a recipe show page, users can share useful tips and tricks with other users by leaving 'cooking notes' on each recipe. Users can also upvote cooking notes that they find useful. 
   
