@@ -6,7 +6,7 @@
   * Secure User Authentication 
   * Each user has a recipe box where they are able to view their bookmarked and authored recipes. 
   
-       ![Bilby Stampede](http://example.com/images/logo.png)
+       ![Bilby Stampede](https://i.imgur.com/NOgpj8n.jpg)
     
     
   * Users can share useful tips and tricks with other users by leaving 'cooking notes' on each recipe. 
