@@ -5,7 +5,7 @@
 ## Features 
   * Secure User Authentication 
   * Each user has a recipe box where they are able to view their bookmarked and authored recipes. 
-    ![alt text](blob:https://imgur.com/47019707-27c1-4d51-ac35-c31cdd437dc2)
+    ![alt text](blob:https://imgur.com/47019707-27c1-4d51-ac35-c31cdd437dc2.gif)
     
     
   * Users can share useful tips and tricks with other users by leaving 'cooking notes' on each recipe. 
