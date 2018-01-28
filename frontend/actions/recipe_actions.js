@@ -21,6 +21,7 @@ const receiveRecipe = ({recipe, comments}) => {
 };
 
 const receiveRecipeErrors = (errors) => {
+// debugger
   return {
     type: RECEIVE_RECIPE_ERRORS,
     errors
@@ -61,8 +62,10 @@ export const fetchRecipe = (id) => dispatch => {
 
 export const createRecipe = (recipe) => dispatch => {
   return RecipeApiUtil.createRecipe(recipe).then(recipe => {
+    debugger
     return dispatch(receiveRecipe(recipe));
   }, errors => {
+    // debugger
     return dispatch(receiveRecipeErrors(errors.responseJSON));
   }
   );
@@ -89,4 +92,8 @@ export const unlikeRecipe = (recipeId) => dispatch => {
     return dispatch(recieveUnlike(unlike));
     }
   );
+};
+
+export const removeErrors = () => dispatch => {
+  return dispatch(receiveRecipeErrors([]));
 };

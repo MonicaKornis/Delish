@@ -12,11 +12,13 @@ class RecipeForm extends React.Component {
     this.updateFile = this.updateFile.bind(this);
   }
 
+
   handleSubmit(e) {
 
     let formData = new FormData();
     let ingredients = this.state.ingredients.split(' ');
     let steps = this.state.steps.split('.');
+    let time = parseInt(this.state.cookingTime) > 0 ? parseInt(this.state.cookingTime) : 5;
 
     for (let i = 0; i < ingredients.length; i++) {
       formData.append('recipe[ingredients][]', ingredients[i]);
@@ -29,7 +31,7 @@ class RecipeForm extends React.Component {
 
     formData.append('recipe[title]', this.state.title);
     formData.append('recipe[description]', this.state.description);
-    formData.append('recipe[cooking_time]', parseInt(this.state.cookingTime));
+    formData.append('recipe[cooking_time]', time);
     formData.append('recipe[image]', this.state.imageFile);
     // formData.append('recipe[ingredients]', this.state.ingredients.split(' '));
     // formData.append('recipe[steps]', this.state.steps.split('.'));
@@ -52,10 +54,21 @@ class RecipeForm extends React.Component {
     }
   }
 
+  errors() {
+    return (
+      <ul className='errors'>
+        {this.props.errors.map((error,i) =>
+          <li key={i}>{error}</li>
+        )}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <div id='modal-container'>
         <h2 id='savedRecipes'> Submit A Recipe! </h2>
+          {this.errors()}
         <form onSubmit={this.handleSubmit} >
           <h3>
             <input id='input' type='text' placeholder='Title' onChange={this.update('title')} value={this.state.title}/>

@@ -1,15 +1,24 @@
 class Api::RecipesController < ApplicationController
   def index
+    # debugger
     @recipes = Recipe.all
   end
 
   def create
+    recipe_params.values.each do |param|
+      if param == "null" || param == "NaN"
+        render json: ['Please fill out all fields'], status: 422
+        return
+      end
+    end
+
     @recipe = Recipe.new(recipe_params)
     @recipe.author_id = current_user.id
     if @recipe.save
       render :show
-    else
-      render json: @recipe.errors.full_messages, status: 422
+    # else
+    #   debugger
+    #   render json: ['please fill out all fields'], status: 422
     end
   end
 

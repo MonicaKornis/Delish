@@ -34,6 +34,7 @@ class RecipeIndex extends React.Component {
 
   openRecipeModal() {
     this.setState({recipeModalOpen: true});
+    this.props.removeErrors();
   }
 
 
