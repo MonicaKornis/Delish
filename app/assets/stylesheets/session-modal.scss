@@ -1,20 +1,22 @@
 .session-form-container {
   position: fixed;
-   background: rgba(0, 0, 0, 0.7);
-   height: 100%;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   z-index: 4;
-   display: flex;
+  font-family: 'cheltenham-500';
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  display: flex;
 }
 
 .session-form {
   display: flex;
   cursor: pointer;
   margin: 0 auto;
-  font-family: 'Domine', serif;
+  font-size: 20px;
+  font-family: 'cheltenham-500';
   align-items: center;
   background-color: rgba(257, 257, 257, .95);
   position: absolute;
@@ -30,7 +32,7 @@
 }
 
 h1.welcomeMessage {
-  font-size: 30px;
+  font-size: 40px;
   padding-bottom: 10px;
   font-family: 'Domine', serif;
 }
@@ -39,13 +41,16 @@ h1.welcomeMessage {
   align-items: center;
   border: 1px grey;
 }
+.greeting {
+  font-size: 22px;
+}
 
 .button {
   background-color: #e33d26;
   width: 100%;
   height: 30px;
-  font-size: 15px;
-  font-family: 'Domine', serif;
+  font-size: 17px;
+  font-family: 'franklin-300';
   font-style: bold;
   text-decoration: none;
 }
@@ -53,11 +58,12 @@ h1.welcomeMessage {
 .model-input {
   background-color: #fff;
   border: 1px solid #deddd5;
+  font-size: 20px;
   color: #222;
   font-family: Arial,Helvetica,sans-serif;
   font-weight: 300;
   font-size: 1rem;
-  height: 40px;
+  height: 45px;
   letter-spacing: .3px;
   padding: 10px;
   width: 100%;
@@ -79,7 +85,7 @@ h1 {
 .sessionButton {
   color: #e33d26;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: 'franklin-300';
 }
 
 .errors {
