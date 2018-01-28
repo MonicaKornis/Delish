@@ -7,9 +7,11 @@ class CommentIndex extends React.Component {
     this.handleCommentLike = this.handleCommentLike.bind(this);
     this.state = {commentIcon: 'black-thumbs-up', commentLikes: commentLikes };
     this.handleCommentLike = this.handleCommentLike.bind(this);
+    this.removeComment = this.removeComment.bind(this);
   }
 
   handleCommentLike(commentId){
+    debugger
     if(this.props.likedComments.includes(commentId)) {
       return (e) => {
         let likes = this.state.commmentId || 0;
@@ -23,6 +25,13 @@ class CommentIndex extends React.Component {
         this.setState({commentIcon: 'red-thumbs-up', [commentId]: likes});
         return this.props.likeComment(commentId);
       };
+    }
+  }
+
+  removeComment(commentId, authorId) {
+    if(this.props.currentUser === authorId) {
+      debugger
+      this.props.deleteComment(commentId);
     }
   }
 
@@ -44,6 +53,9 @@ class CommentIndex extends React.Component {
                   <div id='note-header'>
                     <h4 id='comment-author'>{comment.authorName}</h4>
                     <h4 id='date'> 2 days ago</h4>
+                    <button id='delete-button' onClick={() => this.removeComment(comment.id, comment.author_id)}>Delete</button>
+
+
                   </div>
                   <div id='comment-title'>{comment.title}</div>
                   <div id='comment-body'>{comment.body}</div>
@@ -65,3 +77,8 @@ class CommentIndex extends React.Component {
 }
 
 export default CommentIndex;
+
+
+
+
+// <h4 id='delete-button' onClick={this.removeComment(comment.id, comment.author_id)}>Delete</h4>

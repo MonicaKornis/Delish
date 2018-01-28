@@ -14,7 +14,6 @@ const mapDispatchToProps = (dispatch) => {
   // debugger
   return {
     createRecipe: (recipe) => dispatch(createRecipe(recipe)),
-    // removeErrors: () => dispatch(receiveRecipeErrors([]))
   };
 };
 

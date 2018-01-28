@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => {
   return {
   fetchRecipe: id => dispatch(fetchRecipe(id)),
   likeRecipe: id => dispatch(likeRecipe(id)),
-  unlikeRecipe: id => dispatch(unlikeRecipe(id))
+  unlikeRecipe: id => dispatch(unlikeRecipe(id)),
   };
 };
 
