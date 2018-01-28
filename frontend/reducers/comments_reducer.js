@@ -3,7 +3,7 @@ import { RECEIVE_RECIPE } from '../actions/recipe_actions';
 
 const commentsReducer = (oldState = {}, action) => {
   let newState = {};
-  debugger
+  // debugger
   switch (action.type) {
     case RECEIVE_COMMENT:
       return Object.assign(newState,oldState,{[action.payload.id]: action.payload});
@@ -15,6 +15,7 @@ const commentsReducer = (oldState = {}, action) => {
       return Object.assign(newState,oldState,action.comments);
     case RECEIVE_COMMENT_LIKE:
       newState = Object.assign(newState,oldState);
+      newState[action.payload.likeable_id].numLikes = newState[action.payload.likeable_id].numLikes || 0;
       newState[action.payload.likeable_id].numLikes += 1;
       return newState;
     case REMOVE_COMMENT_LIKE:

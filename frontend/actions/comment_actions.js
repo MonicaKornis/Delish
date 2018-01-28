@@ -72,7 +72,7 @@ export const updateComment = (comment) => (dispatch) => {
 
 export const deleteComment = (commentId) => (dispatch) => {
   return CommentApiUtil.deleteComment(commentId).then((commentId) => {
-    debugger
+    // debugger
     return dispatch(removeComment(commentId));
   }, errors => {
     return dispatch(recieveCommentErrors(errors.responseJSON));
