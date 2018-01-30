@@ -1,5 +1,5 @@
 json.recipe do
-  json.extract! @recipe, :title, :description, :cooking_time, :ingredients, :id, :steps
+  json.extract! @recipe, :title, :description, :cooking_time, :ingredients, :steps ,:id
   json.image_url image_url(@recipe.image.url)
   json.commentIds @recipe.comment_ids
   json.author @recipe.author.name

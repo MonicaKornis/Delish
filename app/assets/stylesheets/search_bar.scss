@@ -1,7 +1,7 @@
 .search-bar {
   left: 191px;
   position: absolute;
-  width: 40%;
+  width: 34%;
   z-index:100;
   background-color:#fff;
 }
@@ -19,7 +19,7 @@
   padding: 20px;
   border: none;
   /* border-right: 1px solid #ccc; */
-  padding: 3.33%;
+  padding: 17px;
   border-left: 1px solid #ccc;
 }
 
@@ -40,7 +40,7 @@
 
 .search-result-item:hover {
   background-color: grey;
-  color: white; 
+  color: white;
 }
 
 

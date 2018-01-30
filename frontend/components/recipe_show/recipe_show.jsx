@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CommentFormContainer from '../comments/comment_form_container';
 
@@ -9,7 +9,7 @@ class RecipeShow extends React.Component {
     super(props);
     this.state = { buttonMessage: this.props.buttonMessage};
     this.handleLike = this.handleLike.bind(this);
-    // this.handleCommentLike = this.handleCommentLike.bind(this);
+    debugger
   }
 
   componentDidMount(){
@@ -56,7 +56,7 @@ class RecipeShow extends React.Component {
       <li className='ingredient' key={idx}> <span id='quantity'> {`${ingredient.slice(0,3)}`}</span><span id='ingredient-name'>{`${ingredient.slice(3)}`}</span></li>
       );
     }
-
+    debugger
     if (recipe.steps) {
       steps = recipe.steps.map((step, idx) => (
         <div key={idx}>
@@ -66,7 +66,7 @@ class RecipeShow extends React.Component {
       ));
     }
 
-
+    debugger
       return (
 
         <div className='recipeContainer'>
