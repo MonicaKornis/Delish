@@ -12,9 +12,9 @@ class User < ApplicationRecord
   has_many :likes
 
   has_many :liked_recipes,
-    through: :likes,
-    source: :likeable,
-    source_type: "Recipe"
+  through: :likes,
+  source: :likeable,
+  source_type: "Recipe"
 
   has_many :liked_comments,
   through: :likes,
@@ -23,6 +23,11 @@ class User < ApplicationRecord
 
   has_many :authored_comments,
   class_name: 'Comment',
+  foreign_key: :author_id,
+  primary_key: :id
+
+  has_many :ratings,
+  class_name: 'Rating',
   foreign_key: :author_id,
   primary_key: :id
 

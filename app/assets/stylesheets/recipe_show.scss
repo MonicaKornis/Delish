@@ -22,7 +22,9 @@
     border: 0px none rgb(34, 34, 34);
     font: 'cheltenham-500';
     outline: rgb(34, 34, 34) none 0px;
-}/*#HEADER_1*/
+}
+
+/*#HEADER_1*/
 
 #HEADER_1:after {
     clear: both;
@@ -108,8 +110,7 @@
     font-family: 'Cheltenham-BT';
     font-weight: lighter;
     margin-bottom: 5px;
-    // outline: rgb(34, 34, 34) none 0px;
-}/*#H1_4*/
+}
 
 #div-4 {
     box-sizing: border-box;
@@ -277,26 +278,18 @@
 $break-small: 320px;
 $break-large: 757px;
 
-//
-// @media screen and (min-width: 757px ) and (max-width: 1000px ) {
-//   #recipeImage {
-//     max-width: 940px;
-//   }
-// }
-//
-// @media screen and (min-width: 1000px ) and (max-width: 1400px ) {
-//   #recipeImage {
-//     max-width: 1060px;
-//     // height: 700px;
-//   }
-// }
-
 #img {
   width: 120%;
   bottom: 200px;
-  // z-index: 2;
   bottom: 70px;
   position: relative;
+
+  @media (min-width: 1400px) {
+    width: 150%;
+    bottom: 200px;
+    bottom: 70px;
+    position: relative;
+  }
 }
 
 #description {

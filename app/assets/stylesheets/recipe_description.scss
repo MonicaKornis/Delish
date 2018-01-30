@@ -15,40 +15,9 @@ html, body {
   justify-content: space-between;
   margin-top: 20px;
       /* flex-direction: row; */
-}/*#DIV_1*/
+}
 
-// #DIV_2 {
-//     bottom: 0px;
-//     box-sizing: border-box;
-//     // color: rgb(34, 34, 34);
-//     cursor: default;
-//     height: 541.836px;
-//     position: relative;
-//     width: 95%;
-//     // column-rule-color: rgb(34, 34, 34);
-//     perspective-origin: 171.836px 275.918px;
-//     transform-origin: 171.836px 275.918px;
-//     margin: 0px 0px 15px;
-//     overflow: hidden;
-//     padding: 0px 0px 20px;
-//     margin-top: 25px;
-// }/*#DIV_2*/
 
-// @media screen and (min-width: 1100px ) and (max-width: 1600) {
-//   #recipeImage {
-//     float: right;
-//     margin: 0 auto 20px 30px;
-//     width: 62.63158%;
-//     max-width: 500px;
-//     // margin-right: 300px;
-//     margin-right: 400px;
-//     margin-top: 100px;
-//     margin-right: 405px;
-//
-//   }
-// }
-//
-// @media screen and (min-width: 800px ) and (max-width: 1099px) {
   #recipeImage {
     float: right;
     margin: 0 auto 20px 30px;
@@ -56,6 +25,15 @@ html, body {
     max-width: 500px;
     margin-top: 100px;
     margin-right: 190px;
+
+    @media (min-width: 700px) {
+      width: 50.63158%;
+      max-width: 500px;
+      // margin-right: 300px;
+      margin-right: 400px;
+      margin-top: 100px;
+      margin-right: 156px;
+    }
 
     @media (min-width: 1100px) {
       width: 62.63158%;
@@ -65,16 +43,25 @@ html, body {
       margin-top: 100px;
       margin-right: 405px;
     }
+
+    @media (min-width: 1500px ) {
+      width: 62.63158%;
+      max-width: 500px;
+      margin-right: 400px;
+      margin-top: 100px;
+      margin-right: 875px;
+    }
+
+    @media (min-width: 2000px ) {
+      width: 62.63158%;
+      max-width: 500px;
+      margin-right: 400px;
+      margin-top: 100px;
+      margin-right: 1205px;
+    }
   }
 // }
 
-// @media screen and (min-width: 700px ) and (max-width: 999px) {
-//   #recipeImage {
-//     margin-right: 155px;
-//     width: 80%
-//     // margin-top: 40px;
-//   }
-// }
 
 #top-border {
   border-bottom: 2px solid black;
@@ -109,15 +96,6 @@ html, body {
     margin: 0px 0px 15px;
 }/*#P_4*/
 
-// #recipeImage {
-//   float: right;
-//   margin: 0 auto 20px 30px;
-//   width: 62.63158%;
-//   max-width: 500px;
-//   // margin-right: 300px;
-//   margin-right: 400px;
-//   margin-top: 100px;
-// }
 
 #recipeSave {
   background-clip: border-box;

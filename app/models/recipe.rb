@@ -12,6 +12,11 @@ class Recipe < ApplicationRecord
   foreign_key: :recipe_id,
   primary_key: :id
 
+  has_many :ratings,
+  class_name: 'Rating',
+  foreign_key: :recipe_id,
+  primary_key: :id
+
   has_attached_file :image,  default_url: "citrus.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end
