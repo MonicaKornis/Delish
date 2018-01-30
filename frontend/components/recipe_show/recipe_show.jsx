@@ -56,7 +56,7 @@ class RecipeShow extends React.Component {
       <li className='ingredient' key={idx}> <span id='quantity'> {`${ingredient.slice(0,3)}`}</span><span id='ingredient-name'>{`${ingredient.slice(3)}`}</span></li>
       );
     }
-    debugger
+
     if (recipe.steps) {
       steps = recipe.steps.map((step, idx) => (
         <div key={idx}>
@@ -66,7 +66,7 @@ class RecipeShow extends React.Component {
       ));
     }
 
-    debugger
+
       return (
 
         <div className='recipeContainer'>
