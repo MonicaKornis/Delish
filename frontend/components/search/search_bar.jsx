@@ -38,12 +38,13 @@ class SearchBar extends React.Component {
     if(this.state.searchTerm === '') {
       searchResults = [];
     } else {
-      searchResults = this.state.searchResults.map((recipe) => {
+      searchResults = this.state.searchResults.map((recipe,i) => {
         // debugger
         return <SearchItem classStr="search-result-item" clearSearch={this.clearSearch}
-          recipe={recipe} key={recipe.id} history={this.props.history}/>;
+          recipe={recipe} key={recipe.id} index={i} history={this.props.history}/>;
         }
       );
+      searchResults = searchResults.slice(0,6);
     }
 
     return (
