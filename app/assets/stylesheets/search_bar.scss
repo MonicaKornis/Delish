@@ -1,11 +1,17 @@
 .search-bar {
-  left: 193px; 
+  left: 191px;
   position: absolute;
-  width: 20%;
+  width: 40%;
   z-index:100;
   background-color:#fff;
 }
 
 .search-dropdown {
   z-index: 4;
+}
+
+#search-input {
+  width: 100%;
+  font-size: 1em;
+  padding: 18px;
 }

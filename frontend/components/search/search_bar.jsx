@@ -49,7 +49,7 @@ class SearchBar extends React.Component {
     return (
      <section className='search-bar'>
        <form>
-         <input type="text" placeholder="What would you like to cook?"
+         <input id='search-input' type="text" placeholder="What would you like to cook?"
            onChange={this.handleTyping} value={this.state.searchTerm} />
          <i></i>
        </form>
