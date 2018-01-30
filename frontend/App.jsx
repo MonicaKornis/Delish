@@ -7,7 +7,7 @@ import RecipeIndexContainer from './components/main_page/recipe_index_container'
 import RecipeShowContainer from './components/recipe_show/recipe_show_container';
 import RecipeFormContainer from './components/recipe_form/recipe_form_container';
 import RecipeBackgroundContainer from './components/recipe_box/recipe_background_container';
-
+import SearchContainer from './components/search/search_container';
 
 import {
   Route,
@@ -25,7 +25,8 @@ const App = () => (
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
 
-    <Route path="/recipes/recipe-box" component={RecipeBoxContainer} />
+
+    <Route path="/recipes/recipe-box" component={RecipeBoxContainer}/>
     <Route exact path="/" component={GreetingContainer} />
 
     <Route path="/recipes/:recipeId" component={GreetingContainer} />
@@ -44,3 +45,8 @@ export default App;
 
 // <Route exact path="/login" component={RecipeIndexContainer} />
 // <Route exact path="/signup" component={RecipeIndexContainer} />
+
+
+
+
+// <Route path="/" component={SearchContainer} />

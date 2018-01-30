@@ -11,7 +11,6 @@ class CommentIndex extends React.Component {
   }
 
   handleCommentLike(commentId){
-    debugger
     if(this.props.likedComments.includes(commentId)) {
       return (e) => {
         let likes = this.state.commmentId || 0;
@@ -61,7 +60,7 @@ class CommentIndex extends React.Component {
                   <div id='comment-body'>{comment.body}</div>
                   <div id='note-footer'>
                     <div id='likes'>
-                      <i class="fa fa-thumbs-up" onClick={this.handleCommentLike(comment.id)} id={this.state.commentIcon} aria-hidden="true"></i>
+                      <i className="fa fa-thumbs-up" onClick={this.handleCommentLike(comment.id)} id={this.state.commentIcon} aria-hidden="true"></i>
                       <span id='like-text'>{`${numLikes} people like this`}</span>
                     </div>
                   </div>

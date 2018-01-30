@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchContainer from '../search/search_container';
 
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
+    debugger
     this.handleLogout = this.handleLogout.bind(this);
   }
 
@@ -23,6 +25,8 @@ class Greeting extends React.Component {
         <div className='formImage'>
           <Link to='/' id='delish'>DELISH</Link>
         </div>
+
+        <SearchContainer/>
         <nav className="right-nav">
             <Link to='/recipes/recipe-box' className='subscribe'> Your Recipe Box: {(this.props.currentUser.email).split('@')[0]}</Link>
             <li className='subscribe'>
@@ -39,6 +43,7 @@ class Greeting extends React.Component {
         <div className='formImage'>
           <Link to='/' id='delish'>DELISH</Link>
         </div>
+
         <nav className="right-nav">
           <Link className='subscribe' to='/signup'>Subscribe</Link>  &nbsp;&nbsp;
           <Link className='subscribe' to='/login'>Login</Link>
