@@ -26,7 +26,10 @@ class Greeting extends React.Component {
           <Link to='/' id='delish'>DELISH</Link>
         </div>
 
-        <SearchContainer/>
+        <div className='search-bar-wrapper'>
+    
+        </div>
+
         <nav className="right-nav">
             <Link to='/recipes/recipe-box' className='subscribe'> Your Recipe Box: {(this.props.currentUser.email).split('@')[0]}</Link>
             <li className='subscribe'>

@@ -39,7 +39,7 @@ class SearchBar extends React.Component {
       searchResults = [];
     } else {
       searchResults = this.state.searchResults.map((recipe) => {
-        debugger
+        // debugger
         return <SearchItem classStr="search-result-item" clearSearch={this.clearSearch}
           recipe={recipe} key={recipe.id} history={this.props.history}/>;
         }
@@ -47,7 +47,7 @@ class SearchBar extends React.Component {
     }
 
     return (
-     <section className='search-bar' onMouseLeave={this.handleExit}>
+     <section className='search-bar'>
        <form>
          <input type="text" placeholder="What would you like to cook?"
            onChange={this.handleTyping} value={this.state.searchTerm} />
@@ -63,6 +63,6 @@ class SearchBar extends React.Component {
 
 export default SearchBar;
 
-
+// onMouseLeave={this.handleExit}
 
 // this.handleSubmit = this.handleSubmit.bind(this);
