@@ -279,10 +279,19 @@ $break-small: 320px;
 $break-large: 757px;
 
 #img {
-  width: 120%;
-  bottom: 200px;
-  bottom: 70px;
-  position: relative;
+  @media (min-width: 500px) {
+    width: 100%;
+    bottom: 200px;
+    bottom: 70px;
+    position: relative;
+  }
+
+  @media (min-width: 800px) {
+    width: 120%;
+    bottom: 200px;
+    bottom: 70px;
+    position: relative;
+  }
 
   @media (min-width: 1400px) {
     width: 150%;
@@ -299,11 +308,68 @@ $break-large: 757px;
 }
 
 .recipe-instructions {
-  margin-top: 10px;
-  padding: 0 0 35px;
-  width: 90%;
-  float: left;
-  margin-bottom: -500px;
+  @media (max-width: 600px ) {
+    margin-top: 45%;
+    padding: 0 0 35px;
+    width: 90%;
+    float: left;
+    margin-bottom: -500px;
+  }
+
+  @media (min-width: 800px ) {
+    margin-top: 35%;
+    padding: 0 0 35px;
+    width: 90%;
+    float: left;
+    margin-bottom: -500px;
+  }
+
+  @media (min-width: 1100px ) {
+    margin-top: 30%;
+    padding: 0 0 35px;
+    width: 90%;
+    float: left;
+    margin-bottom: -500px;
+  }
+
+  @media (min-width: 1401px) {
+    margin-top: 10%;
+    padding: 0 0 35px;
+    width: 90%;
+    float: left;
+    margin-bottom: -500px;
+  }
+
+  @media (min-width: 1801px) {
+    margin-top: 10%;
+    padding: 0 0 35px;
+    width: 90%;
+    float: left;
+    margin-bottom: -500px;
+  }
+
+  @media (min-width: 2101px) {
+    margin-top: 5%;
+    padding: 0 0 35px;
+    width: 90%;
+    float: left;
+    margin-bottom: -500px;
+  }
+
+  @media (min-width: 2501px) {
+    margin-top: 1%;
+    padding: 0 0 35px;
+    width: 90%;
+    float: left;
+    margin-bottom: -500px;
+  }
+
+  @media (min-width: 2701px) {
+    padding: 0 0 35px;
+    width: 90%;
+    float: left;
+    margin-bottom: -500px;
+  }
 }
 
 .recipe-ingredients-wrap {
@@ -317,6 +383,19 @@ $break-large: 757px;
     margin-top: 30px;
     margin-right: -44px;
     padding-right: 50px;
+
+    @media(min-width: 1900px) {
+      float: left;
+      margin-bottom: 0;
+      padding-right: 1em;
+      width: 32.31579%;
+      margin-bottom: 800px;
+      display: block;
+      box-sizing: border-box;
+      margin-top: 30px;
+      margin-right: -151px;
+      padding-right: 50px;
+    }
 }
 
 .recipe-ingredients {
@@ -343,7 +422,7 @@ $break-large: 757px;
 .steps {
   margin-top: 20px;
   font-family: 'franklin-500';
-  font-size: 14px;
+  font-size: 18px;
   font-style: bold;
   margin-top: 30px;
 }
@@ -366,9 +445,19 @@ $break-large: 757px;
 }
 
 .comments-container {
-  clear:both;
-  margin-top: -60px;
-  margin-left: 130px;
-  border: 1px solid #ccc;
-  width: 60%;
+    // @media (max-width: 1999px) {
+    clear:both;
+    margin-top: -60px;
+    margin-left: 40%;
+    border: 1px solid #ccc;
+    width: 60%;
+  // }
+  //
+  // @media (max-width: 2500px) {
+  //   clear:both;
+  //   margin-top: -60px;
+  //   margin-left: 36%;
+  //   border: 1px solid #ccc;
+  //   width: 60%;
+  // }
 }

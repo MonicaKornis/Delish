@@ -32,7 +32,7 @@ html, body {
       // margin-right: 300px;
       margin-right: 400px;
       margin-top: 100px;
-      margin-right: 156px;
+      margin-right: 35%;
     }
 
     @media (min-width: 1100px) {
@@ -41,7 +41,7 @@ html, body {
       // margin-right: 300px;
       margin-right: 400px;
       margin-top: 100px;
-      margin-right: 405px;
+      margin-right: 45%;
     }
 
     @media (min-width: 1500px ) {
@@ -49,7 +49,15 @@ html, body {
       max-width: 500px;
       margin-right: 400px;
       margin-top: 100px;
-      margin-right: 875px;
+      margin-right: 55%;
+    }
+
+    @media (min-width: 1700px ) {
+      width: 62.63158%;
+      max-width: 500px;
+      margin-right: 400px;
+      margin-top: 100px;
+      margin-right: 55%;
     }
 
     @media (min-width: 2000px ) {
@@ -57,7 +65,23 @@ html, body {
       max-width: 500px;
       margin-right: 400px;
       margin-top: 100px;
-      margin-right: 1205px;
+      margin-right: 55%;
+    }
+
+    @media (min-width: 2000px ) {
+      width: 62.63158%;
+      max-width: 500px;
+      margin-right: 400px;
+      margin-top: 100px;
+      margin-right: 55%;
+    }
+
+    @media (min-width: 2100px ) {
+      width: 62.63158%;
+      max-width: 500px;
+      margin-right: 400px;
+      margin-top: 100px;
+      margin-right: 55%;
     }
   }
 // }
@@ -81,6 +105,20 @@ html, body {
     font-weight: normal;
     width: 200px;
     padding-top: 40px;
+
+    @media (max-width: 2001px) {
+      box-sizing: border-box;
+      height: 427.5px;
+      width: 343.691px;
+      perspective-origin: 171.836px 213.75px;
+      transform-origin: 171.836px 213.75px;
+      margin: 0px 0px 15px;
+      font-family: 'Domine', serif;
+      font-size: 18px;
+      font-weight: normal;
+      width: 200px;
+      padding-top: 40px;
+    }
 }/*#P_3*/
 
 #P_4 {
