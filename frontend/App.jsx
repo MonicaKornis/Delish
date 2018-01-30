@@ -28,7 +28,6 @@ const App = () => (
 
     <Route path="/recipes/recipe-box" component={RecipeBoxContainer}/>
     <Route exact path="/" component={GreetingContainer} />
-    <Route path='/'component={SearchContainer}/>
 
     <Route path="/recipes/:recipeId" component={GreetingContainer} />
     <Route path="/recipes/:recipeId" component={RecipeShowContainer} />
@@ -44,6 +43,7 @@ const App = () => (
 
 export default App;
 
+// <Route path='/'component={SearchContainer}/>
 // <Route exact path="/login" component={RecipeIndexContainer} />
 // <Route exact path="/signup" component={RecipeIndexContainer} />
 

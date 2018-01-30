@@ -27,7 +27,7 @@ class Greeting extends React.Component {
         </div>
 
         <div className='search-bar-wrapper'>
-    
+          <SearchContainer/>
         </div>
 
         <nav className="right-nav">

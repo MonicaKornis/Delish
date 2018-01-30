@@ -7,7 +7,7 @@ const SearchBartItem = ({recipe, classStr, history, clearSearch}) => (
         clearSearch();
       }
     }>
-    <img src={recipe.image_url} />
+    <img id='search-image' src={recipe.image_url} />
     <p>{recipe.title}</p>
   </div>
 );
