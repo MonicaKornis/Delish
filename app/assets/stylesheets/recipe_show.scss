@@ -391,11 +391,63 @@ $break-large: 757px;
     margin-right: -44px;
     padding-right: 50px;
 
-    @media(min-width: 1900px) {
+    @media(min-width: 1500px) {
       float: left;
       margin-bottom: 0;
       padding-right: 1em;
-      width: 32.31579%;
+      width: 27%;
+      margin-bottom: 800px;
+      display: block;
+      box-sizing: border-box;
+      margin-top: 30px;
+      margin-right: -151px;
+      padding-right: 50px;
+    }
+
+    @media(min-width: 1850px) {
+      float: left;
+      margin-bottom: 0;
+      padding-right: 1em;
+      width: 27%;
+      margin-bottom: 800px;
+      display: block;
+      box-sizing: border-box;
+      margin-top: 30px;
+      margin-right: -151px;
+      padding-right: 50px;
+    }
+
+    @media(min-width: 1850px) {
+      float: left;
+      margin-bottom: 0;
+      padding-right: 1em;
+      width: 27%;
+      margin-bottom: 800px;
+      display: block;
+      box-sizing: border-box;
+      margin-top: 30px;
+      margin-right: -151px;
+      padding-right: 50px;
+    }
+
+    @media(min-width: 2100px) {
+      float: left;
+      margin-bottom: 0;
+      padding-right: 1em;
+      width: 23%;
+      margin-bottom: 800px;
+      display: block;
+      box-sizing: border-box;
+      margin-top: 30px;
+      margin-right: -151px;
+      padding-right: 50px;
+    }
+
+    @media(min-width: 3000px) {
+      float: left;
+      margin-bottom: 0;
+      padding-right: 1em;
+      width: 17%;
       margin-bottom: 800px;
       display: block;
       box-sizing: border-box;
