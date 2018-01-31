@@ -294,7 +294,14 @@ $break-large: 757px;
   }
 
   @media (min-width: 1400px) {
-    width: 150%;
+    width: 160%;
+    bottom: 200px;
+    bottom: 70px;
+    position: relative;
+  }
+
+  @media (min-width: 1900px) {
+    width: 182%;
     bottom: 200px;
     bottom: 70px;
     position: relative;
