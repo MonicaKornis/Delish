@@ -306,6 +306,13 @@ $break-large: 757px;
     bottom: 70px;
     position: relative;
   }
+
+  @media (min-width: 2100px) {
+    width: 187%;
+    bottom: 200px;
+    bottom: 70px;
+    position: relative;
+  }
 }
 
 #description {
@@ -415,6 +422,7 @@ $break-large: 757px;
       margin-top: 30px;
       margin-right: -151px;
       padding-right: 50px;
+    }
 
 
       @media(min-width: 2100px) {
