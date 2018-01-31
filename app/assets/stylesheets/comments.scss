@@ -7,7 +7,7 @@
   font-family: 'franklin-300';
   width: 100%;
   margin-bottom: 10px;
-  
+
 }
 
 #form-input {
@@ -34,6 +34,16 @@ section.comments-container {
   border: 1px solid #ccc;
   width: 80%;
   height: 200px;
+
+@media (min-width: 2400px ) {
+  clear: both;
+  width: 70%;
+  margin-top: -60px;
+  margin-left: 37%;
+  border: 1px solid #ccc;
+  width: 80%;
+  height: 200px;
+  }
 }
 
 .commentsSection {
@@ -49,6 +59,7 @@ section.comments-container {
   text-transform: uppercase;
   margin: auto;
   margin-left: 30px;
+
 }
 
 #cooking-comments-header {
@@ -92,6 +103,17 @@ section.comments-container {
   margin-bottom: 30px;
   flex-direction: column;
   margin-right: 40px;
+
+  @media (min-width: 2400px ) {
+    width: 80%;
+    border: 1px solid #ccc;
+    margin-left: 37%;
+    margin-top: 60px;
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+    margin-right: 40px;
+  }
 }
 
 #note-header {
