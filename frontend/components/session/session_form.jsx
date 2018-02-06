@@ -71,7 +71,7 @@ class SessionForm extends React.Component {
               }
             {this.errors()}
 
-
+            <div id='session-input'>
             <label> Email:
               <input className='modal-input' placeholder='Email' type="text" value={this.state.email} onChange={this.update('email')}/>
             </label>
@@ -82,6 +82,7 @@ class SessionForm extends React.Component {
              <br/>
           <input className='button' type="submit" value={buttonVal}/>
           {demoLogin}
+          </div>
           </form>
 
         </div>
@@ -91,5 +92,3 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
-
-//            <img className='formImage' src={window.staticImages.formImage}></img>

@@ -33,8 +33,6 @@ class RecipeForm extends React.Component {
     formData.append('recipe[description]', this.state.description);
     formData.append('recipe[cooking_time]', time);
     formData.append('recipe[image]', this.state.imageFile);
-    // formData.append('recipe[ingredients]', this.state.ingredients.split(' '));
-    // formData.append('recipe[steps]', this.state.steps.split('.'));
     this.props.createRecipe(formData).then( () => this.props.closeModal());
     }
 

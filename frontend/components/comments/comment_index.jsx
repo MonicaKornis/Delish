@@ -37,7 +37,7 @@ class CommentIndex extends React.Component {
 
   render(){
     if(this.props.comments.length === 0) return <div></div>;
-    // let commentLikes = this.props.likedComments.length;
+
     return(
       <div className='cooking-notes-container'>
         <h3 id='cooking-comments-header'>Cooking Notes</h3>
@@ -55,7 +55,6 @@ class CommentIndex extends React.Component {
                     <h4 id='comment-author'>{comment.authorName}</h4>
                     <h4 id='date'> 2 days ago</h4>
                     {button}
-
 
                   </div>
                   <div id='comment-title'>{comment.title}</div>
@@ -78,8 +77,3 @@ class CommentIndex extends React.Component {
 }
 
 export default CommentIndex;
-
-
-
-
-// <h4 id='delete-button' onClick={this.removeComment(comment.id, comment.author_id)}>Delete</h4>

@@ -48,7 +48,7 @@ class SearchBar extends React.Component {
 
     return (
      <section className='search-bar'>
-       <form autocomplete="off">
+       <form autoComplete="off">
          <input id='search-input' type="text" placeholder="What would you like to cook?"
            onChange={this.handleTyping} value={this.state.searchTerm} />
          <i></i>
@@ -62,7 +62,3 @@ class SearchBar extends React.Component {
 }
 
 export default SearchBar;
-
-// onMouseLeave={this.handleExit}
-
-// this.handleSubmit = this.handleSubmit.bind(this);

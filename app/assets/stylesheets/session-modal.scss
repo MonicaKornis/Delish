@@ -13,7 +13,6 @@
 
 .session-form {
   display: flex;
-  cursor: pointer;
   margin: 0 auto;
   font-size: 20px;
   font-family: 'cheltenham-500';
@@ -43,6 +42,7 @@ h1.welcomeMessage {
 }
 .greeting {
   font-size: 22px;
+  padding: 15px;
 }
 
 .button {
@@ -69,6 +69,7 @@ h1.welcomeMessage {
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 h1 {
@@ -77,9 +78,7 @@ h1 {
 }
 
 .formImage {
-  height: 200px
-  // background: 50%/cover no-repeat;
-  // background-position: -55px -390px;
+  height: 200px;
 }
 
 .sessionButton {
@@ -91,4 +90,8 @@ h1 {
 .errors {
   font-size: 13px;
   color: #e33d26;
+}
+
+#session-input {
+  padding: 15px;
 }
