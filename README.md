@@ -60,6 +60,3 @@
   * Star Ratings 
   * Tags/Categories that users can apply to each recipe and are displayed on each recipe's show page. 
   * 'Cooking Guides' that showcase specific how-tos and cooking techniques. 
- 
-
-## Image Gallery
