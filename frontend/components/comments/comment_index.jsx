@@ -47,12 +47,14 @@ class CommentIndex extends React.Component {
               let commentId = comment.id;
               let commentAuthor = comment.authorName ? comment.authorName : 'Anonymous';
               let numLikes = comment.numLikes ? comment.numLikes : 0;
+              let button = this.props.currentUser === comment.author_id ?   <button id='delete-button' onClick={() => this.removeComment(comment.id, comment.author_id)}>Delete</button>
+                        : <div></div>;
               return (
                 <div id='note'>
                   <div id='note-header'>
                     <h4 id='comment-author'>{comment.authorName}</h4>
                     <h4 id='date'> 2 days ago</h4>
-                    <button id='delete-button' onClick={() => this.removeComment(comment.id, comment.author_id)}>Delete</button>
+                    {button}
 
 
                   </div>

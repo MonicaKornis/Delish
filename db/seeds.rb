@@ -11,7 +11,8 @@ Recipe.destroy_all
 
 User.create!({email: 'MonicaKornis@gmail.com', password: 'password123', name: 'Monica Kornis'})
 User.create!({email: 'Bob@gmail.com', password: 'password123', name: 'Bob Jones'})
-
+User.create!({email: 'Mario@gmail.com', password: 'password123', name: 'Mario'})
+User.create!({email: 'Doug@gmail.com', password: 'password123', name: 'Doug'})
 
 30.times do
   User.create!(email: (Faker::Name.name).split(' ').join('') + "@gmail.com", password: 'password123', name: Faker::Name.name )

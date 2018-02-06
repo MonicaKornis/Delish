@@ -6,6 +6,7 @@ import CommentIndex from './comment_index';
 
 const mapStateToProps = (state,ownProps) => {
   let likedComments = state.session.currentUser.likedCommentIds || [];
+  
   return {
     comments: Object.values(state.entities.comments),
     likedComments: likedComments,
