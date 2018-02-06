@@ -31,6 +31,28 @@
   padding-bottom: 75px;
 }
 
+@media (min-width: 1800px) {
+  .session-form {
+    display: flex;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'cheltenham-500';
+    align-items: center;
+    background-color: rgba(257, 257, 257, .95);
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    width: 36%;
+    height: 85%;
+    z-index: 4;
+    border: 0.5px solid black;
+    box-sizing: border-box;
+    justify-content: center;
+    margin-top: 50px;
+    padding-bottom: 75px;
+  }
+}
+
 h1.welcomeMessage {
   font-size: 40px;
   padding-bottom: 10px;
@@ -86,7 +108,7 @@ h1 {
 .sessionButton {
   color: #e33d26;
   font-weight: bold;
-  font-family: 'franklin-300';
+  // font-family: 'franklin-300';
 }
 
 .errors {
@@ -102,14 +124,14 @@ h1 {
   display: flex;
   padding-bottom: 15%;
   justify-content: flex-end;
-  margin: 15px;
+  margin: 5%;
   text-decoration: none;
   color: #ccc;
   font-size: 26px;
   font-family: sans-serif;
 }
 
-@media (max-width: 652px ) {
+@media (max-width: 652px) {
   .exit-button {
     display: flex;
     padding-bottom: 9%;
@@ -130,5 +152,57 @@ h1 {
   .greeting {
       font-size: 18px;
       padding: 15px;
+  }
+}
+
+@media (max-width: 1077px) {
+  .exit-button {
+    display: flex;
+    padding-bottom: 0%;
+    justify-content: flex-end;
+    margin: 5%;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 26px;
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 1078px) {
+  .exit-button {
+    display: flex;
+    padding-bottom: 9%;
+    justify-content: flex-end;
+    margin: -2%;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 26px;
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 1204px) {
+  .exit-button {
+    display: flex;
+    padding-bottom: 9%;
+    justify-content: flex-end;
+    margin: -5%;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 26px;
+    font-family: sans-serif;
+  }
+}
+
+@media (min-width: 1316px) {
+  .exit-button {
+    display: flex;
+    padding-bottom: 15%;
+    justify-content: flex-end;
+    margin: -10%;
+    text-decoration: none;
+    color: #ccc;
+    font-size: 26px;
+    font-family: sans-serif;
   }
 }
