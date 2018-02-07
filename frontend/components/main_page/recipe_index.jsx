@@ -26,6 +26,7 @@ class RecipeIndex extends React.Component {
     this.state = { recipeModalOpen: false };
     this.closeRecipeModal = this.closeRecipeModal.bind(this);
     this.openRecipeModal = this.openRecipeModal.bind(this);
+    this.handleFeature = this.handleFeature.bind(this);
   }
 
   closeRecipeModal() {
@@ -63,6 +64,13 @@ class RecipeIndex extends React.Component {
     }
   }
 
+  handleFeature(e) {
+    e.preventDefault();
+    debugger
+    let recipe = this.props.recipes.filter((recipe) => recipe.title.includes('Tumeric Tea'));
+    this.props.history.push(`/recipes/${recipe[0].id}`);
+  }
+
 
   render() {
 
@@ -82,8 +90,8 @@ class RecipeIndex extends React.Component {
       <div>
         <div className='image'>
           <img src={window.staticImages.featureImage}/>
-          <div id='recipe-circle'>RECIPE <br/>OF THE DAY</div>
-          <div id='recipe-title'>
+          <div id='recipe-circle' onClick={this.handleFeature}>RECIPE <br/>OF THE DAY</div>
+          <div id='recipe-title' onClick={this.handleFeature}>
             <h2>Tumeric Tea</h2>
             <div id='feature-description'>A falvorful drink to warm the <br/> body and soul.</div>
             <h3>Monica Kornis</h3>
