@@ -121,10 +121,10 @@ h1 {
 }
 
 .exit-button {
-  display: flex;
-  padding-bottom: 15%;
-  justify-content: flex-end;
-  margin: 5%;
+  padding: 9px;
+  position: absolute;
+  top: 0;
+  right: 0;
   text-decoration: none;
   color: #ccc;
   font-size: 26px;
@@ -132,16 +132,6 @@ h1 {
 }
 
 @media (max-width: 652px) {
-  .exit-button {
-    display: flex;
-    padding-bottom: 9%;
-    justify-content: flex-end;
-    margin: 15px;
-    text-decoration: none;
-    color: #ccc;
-    font-size: 26px;
-    font-family: sans-serif;
-  }
 
   h1.welcomeMessage {
     font-size: 33px;
@@ -152,57 +142,5 @@ h1 {
   .greeting {
       font-size: 18px;
       padding: 15px;
-  }
-}
-
-@media (max-width: 1077px) {
-  .exit-button {
-    display: flex;
-    padding-bottom: 0%;
-    justify-content: flex-end;
-    margin: 5%;
-    text-decoration: none;
-    color: #ccc;
-    font-size: 26px;
-    font-family: sans-serif;
-  }
-}
-
-@media (min-width: 1078px) {
-  .exit-button {
-    display: flex;
-    padding-bottom: 9%;
-    justify-content: flex-end;
-    margin: -2%;
-    text-decoration: none;
-    color: #ccc;
-    font-size: 26px;
-    font-family: sans-serif;
-  }
-}
-
-@media (min-width: 1204px) {
-  .exit-button {
-    display: flex;
-    padding-bottom: 9%;
-    justify-content: flex-end;
-    margin: -5%;
-    text-decoration: none;
-    color: #ccc;
-    font-size: 26px;
-    font-family: sans-serif;
-  }
-}
-
-@media (min-width: 1316px) {
-  .exit-button {
-    display: flex;
-    padding-bottom: 15%;
-    justify-content: flex-end;
-    margin: -10%;
-    text-decoration: none;
-    color: #ccc;
-    font-size: 26px;
-    font-family: sans-serif;
   }
 }
