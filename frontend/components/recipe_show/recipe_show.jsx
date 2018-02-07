@@ -9,7 +9,7 @@ class RecipeShow extends React.Component {
     super(props);
     this.state = { buttonMessage: this.props.buttonMessage};
     this.handleLike = this.handleLike.bind(this);
-    debugger
+    
   }
 
   componentDidMount(){

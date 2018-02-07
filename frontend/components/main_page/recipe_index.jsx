@@ -66,8 +66,9 @@ class RecipeIndex extends React.Component {
 
   handleFeature(e) {
     e.preventDefault();
-    debugger
+
     let recipe = this.props.recipes.filter((recipe) => recipe.title.includes('Tumeric Tea'));
+    debugger
     this.props.history.push(`/recipes/${recipe[0].id}`);
   }
 

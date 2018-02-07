@@ -3,7 +3,7 @@ import { RECEIVE_RECIPE } from '../actions/recipe_actions';
 
 const commentsReducer = (oldState = {}, action) => {
   let newState = {};
-  // debugger
+  // 
   switch (action.type) {
     case RECEIVE_COMMENT:
       return Object.assign(newState,oldState,{[action.payload.id]: action.payload});

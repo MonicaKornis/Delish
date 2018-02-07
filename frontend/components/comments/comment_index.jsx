@@ -29,7 +29,7 @@ class CommentIndex extends React.Component {
 
   removeComment(commentId, authorId) {
     if(this.props.currentUser === authorId) {
-      debugger
+      
       this.props.deleteComment(commentId);
     }
   }
