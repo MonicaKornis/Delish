@@ -18,6 +18,20 @@ User.create!({email: 'Doug@gmail.com', password: 'password123', name: 'Doug'})
   User.create!(email: (Faker::Name.name).split(' ').join('') + "@gmail.com", password: 'password123', name: Faker::Name.name )
 end
 
+Recipe.new(title: 'Tumeric Tea',
+            description: 'On the Japanese island of Okinawa, turmeric tea is a way of life. The population drinks this traditional favorite daily, and numerous studies have linked turmeric with wide-ranging anti-inflammatory effects. Perhaps this helps to explain why the people of Okinawa have one of the world’s longest average life spans: 81.2 years.'
+             author_id: User.find_by(email: 'MonicaKornis@gmail.com').id,
+             cooking_time: rand(32..59),
+             steps: ['Working with a mixer or by hand, beat the butter and sugar together until creamy and light. Beat in the almond flour and the salt. Mix in 1 whole egg, then the white from the second egg.',
+             'Mix the yolk with 1 teaspoon cold water; cover, and refrigerate until needed.',
+             'Place one circle of dough on a baking sheet lined with parchment paper. Spread the filling evenly over the dough, leaving a 1-inch border bare. Press the charm into the filling. Moisten the border with cold water, position the second circle of dough over the filling and press around the border with your fingertips to seal well.',
+             'With the point of a paring knife, etch a design into the top of the galette, taking care not to pierce the dough. Cut 6 small slits in the top as steam vents.'],
+             ingredients: ['5/6 cup ' + Faker::Food.ingredient,'1/4 cup ' + Faker::Food.ingredient,  '1/2 tbs ' + Faker::Food.spice, '1/2 cup ' + Faker::Food.ingredient, '1/2 cup ' + Faker::Food.ingredient, '3/4 tbs ' + Faker::Food.spice])
+             file=File.open("./app/assets/images/tumeric.jpg")
+             recipe.image = file
+             recipe.save!
+           )
+
 titles = ['','Cinnamon Rolls With Icing', 'Soy-Sauce-Pickled Eggs','Omelet With Sriracha Syrup',
           'Lemony Egg Soup With Escarole', 'Coconut Chicken Curry', 'Dosas With Mustard Greens',
           'Galette des Rois','Spinach Bouillabaisse', 'Garlic Chicken With Tomatoes', 'Omelets With Roasted Vegetables',

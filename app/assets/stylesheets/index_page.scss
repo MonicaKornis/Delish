@@ -1,6 +1,4 @@
-.image {
-  margin: auto;
-}
+
 
 .index-header {
   margin: auto;
@@ -130,37 +128,187 @@
   color: red;
 }
 
-#recipe-circle {
-  position: absolute;
-  bottom: 366px;
-  right: 35px;
-  width: 110px;
-  height: 110px;
-  background-color: #e33d26;
-  border-radius: 55px;
-  color: white;
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 1.3px;
-  box-sizing: border-box;
-  padding-top: 40px;
-  font-family: 'karnak-400';
-  z-index: 5;
-}
-
-#recipe-title {
-  width: 256px;
-  height: 224px;
-  background: white;
-  position: absolute;
-  right: 85px;
-  bottom: 188px;
-}
-
-#recipe-title h2{
+#feature-description {
   font-family: 'Domine', serif;
-  font-weight: lighter;
-  margin-left: 17%;
-  margin-top: 15%;
-  font-size: 26px;
+  font-size: 16px;
+  margin-top: 7%;
 }
+
+#recipe-title h3{
+  margin-top: 9%;
+  font-family: 'franklin-700';
+  font-weight: bolder;
+}
+
+
+  @media(max-width: 943px) {
+    #recipe-circle{
+      display: none;
+      cursor: pointer;
+    }
+
+    #recipe-title{
+      display: none;
+      cursor: pointer;
+    }
+
+    .image {
+      margin: auto;
+      height: 100%;
+    }
+
+    .image img{
+      height: 100%;
+    }
+
+  }
+
+  @media(min-width: 944px) and (max-width: 1088px) {
+    #recipe-title {
+      width: 256px;
+      height: 224px;
+      background: white;
+      position: absolute;
+      right: 85px;
+      bottom: 169px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #recipe-circle {
+      position: absolute;
+      bottom: 329px;
+      right: 35px;
+      width: 110px;
+      height: 110px;
+      background-color: #e33d26;
+      border-radius: 55px;
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 1.3px;
+      box-sizing: border-box;
+      padding-top: 40px;
+      font-family: 'karnak-400';
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .image {
+      margin: auto;
+      height: 100%;
+      // width: 100vh;
+    }
+
+    .image img{
+      height: 100%;
+    }
+
+    #recipe-title h2{
+      font-family: 'Domine', serif;
+      font-weight: lighter;
+      // margin-left: 19%;
+      margin-top: 15%;
+      font-size: 22px;
+    }
+
+  }
+
+  @media(min-width: 1089px) and (max-width: 1220px) {
+    #recipe-title {
+      width: 320px;
+      height: 280px;
+      background: white;
+      position: absolute;
+      right: 85px;
+      bottom: 63px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #recipe-circle {
+      position: absolute;
+      bottom: 271px;
+      right: 35px;
+      width: 110px;
+      height: 110px;
+      background-color: #e33d26;
+      border-radius: 55px;
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 1.3px;
+      box-sizing: border-box;
+      padding-top: 40px;
+      font-family: 'karnak-400';
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .image {
+      margin: auto;
+      height: 100%;
+      // width: 100vh;
+    }
+
+    .image img{
+      height: 100%;
+    }
+
+    #recipe-title h2{
+      font-family: 'Domine', serif;
+      font-weight: lighter;
+      // margin-left: 20%;
+      margin-top: 15%;
+      font-size: 28px;
+    }
+  }
+
+  @media(min-width: 1221px) {
+    #recipe-title {
+      width: 320px;
+      height: 280px;
+      background: white;
+      position: absolute;
+      right: 85px;
+      bottom: 61px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #recipe-circle {
+      position: absolute;
+      bottom: 282px;
+      right: 35px;
+      width: 110px;
+      height: 110px;
+      background-color: #e33d26;
+      border-radius: 55px;
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 1.3px;
+      box-sizing: border-box;
+      padding-top: 40px;
+      font-family: 'karnak-400';
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    .image {
+      margin: auto;
+      height: 105vh;
+
+    }
+
+    .image img{
+      height: 100%;
+    }
+
+    #recipe-title h2{
+      font-family: 'Domine', serif;
+      font-weight: lighter;
+      margin-top: 15%;
+      font-size: 28px;
+    }
+  }

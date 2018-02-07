@@ -85,6 +85,7 @@ class RecipeIndex extends React.Component {
           <div id='recipe-circle'>RECIPE <br/>OF THE DAY</div>
           <div id='recipe-title'>
             <h2>Tumeric Tea</h2>
+            <div id='feature-description'>A falvorful drink to warm the <br/> body and soul.</div>
             <h3>Monica Kornis</h3>
           </div>
         </div>
