@@ -82,6 +82,11 @@ class RecipeIndex extends React.Component {
       <div>
         <div className='image'>
           <img src={window.staticImages.featureImage}/>
+          <div id='recipe-circle'>RECIPE <br/>OF THE DAY</div>
+          <div id='recipe-title'>
+            <h2>Tumeric Tea</h2>
+            <h3>Monica Kornis</h3>
+          </div>
         </div>
         <br></br>
         <br></br>

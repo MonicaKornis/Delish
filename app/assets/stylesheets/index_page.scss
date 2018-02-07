@@ -129,3 +129,38 @@
 #red {
   color: red;
 }
+
+#recipe-circle {
+  position: absolute;
+  bottom: 366px;
+  right: 35px;
+  width: 110px;
+  height: 110px;
+  background-color: #e33d26;
+  border-radius: 55px;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1.3px;
+  box-sizing: border-box;
+  padding-top: 40px;
+  font-family: 'karnak-400';
+  z-index: 5;
+}
+
+#recipe-title {
+  width: 256px;
+  height: 224px;
+  background: white;
+  position: absolute;
+  right: 85px;
+  bottom: 188px;
+}
+
+#recipe-title h2{
+  font-family: 'Domine', serif;
+  font-weight: lighter;
+  margin-left: 17%;
+  margin-top: 15%;
+  font-size: 26px;
+}
