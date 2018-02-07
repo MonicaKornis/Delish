@@ -68,8 +68,12 @@ class RecipeIndex extends React.Component {
     e.preventDefault();
 
     let recipe = this.props.recipes.filter((recipe) => recipe.title.includes('Tumeric Tea'));
-    debugger
+
+    if(this.props.currentUser !== undefined) {
     this.props.history.push(`/recipes/${recipe[0].id}`);
+  } else {
+    this.props.history.push('/login');
+  }
   }
 
 
