@@ -6,7 +6,7 @@ import RecipeIndex from './recipe_index';
 
 const mapStateToProps = (state,ownProps) => {
   let likedRecipeIds = state.session.currentUser ? state.session.currentUser.likedRecipeIds : [];
-  let currentUser = state.session.currentUser  ? state.session.currentUser  : undefined; 
+  let currentUser = state.session.currentUser  ? state.session.currentUser  : undefined;
   return {
     recipes: Object.values(state.entities.recipes),
     likedRecipes: likedRecipeIds,

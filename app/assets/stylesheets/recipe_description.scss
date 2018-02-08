@@ -16,20 +16,72 @@ html, body {
 }
 
 
+@media (max-width: 699px) {
+  #DIV_1 {
+    box-sizing: border-box;
+    color: #222222;
+    height: 392.836px;
+    perspective-origin: 500px 275.918px;
+    transform-origin: 500px 275.918px;
+    border: 0px none #222222;
+    font: Georgia, "Times New Roman", serif;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
   #recipeImage {
     float: right;
-    margin: 0 auto 20px 30px;
     width: 50.63158%;
-    max-width: 500px;
-    margin-top: 100px;
+    width: 80%;
+    margin-top: 20%;
     margin-right: 190px;
+  }
+
+  #description {
+    box-sizing: border-box;
+    height: 427.5px;
+    width: 343.691px;
+    perspective-origin: 171.836px 213.75px;
+    transform-origin: 171.836px 213.75px;
+    margin: 0px 0px 15px;
+    font-family: 'Domine', serif;
+    font-size: 18px;
+    font-weight: normal;
+    width: 80%;
+    padding-top: 0%;
+    font-family: 'Domine', serif;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+  }
+
+  .recipe-ingredients-wrap {
+    width: 80%;
+    margin-top: 30px;
+    margin-right: -44px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .recipe-instructions {
+    margin-top: 35%;
+    padding: 0 0 35px;
+    width: 90%;
+    float: left;
+  }
+}
+
+  #recipeImage {
 
     @media (min-width: 700px) {
+      float: right;
+      margin: 0 auto 20px 30px;
       width: 50.63158%;
       max-width: 500px;
-      margin-right: 400px;
       margin-top: 100px;
-      margin-right: 35%;
+      margin-right: 190px;
     }
 
     @media (min-width: 1100px) {
@@ -84,19 +136,19 @@ html, body {
 }
 
 #description {
-    box-sizing: border-box;
-    height: 427.5px;
-    width: 343.691px;
-    perspective-origin: 171.836px 213.75px;
-    transform-origin: 171.836px 213.75px;
-    margin: 0px 0px 15px;
-    font-family: 'Domine', serif;
-    font-size: 12px;
-    font-weight: normal;
-    width: 200px;
-    padding-top: 40px;
+    // box-sizing: border-box;
+    // height: 427.5px;
+    // width: 343.691px;
+    // perspective-origin: 171.836px 213.75px;
+    // transform-origin: 171.836px 213.75px;
+    // margin: 0px 0px 15px;
+    // font-family: 'Domine', serif;
+    // font-size: 12px;
+    // font-weight: normal;
+    // width: 200px;
+    // padding-top: 40px;
 
-    @media (max-width: 2001px) {
+    @media (min-width: 700px) {
       box-sizing: border-box;
       height: 427.5px;
       width: 343.691px;
@@ -104,10 +156,12 @@ html, body {
       transform-origin: 171.836px 213.75px;
       margin: 0px 0px 15px;
       font-family: 'Domine', serif;
-      font-size: 18px;
       font-weight: normal;
       width: 200px;
       padding-top: 40px;
+      font-family: 'Domine', serif;
+      font-size: 16px;
+      font-weight: bold;
     }
 }/*#P_3*/
 

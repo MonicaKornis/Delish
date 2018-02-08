@@ -6,7 +6,6 @@ import { likeComment, unlikeComment} from '../../actions/comment_actions';
 const mapStateToProps = (state, ownProps) => {
   let recipes = Object.values(state.entities.recipes);
   let recipe = state.entities.recipes[ownProps.match.params.recipeId];
-  // let likedComments = state.session.currentUser.likedCommentIds || [];
   let buttonMessage = state.session.currentUser.likedRecipeIds.includes(parseInt(ownProps.match.params.recipeId)) ?
   'Remove From Recipe Box' : 'Save To Recipe Box';
 

@@ -5,15 +5,26 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state,ownProps) => {
-  let currentRecipe = state.entities.recipies[ownProps.match.params.id];
+  let currentRecipe = state.entities.recipes[ownProps.match.params.recipeId];
   let currentRecipeRatings = currentRecipe.ratings;
+  let averageRating = 0;
+  if(currentRecipeRatings.length > 1) {
+  for (let i = 0; i < currentRecipeRatings.length; i++) {
+     averageRating += currentRecipeRatings[i].rating;
+  }
+  averageRating = Math.ceil(averageRating/currentRecipeRatings.length);
+}
+
+
   return {
     currentRecipe: currentRecipe,
-    currentRecipeRatings: currentRecipeRatings
+    currentRecipeRatings: currentRecipeRatings,
+    averageRating: averageRating,
+    currentUserId: state.session.currentUser.id,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch,ownProps) => {
   return {
     deleteRating: (ratingId) => dispatch(deleteRating(ratingId)),
     createRating: (rating) => dispatch(createRating(rating)),

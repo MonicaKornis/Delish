@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentIndexContainer from '../comments/comment_index_container';
 import CommentFormContainer from '../comments/comment_form_container';
-
+import RatingsContainer from '../ratings/ratings_container';
 
 class RecipeShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = { buttonMessage: this.props.buttonMessage};
     this.handleLike = this.handleLike.bind(this);
-    
+
   }
 
   componentDidMount(){
@@ -125,6 +125,7 @@ class RecipeShow extends React.Component {
 
           <div className="recipe-instructions">
             <div id='top-border'></div>
+              <RatingsContainer />
               <section className='recipe-ingredients-wrap'>
                 <div className = "ingredients">
                   <h3 id='ingredientTitle'>INGREDIENTS</h3>
@@ -163,19 +164,3 @@ class RecipeShow extends React.Component {
 }
 
 export default RecipeShow;
-
-// <div className='recipe'>
-//   <br></br>
-//   <br></br>
-//   <br></br>
-//
-// <header id='header-1'>
-//    <a id="A_2">Easy</a>
-//
-//   <div id="div-3">
-//     <h1 id='header-title'>{recipe.title}</h1>
-//   </div>
-//
-//   <div id="div-4">
-//   <h3 id='name-header'><span> By Monica Kornis</span></h3>
-// </div>

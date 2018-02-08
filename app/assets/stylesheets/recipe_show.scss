@@ -319,25 +319,25 @@
   }
 }
 
-#description {
-  font-family: 'Domine', serif;
-  font-size: 15px;
-  font-weight: bold;
-}
+// #description {
+//   font-family: 'Domine', serif;
+//   font-size: 15px;
+//   font-weight: bold;
+// }
 
-  @media (max-width: 600px ) {
+  @media (min-width: 700px ) {
     .recipe-instructions {
-    margin-top: 45%;
+    margin-top: 19%;
     padding: 0 0 35px;
     width: 90%;
     float: left;
-    margin-bottom: -500px;
+    margin-bottom: -52%;
     }
   }
 
   @media (min-width: 800px ) {
       .recipe-instructions {
-    margin-top: 25%;
+    margin-top: 10%;
     padding: 0 0 35px;
     width: 90%;
     float: left;
@@ -348,7 +348,7 @@
 
   @media (min-width: 1000px ) {
     .recipe-instructions {
-    margin-top: 13%;
+    margin-top: 7%;
     padding: 0 0 35px;
     width: 90%;
     float: left;
@@ -358,7 +358,7 @@
 
   @media (min-width: 1401px) {
       .recipe-instructions {
-    margin-top: 10%;
+    margin-top: 5%;
     padding: 0 0 35px;
     width: 90%;
     float: left;
@@ -368,7 +368,7 @@
 
   @media (min-width: 1801px) {
       .recipe-instructions {
-    margin-top: 10%;
+    margin-top: 4%;
     padding: 0 0 35px;
     width: 90%;
     float: left;
@@ -378,7 +378,7 @@
 
   @media (min-width: 2101px) {
       .recipe-instructions {
-    margin-top: 5%;
+    margin-top: 2%;
     padding: 0 0 35px;
     width: 90%;
     float: left;
@@ -406,6 +406,8 @@
 }
 
 .recipe-ingredients-wrap {
+
+  @media(min-width: 700px) {
     float: left;
     margin-bottom: 0;
     padding-right: 1em;
@@ -416,6 +418,7 @@
     margin-top: 30px;
     margin-right: -44px;
     padding-right: 50px;
+  }
 
     @media(min-width: 1500px) {
       float: left;
