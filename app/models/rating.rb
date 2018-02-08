@@ -4,7 +4,7 @@ class Rating < ApplicationRecord
 
   belongs_to :author,
   class_name: 'User',
-  foreign_key: :author_id
+  foreign_key: :user_id
 
   belongs_to :recipe,
   class_name: 'Recipe',

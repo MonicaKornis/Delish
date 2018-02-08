@@ -1,7 +1,6 @@
 class Api::RatingsController < ApplicationController
   def create
     @rating = Rating.new(rating_params)
-    @rating.recipe_id = @recipe.id
     @rating.user_id = current_user.id
     if @rating.save
       render :show
@@ -11,12 +10,19 @@ class Api::RatingsController < ApplicationController
   end
 
   def destroy
+    @rating = Rating.find(params[:id])
+    if current_user.ratings.include?(@rating)
+      @rating.destroy!
+      render :show
+    else
+      render json: @rating.errors.full_messages
+    end
   end
 
   def update
     @rating = Rating.find(params[:id])
     if current_user.ratings.include?(@rating)
-      rating.update_attributes(rating_params)
+      @rating.update_attributes(rating_params)
       render :show
     else
       render json: @rating.errors.full_messages
@@ -24,7 +30,7 @@ class Api::RatingsController < ApplicationController
   end
 
   private
-  def recipe_params
-    params.require(:recipe).permit(:rating,:recipe_id)
+  def rating_params
+    params.require(:rating).permit(:rating,:recipe_id,:id)
   end
 end

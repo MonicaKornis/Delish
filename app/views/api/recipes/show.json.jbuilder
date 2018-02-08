@@ -4,6 +4,7 @@ json.recipe do
   json.commentIds @recipe.comment_ids
   json.author @recipe.author.name
   json.image_url asset_path(@recipe.image.url)
+  json.ratings @recipe.ratings
 end
 
 json.comments do

@@ -1,10 +1,11 @@
 import { RECEIVE_RATING, REMOVE_RATING } from '../actions/rating_actions';
-import { createRating, updateRating, deleteRating } from '../actions/rating-actions';
 
 const ratingsReducer = (oldState={}, action) => {
   let newState = {};
+  debugger
   switch(action.type) {
     case RECEIVE_RATING:
+    debugger
       newState = Object.assign(newState,oldState,{[action.payload.id]: action.payload});
       return newState;
     case REMOVE_RATING:
@@ -16,4 +17,4 @@ const ratingsReducer = (oldState={}, action) => {
   }
 };
 
-export default ratingsReducer; 
+export default ratingsReducer;

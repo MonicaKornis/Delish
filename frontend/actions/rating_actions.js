@@ -1,10 +1,11 @@
-import * as RatingsApiUtil from '../util/ratings-util';
+import * as RatingsApiUtil from '../util/rating_util';
 export const RECEIVE_RATING = 'RECEIVE_RATING';
 export const REMOVE_RATING = 'REMOVE_RATING';
+export const RECEIVE_RATING_ERRORS = 'RECEIVE_RATING_ERRORS';
 
 const receiveRating = (payload) => {
   return{
-    action: RECEIVE_RATING,
+    type: RECEIVE_RATING,
     payload
   };
 };
@@ -18,7 +19,7 @@ const removeRating = (payload) => {
 
 const recieveRatingErrors = (errors) => {
   return {
-    type: RECEIVE_COMMENT_ERRORS,
+    type: RECEIVE_RATING_ERRORS,
     errors
   };
 };
@@ -42,7 +43,7 @@ export const updateRating = (rating) =>  (dispatch) => {
 };
 
 export const deleteRating = (ratingId) => (dispatch) => {
-  return ratingApiUtil.deleteRating(ratingId).then((ratingId) => {
+  return RatingsApiUtil.deleteRating(ratingId).then((ratingId) => {
     return dispatch(removeRating(ratingId));
   }, errors => {
     return dispatch(recieveRatingErrors(errors.responseJSON));

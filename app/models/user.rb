@@ -28,7 +28,7 @@ class User < ApplicationRecord
 
   has_many :ratings,
   class_name: 'Rating',
-  foreign_key: :author_id,
+  foreign_key: :user_id,
   primary_key: :id
 
   def is_password?(password)
