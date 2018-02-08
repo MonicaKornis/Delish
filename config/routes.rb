@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
     post 'comments/:comment_id/likes', to: 'comments#likes'
     delete 'comments/:comment_id/likes', to: 'comments#remove_like'
+
+    resources :ratings, only: [:create, :update]
   end
 
   root to: 'static_pages#root'

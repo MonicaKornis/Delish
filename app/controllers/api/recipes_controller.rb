@@ -1,6 +1,5 @@
 class Api::RecipesController < ApplicationController
   def index
-    # 
     @recipes = Recipe.all
   end
 
@@ -17,7 +16,7 @@ class Api::RecipesController < ApplicationController
     if @recipe.save
       render :show
     # else
-    #   
+    #
     #   render json: ['please fill out all fields'], status: 422
     end
   end

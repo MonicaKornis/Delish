@@ -141,6 +141,18 @@
 }
 
 
+@media(max-height: 534px) {
+  #recipe-circle{
+    display: none;
+    cursor: pointer;
+  }
+
+  #recipe-title{
+    display: none;
+    cursor: pointer;
+  }
+}
+
   @media(max-width: 943px) {
     #recipe-circle{
       display: none;

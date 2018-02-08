@@ -10,12 +10,7 @@ let Modal = require('react-modal');
 
 window.fetchRecipes = fetchRecipes;
 window.fetchRecipe = fetchRecipe;
-window.createRecipe = createRecipe;
-window.updateRecipe = updateRecipe;
-window.likeRecipe = likeRecipe;
-window.unlikeRecipe = unlikeRecipe;
-window.likeComment = likeComment;
-window.unlikeComment = unlikeComment;
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
