@@ -319,12 +319,6 @@
   }
 }
 
-// #description {
-//   font-family: 'Domine', serif;
-//   font-size: 15px;
-//   font-weight: bold;
-// }
-
   @media (min-width: 700px ) {
     .recipe-instructions {
     margin-top: 24%;
@@ -508,12 +502,14 @@
   font-weight: lighter;
 }
 
-.steps {
-  margin-top: 20px;
-  font-family: 'franklin-500';
-  font-size: 18px;
-  font-style: bold;
-  margin-top: 30px;
+@media (min-width: 700px) {
+  .steps {
+    margin-top: 20px;
+    font-family: 'franklin-500';
+    font-size: 18px;
+    font-style: bold;
+    margin-top: 30px;
+  }
 }
 
 #preparation {

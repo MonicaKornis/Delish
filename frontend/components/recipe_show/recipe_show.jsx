@@ -9,10 +9,14 @@ class RecipeShow extends React.Component {
     super(props);
     this.state = { buttonMessage: this.props.buttonMessage};
     this.handleLike = this.handleLike.bind(this);
-
   }
 
+  // componentWillMount() {
+  //    window.scrollTo(0, 0);
+  // }
+
   componentDidMount(){
+    window.scrollTo(0, 0);
     let id = parseInt(this.props.match.params.recipeId);
     this.props.fetchRecipe(id);
   }
@@ -20,6 +24,7 @@ class RecipeShow extends React.Component {
   componentWillReceiveProps(nextProps) {
     let nextId = nextProps.match.params.recipeId;
     if(nextId !== this.props.match.params.recipeId){
+      window.scrollTo(0, 0);
       this.props.fetchRecipe(nextProps.match.params.recipeId);
     }
   }
