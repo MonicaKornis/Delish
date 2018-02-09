@@ -130,7 +130,7 @@ class RecipeShow extends React.Component {
 
           <div className="recipe-instructions">
             <div id='top-border'></div>
-              <RatingsContainer />
+            <RatingsContainer />
               <section className='recipe-ingredients-wrap'>
                 <div className = "ingredients">
                   <h3 id='ingredientTitle'>INGREDIENTS</h3>

@@ -10,12 +10,40 @@ class RatingsIndex extends React.Component {
                         rating.user_id === this.props.currentUserId);
 
     currentRating = currentRating.length !== 0 ? currentRating[0].rating : 0;
+    let avgStars;
+    let currentStars;
 
-    return(
+
+    avgStars = [1,2,3,4,5].map((num) => {
+      if(this.props.averageRating >= num) {
+        return <li className='avgRatingFill'></li>;
+      } else {
+        return <li className='ratingEmpty'></li>;
+      }
+    });
+
+    currentStars = [1,2,3,4,5].map((num) => {
+      if(currentRating >= num) {
+        return <li className='currentRatingFill'></li>;
+      } else {
+        return <li className='ratingEmpty'></li>;
+      }
+    });
+
+    let displayRating = currentRating > 0 ? currentStars : avgStars;
+    let displayText = `${this.props.currentRecipeRatings.length} ratings`;
+    return (
+
       <div>
 
-        <div>{this.props.averageRating} Average Rating</div>
-        <div>{currentRating} User Rating </div>
+        <section className = "ratings-bar">
+          <div className='ratingItems'>
+            <h3 className='ratingNumber'>{displayText}</h3>
+            <ul className='currentRating'>
+              {displayRating}
+            </ul>
+          </div>
+        </section>
       </div>
     );
   }
