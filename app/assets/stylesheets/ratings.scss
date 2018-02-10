@@ -45,9 +45,12 @@
 }
 
 .ratingNumber {
-  padding-right: 8px;
+  padding-right: 10px;
+  border-right: 1px solid #ccc;
+  font-family: 'franklin-300';
 }
 
 .currentRating {
   display: flex;
+  padding-left: 9px;
 }

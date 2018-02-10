@@ -77,15 +77,15 @@ class RecipeForm extends React.Component {
           </h3>
 
           <h3>
-            <input id='input' placeholder='Cooking Time' onChange={this.update('cooking_time')} value={this.state.cooking_time}/>
+            <input id='input' placeholder='Cooking Time - in minutes' onChange={this.update('cooking_time')} value={this.state.cooking_time}/>
           </h3>
 
           <h3>
-            <input id='input' placeholder='Ingredients' onChange={this.update('ingredients')} value={this.state.ingredients}/>
+            <input id='input' placeholder='Ingredients (separated by commas, please)' onChange={this.update('ingredients')} value={this.state.ingredients}/>
           </h3>
 
           <h3>
-            <textarea id='input' placeholder='Steps' onChange={this.update('steps')} value={this.state.steps}/>
+            <textarea id='input' placeholder='Steps  - full sentences. Be as descriptive as possible :)' onChange={this.update('steps')} value={this.state.steps}/>
           </h3>
 
           <h3 id='upload-image'> Upload An Image

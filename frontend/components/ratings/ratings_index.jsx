@@ -1,4 +1,6 @@
 import React from 'react';
+// import { Transition }
+
 
 class RatingsIndex extends React.Component {
   constructor(props){
@@ -31,7 +33,7 @@ class RatingsIndex extends React.Component {
     });
 
     let displayRating = currentRating > 0 ? currentStars : avgStars;
-    let displayText = `${this.props.currentRecipeRatings.length} ratings`;
+    let displayText = currentRating > 0 ? `Your Rating` : `${this.props.currentRecipeRatings.length} ratings`;
     return (
 
       <div>
