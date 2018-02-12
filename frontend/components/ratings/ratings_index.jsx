@@ -6,24 +6,25 @@ import UserStars from './user_star';
 class RatingsIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = { currentRating: this.props.currentRating};
+    this.state = { currentRating: this.props.currentRatingNum};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     // debugger
-    if(this.props.currentRating !== nextProps.currentRating) {
-      this.setState({currentRating: nextProps.currentRating});
+    if(this.props.currentRatingNum !== nextProps.currentRatingNum) {
+      this.setState({currentRating: nextProps.currentRatingNum});
     }
   }
 
   handleSubmit(e,num) {
-    debugger
-    if(this.props.currentRating !== 0) {
-    this.props.updateRating({"rating": num, "recipe_id": this.props.currentRecipe.id});
+    // debugger
+    if(this.props.currentRatingNum !== 0) {
+    this.props.updateRating({"rating": num, "recipe_id": this.props.currentRecipe.id, id: this.props.currentRating[0].id});
       this.setState({currentRating: num});
     } else {
-      this.props.createRating({"rating": num, "recipe_id": this.props.currentRecipe.id, id: this.props.currentRating.id});
+      // debugger
+      this.props.createRating({"rating": num, "recipe_id": this.props.currentRecipe.id});
       this.setState({currentRating: num});
     }
   }
@@ -62,7 +63,7 @@ class RatingsIndex extends React.Component {
     });
 
     let displayRating = this.state.currentRating > 0 ? currentStars : avgStars;
-    let displayText = this.state.currentRating > 0 ? `Your Rating` : `${this.props.currentRecipeRatings.length} ratings`;
+    let displayText = this.state.currentRating> 0 ? `Your Rating` : `${this.props.currentRecipeRatings.length} ratings`;
     debugger
 
     return (

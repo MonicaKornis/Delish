@@ -9,7 +9,8 @@ const mapStateToProps = (state,ownProps) => {
   let currentRecipeRatings = currentRecipe.ratings;
   let currentRating = currentRecipeRatings.length === 0 ? 0 : currentRecipeRatings.filter((rating) =>
                         rating.user_id === state.session.currentUser.id);
-  currentRating = currentRating !== 0 ? currentRating[0].rating : 0 ;
+
+  let currentRatingNum = currentRating !== 0 ? currentRating[0].rating : 0 ;
   let averageRating = 0;
   if(currentRecipeRatings.length > 1) {
   for (let i = 0; i < currentRecipeRatings.length; i++) {
@@ -21,6 +22,7 @@ const mapStateToProps = (state,ownProps) => {
 
   return {
     currentRecipe: currentRecipe,
+    currentRatingNum: currentRatingNum,
     currentRating: currentRating,
     currentRecipeRatings: currentRecipeRatings,
     averageRating: averageRating,
