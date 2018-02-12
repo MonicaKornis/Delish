@@ -6,8 +6,27 @@ import UserStars from './user_star';
 class RatingsIndex extends React.Component {
   constructor(props){
     super(props);
+    this.state = { currentRating: this.props.currentRating};
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    // debugger
+    if(this.props.currentRating !== nextProps.currentRating) {
+      this.setState({currentRating: nextProps.currentRating});
+    }
+  }
+
+  handleSubmit(e,num) {
+    debugger
+    if(this.props.currentRating !== 0) {
+    this.props.updateRating({"rating": num, "recipe_id": this.props.currentRecipe.id});
+      this.setState({currentRating: num});
+    } else {
+      this.props.createRating({"rating": num, "recipe_id": this.props.currentRecipe.id, id: this.props.currentRating.id});
+      this.setState({currentRating: num});
+    }
+  }
 
 
   render() {
@@ -30,7 +49,7 @@ class RatingsIndex extends React.Component {
     });
 
     currentStars = [1,2,3,4,5].map((num) => {
-      if(currentRating >= num) {
+      if(this.state.currentRating >= num) {
         return <li className='currentRatingFill'></li>;
       } else {
         return <li className='ratingEmpty'></li>;
@@ -39,13 +58,13 @@ class RatingsIndex extends React.Component {
 
 
     let hoverStars = [1,2,3,4,5].map((num) => {
-      return <UserStars rating={num} actionString={actionString} action={action} recipeId={parseInt(this.props.match.params.recipeId)} currentRatingId={currentRatingId}/>;
+      return <UserStars rating={num} actionString={actionString} action={action} recipeId={parseInt(this.props.match.params.recipeId)} action={(e) => this.handleSubmit(e,num)}/>;
     });
 
-    let displayRating = currentRatingId > 0 ? currentStars : avgStars;
-    let displayText = currentRatingId > 0 ? `Your Rating` : `${this.props.currentRecipeRatings.length} ratings`;
+    let displayRating = this.state.currentRating > 0 ? currentStars : avgStars;
+    let displayText = this.state.currentRating > 0 ? `Your Rating` : `${this.props.currentRecipeRatings.length} ratings`;
     debugger
-    console.log(this.props.currentRecipeRatings);
+
     return (
       <div>
 
