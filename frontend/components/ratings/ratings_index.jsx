@@ -6,13 +6,33 @@ import UserStars from './user_star';
 class RatingsIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = { currentRating: this.props.currentRatingNum, classNames: ['ratingEmpty','ratingEmpty','ratingEmpty','ratingEmpty','ratingEmpty']};
+    this.state = { currentRating: this.props.currentRatingNum, classNames: ['ratingEmpty','ratingEmpty','ratingEmpty','ratingEmpty','ratingEmpty'], hoverStatus: 'unhover'};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleHover = this.handleHover.bind(this);
     this.mouseLeave = this.mouseLeave.bind(this);
     this.hoverText = { 0: '', 1: 'Not Worth It', 2: 'Fine', 3: 'Good', 4: 'Really Good', 5: 'Delicious!'};
     this.currentText = this.hoverText[0];
+    this.hoverStatus = 'unhover';
+    this.renderHoverBox = this.renderHoverBox.bind(this);
+    this.removeHoverBox = this.removeHoverBox.bind(this);
 
+    this.ratingHoverTransitionStyle = {
+      'hover': {
+        display: "block",
+        position: "absolute",
+        right: 35,
+        bottom: -20,
+        width: "170px",
+        height: "80px",
+        border: "1px solid #F5F5F5",
+        background: "white",
+        zIndex: 1
+      },
+
+      'unhover': {
+        display: 'none'
+      }
+    };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -47,6 +67,14 @@ class RatingsIndex extends React.Component {
   mouseLeave(e) {
     this.setState({classNames: ['ratingEmpty','ratingEmpty','ratingEmpty','ratingEmpty','ratingEmpty']});
     this.currentText = '';
+  }
+
+  renderHoverBox() {
+    this.setState({hoverStatus: 'hover'});
+  }
+
+  removeHoverBox() {
+    this.setState({hoverStatus: 'unhover'});
   }
 
 
@@ -89,22 +117,24 @@ class RatingsIndex extends React.Component {
 
     return (
       <div>
-        <section className = "ratings-bar">
-          <div className='ratingItems'>
+        <section className = "ratings-bar" onMouseLeave={this.removeHoverBox}>
+          <div style={this.ratingHoverTransitionStyle[this.state.hoverStatus]}>
+            <ul className='hoverStars' onMouseLeave={this.mouseLeave}>
+              {hoverStars}
+            </ul>
+            <h4>{this.currentText}</h4>
+          </div>
+
+          <div className='ratingItems' onMouseEnter={this.renderHoverBox}>
             <h3 className='ratingNumber'>{displayText}</h3>
 
             <ul className='currentRating'>
               {displayRating}
             </ul>
-
           </div>
         </section>
-        <ul className='hoverStars' onMouseLeave={this.mouseLeave}>
-          {hoverStars}
-        </ul>
-        <h4>{this.currentText}</h4>
-      </div>
 
+    </div>
     );
   }
 
@@ -112,7 +142,3 @@ class RatingsIndex extends React.Component {
 }
 
 export default RatingsIndex;
-
-
-
-// <h4>{this.state.hoverText[this.state.hoverTextIndex]}</h4>
