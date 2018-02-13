@@ -33,6 +33,23 @@ class RatingsIndex extends React.Component {
         opacity: 1,
       },
 
+      'saved': {
+        display: "flex",
+        alignItems: "center",
+        position: "absolute",
+        flexDirection: "column",
+        right: 25,
+        bottom: -20,
+        marginTop: "50%",
+        width: "175px",
+        height: "80px",
+        border: "1px solid #F5F5F5",
+        background: "#fab038",
+        color: "white",
+        zIndex: 1,
+        opacity: 1,
+      },
+
       'unhover': {
         // display: 'none'
       }
@@ -53,6 +70,8 @@ class RatingsIndex extends React.Component {
       this.props.createRating({"rating": num, "recipe_id": this.props.currentRecipe.id});
       this.setState({currentRating: num});
     }
+      this.setState({hoverStatus: 'saved'});
+      this.setState({classNames: ['savedRatingFill','savedRatingFill','savedRatingFill','savedRatingFill','savedRatingFill']});
   }
 
   handleHover(e,num) {

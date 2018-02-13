@@ -26,6 +26,13 @@
     height: 15px;
 }
 
+.savedRatingFill {
+  background-image: image_url('star-white.png');
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+}
+
 .ratings-bar {
   display: flex;
   width: 100%;
