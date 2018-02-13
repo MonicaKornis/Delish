@@ -18,19 +18,23 @@ class RatingsIndex extends React.Component {
 
     this.ratingHoverTransitionStyle = {
       'hover': {
-        display: "block",
+        display: "flex",
+        alignItems: "center",
         position: "absolute",
-        right: 35,
+        flexDirection: "column",
+        right: 25,
         bottom: -20,
-        width: "170px",
+        marginTop: "50%",
+        width: "175px",
         height: "80px",
         border: "1px solid #F5F5F5",
         background: "white",
-        zIndex: 1
+        zIndex: 1,
+        opacity: 1,
       },
 
       'unhover': {
-        display: 'none'
+        // display: 'none'
       }
     };
   }
@@ -118,7 +122,7 @@ class RatingsIndex extends React.Component {
     return (
       <div>
         <section className = "ratings-bar" onMouseLeave={this.removeHoverBox}>
-          <div style={this.ratingHoverTransitionStyle[this.state.hoverStatus]}>
+          <div className='hoverBox' style={this.ratingHoverTransitionStyle[this.state.hoverStatus]}>
             <ul className='hoverStars' onMouseLeave={this.mouseLeave}>
               {hoverStars}
             </ul>

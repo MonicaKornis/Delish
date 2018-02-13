@@ -54,11 +54,18 @@
 .currentRating {
   display: flex;
   padding-left: 9px;
+
+}
+
+.hoverBox {
+  transition: opacity 500ms ease-in-out;
+  opacity: 0;
+  height: 0;
 }
 
 .hoverStars {
   display: flex;
   margin-right: 3%;
   align-items: center;
-  margin-top: 1.5%;
+  margin-top: 14.5%;
 }
