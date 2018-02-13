@@ -11,10 +11,6 @@ class RecipeShow extends React.Component {
     this.handleLike = this.handleLike.bind(this);
   }
 
-  // componentWillMount() {
-  //    window.scrollTo(0, 0);
-  // }
-
   componentDidMount(){
     window.scrollTo(0, 0);
     let id = parseInt(this.props.match.params.recipeId);
@@ -163,8 +159,6 @@ class RecipeShow extends React.Component {
           </div>
         </div>
       );
-
-
   }
 }
 

@@ -18,7 +18,7 @@ const mapStateToProps = (state,ownProps) => {
   }
   averageRating = Math.ceil(averageRating/currentRecipeRatings.length);
 }
-  debugger
+
 
   return {
     currentRecipe: currentRecipe,
