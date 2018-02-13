@@ -19,6 +19,7 @@
     height: 15px;
 }
 
+
 .currentRatingFill {
     background-image: image_url('star-red.png');
     background-size: contain;
@@ -61,18 +62,32 @@
 .currentRating {
   display: flex;
   padding-left: 9px;
+}
 
+.ratingGone {
+  display: none;
 }
 
 .hoverBox {
   transition: opacity 500ms ease-in-out;
   opacity: 0;
-  height: 0;
+  height: 0px;
+  right: -20px;
+  bottom: 54px;
+  position: absolute;
+  display: flex !important;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50%;
+  width: 179px;
+  // height: 80px;
 }
 
 .hoverStars {
+  transition: opacity 1ms ease-in-out;
   display: flex;
   margin-right: 3%;
   align-items: center;
   margin-top: 14.5%;
+  transition: none;
 }

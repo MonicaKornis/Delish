@@ -25,7 +25,7 @@ class RatingsIndex extends React.Component {
         right: 25,
         bottom: -20,
         marginTop: "50%",
-        width: "178px",
+        width: "179px",
         height: "80px",
         border: "1px solid #F5F5F5",
         background: "white",
@@ -41,7 +41,7 @@ class RatingsIndex extends React.Component {
         right: 25,
         bottom: -20,
         marginTop: "50%",
-        width: "178px",
+        width: "179px",
         height: "80px",
         border: "1px solid #F5F5F5",
         background: "#fab038",
@@ -52,7 +52,11 @@ class RatingsIndex extends React.Component {
 
       'unhover': {
         // display: 'none'
-      }
+      },
+
+      // starUnhover: {
+      //   display: 'none'
+      // }
     };
   }
 
@@ -93,11 +97,13 @@ class RatingsIndex extends React.Component {
   }
 
   renderHoverBox() {
+    this.setState({classNames: ['ratingEmpty','ratingEmpty','ratingEmpty','ratingEmpty','ratingEmpty']});
     this.setState({hoverStatus: 'hover'});
   }
 
   removeHoverBox() {
     this.setState({hoverStatus: 'unhover'});
+    this.setState({classNames: ['ratingGone','ratingGone','ratingGone','ratingGone','ratingGone']});
   }
 
 
