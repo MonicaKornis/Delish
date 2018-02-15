@@ -26,7 +26,6 @@ const ratingHoverTransitionStyle = {
 export const HoverBox= ({ in: inProp, component: Component }) => {
 
   return (<Transition in={inProp} timeout={hoverDuration}>
-    debugger
     {(state) => {
       const style = merge({}, defaultStyle, ratingHoverTransitionStyle[state]);
         return (<div style={style}>

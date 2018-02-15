@@ -27,6 +27,7 @@ class RecipeIndex extends React.Component {
     this.closeRecipeModal = this.closeRecipeModal.bind(this);
     this.openRecipeModal = this.openRecipeModal.bind(this);
     this.handleFeature = this.handleFeature.bind(this);
+    this.handleImageClick = this.handleImageClick.bind(this);
   }
 
   closeRecipeModal() {
@@ -47,6 +48,10 @@ class RecipeIndex extends React.Component {
     this.props.fetchRecipes();
   }
 
+  handleImageClick(e,id) {
+    debugger
+    this.props.history.push(`/recipes/${id}`);
+  }
 
   handleLike(recipeId){
     if(this.props.likedRecipes.includes(recipeId)) {
@@ -150,7 +155,7 @@ class RecipeIndex extends React.Component {
 
           {
             this.props.authoredRecipes.map( (recipe,index) =>
-              <RecipeIndexItem currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
+              <RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
             )
           }
 
@@ -186,7 +191,7 @@ class RecipeIndex extends React.Component {
 
             {
               this.props.recipes.map( (recipe,index) =>
-                <RecipeIndexItem currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
+                <RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
               )
             }
           </div>

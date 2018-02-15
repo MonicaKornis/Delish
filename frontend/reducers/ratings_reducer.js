@@ -2,7 +2,6 @@ import { RECEIVE_RATING, REMOVE_RATING, RECEIVE_RATING_ERRORS } from '../actions
 
 const ratingsReducer = (oldState={}, action) => {
   let newState = {};
-  debugger
   switch(action.type) {
     case RECEIVE_RATING:
       return Object.assign(oldState,newState,{[action.payload.id]: action.payload});

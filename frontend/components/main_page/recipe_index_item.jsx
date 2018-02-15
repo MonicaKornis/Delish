@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const RecipeIndexItem = ({recipe, action, color, author, currentUser}) => (
+const RecipeIndexItem = ({recipe, action, color, author, currentUser, imageAction}) => (
   <div className='col-recipe-index'>
-      <img className="recipeIndexImage" src={recipe.image_url}/>
+      <img className="recipeIndexImage" src={recipe.image_url} onClick={(e) => imageAction(e,recipe.id)}/>
 
       <div className='recipeInfo'>
         <div className='titleWrapper'>

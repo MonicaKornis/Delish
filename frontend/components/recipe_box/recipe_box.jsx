@@ -89,8 +89,6 @@ class RecipeBox extends React.Component {
     return (
 
       <div className='recipeIndex' id={containerId}>
-
-
         {recipeIndexHeader}
         <br></br>
         <br></br>

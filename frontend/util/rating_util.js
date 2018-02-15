@@ -19,7 +19,6 @@ export const updateRating = (rating) => {
 };
 
 export const deleteRating = (ratingId) => {
-  debugger
   return(
     $.ajax({
       method: 'DELETE',
