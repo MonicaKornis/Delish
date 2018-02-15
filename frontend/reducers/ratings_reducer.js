@@ -1,4 +1,4 @@
-import { RECEIVE_RATING, REMOVE_RATING } from '../actions/rating_actions';
+import { RECEIVE_RATING, REMOVE_RATING, RECEIVE_RATING_ERRORS } from '../actions/rating_actions';
 
 const ratingsReducer = (oldState={}, action) => {
   let newState = {};
