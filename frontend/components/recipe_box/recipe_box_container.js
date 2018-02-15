@@ -5,21 +5,16 @@ import RecipeIndex from '../main_page/recipe_index';
 
 const mapStateToProps = (state) => {
   let likedRecipeIds = state.session.currentUser.likedRecipeIds;
-  let authoredRecipeIds = state.session.currentUser.authoredRecipeIds || [];
+  let currentUserId = state.session.currentUser.id;
+  let authoredRecipes = Object.values(state.entities.recipes).filter((recipe) => recipe.authorId === currentUserId);
+
   const recipes = [];
-  const authoredRecipes = [];
 
   likedRecipeIds.forEach( (id) => {
     if(state.entities.recipes[id]) {
       recipes.push(state.entities.recipes[id]);
    }
  });
-
-   authoredRecipeIds.forEach( (id) => {
-     if(state.entities.recipes[id]) {
-       authoredRecipes.push(state.entities.recipes[id]);
-    }
-  });
 
 
   return {

@@ -3,6 +3,7 @@
     json.extract! recipe, :title, :description, :cooking_time, :ingredients, :id, :steps
     json.image_url image_url(recipe.image.url)
     json.author recipe.author.name
+    json.authorId recipe.author.id
     json.commentIds recipe.comment_ids
     json.ratings recipe.ratings
   end

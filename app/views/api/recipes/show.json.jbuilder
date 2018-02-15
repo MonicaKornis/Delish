@@ -3,6 +3,7 @@ json.recipe do
   json.image_url image_url(@recipe.image.url)
   json.commentIds @recipe.comment_ids
   json.author @recipe.author.name
+  json.authorId @recipe.author.id
   json.image_url asset_path(@recipe.image.url)
   json.ratings @recipe.ratings
 end

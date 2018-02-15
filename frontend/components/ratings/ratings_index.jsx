@@ -127,8 +127,6 @@ class RatingsIndex extends React.Component {
       }
     });
 
-    // debugger
-
     let hoverStars = [1,2,3,4,5].map((num) => {
       return <UserStars key={num} rating={num} className={this.state.classNames[num-1]} actionString={actionString} action={action} onMouseEnter={(e) => this.handleHover(e,num)} recipeId={parseInt(this.props.match.params.recipeId)} action={(e) => this.handleSubmit(e,num)} />;
     });
