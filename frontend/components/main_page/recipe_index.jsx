@@ -49,7 +49,6 @@ class RecipeIndex extends React.Component {
   }
 
   handleImageClick(e,id) {
-    debugger
     this.props.history.push(`/recipes/${id}`);
   }
 
