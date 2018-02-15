@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = (state,ownProps) => {
   let currentRecipe = state.entities.recipes[ownProps.match.params.recipeId];
   let currentRecipeRatings = currentRecipe.ratings;
-  let currentRating = currentRecipeRatings.length === 0 ? 0 : currentRecipeRatings.filter((rating) =>
+  let currentRating = currentRecipeRatings.length === 0 ? [] : currentRecipeRatings.filter((rating) =>
                         rating.user_id === state.session.currentUser.id);
 
   let currentRatingNum = currentRating.length !== 0 ? currentRating[0].rating : 0 ;

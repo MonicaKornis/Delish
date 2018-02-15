@@ -38,6 +38,9 @@ class RecipeIndex extends React.Component {
     this.props.removeErrors();
   }
 
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
 
   componentDidMount(){
     window.scrollTo(0, 0);
