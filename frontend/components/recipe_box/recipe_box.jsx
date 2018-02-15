@@ -76,7 +76,6 @@ class RecipeBox extends React.Component {
 
       recipeIndexFooter = (
         <div className='recipeBoxHeader footer'>
-
         </div>
       );
 
@@ -116,10 +115,7 @@ class RecipeBox extends React.Component {
 
         <br></br>
         <br></br>
-
-
-
-          <br></br>
+        <br></br>
       </div>
     );
   }

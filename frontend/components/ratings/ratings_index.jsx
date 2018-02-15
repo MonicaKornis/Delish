@@ -51,12 +51,7 @@ class RatingsIndex extends React.Component {
       },
 
       'unhover': {
-        // display: 'none'
       },
-
-      // starUnhover: {
-      //   display: 'none'
-      // }
     };
   }
 
@@ -87,7 +82,6 @@ class RatingsIndex extends React.Component {
         return 'ratingEmpty';
       }
     });
-
     this.setState({classNames: newClasses});
   }
 
@@ -119,20 +113,21 @@ class RatingsIndex extends React.Component {
 
     avgStars = [1,2,3,4,5].map((num) => {
       if(this.props.averageRating >= num) {
-        return <li className='avgRatingFill'></li>;
+        return <li key={num} className='avgRatingFill'></li>;
       } else {
-        return <li className='ratingEmpty'></li>;
+        return <li key={num} className='ratingEmpty'></li>;
       }
     });
 
     currentStars = [1,2,3,4,5].map((num) => {
       if(this.state.currentRating >= num) {
-        return <li className='currentRatingFill'></li>;
+        return <li key={num} className='currentRatingFill'></li>;
       } else {
-        return <li className='ratingEmpty'></li>;
+        return <li key={num} className='ratingEmpty'></li>;
       }
     });
 
+    // debugger
 
     let hoverStars = [1,2,3,4,5].map((num) => {
       return <UserStars key={num} rating={num} className={this.state.classNames[num-1]} actionString={actionString} action={action} onMouseEnter={(e) => this.handleHover(e,num)} recipeId={parseInt(this.props.match.params.recipeId)} action={(e) => this.handleSubmit(e,num)} />;
@@ -141,12 +136,12 @@ class RatingsIndex extends React.Component {
 
 
     let displayRating = this.state.currentRating > 0 ? currentStars : avgStars;
-    let displayText = this.state.currentRating> 0 ? `Your Rating` : `${this.props.currentRecipeRatings.length} ratings`;
+    let displayText = this.state.currentRating > 0 ? `Your Rating` : (this.props.currentRecipeRatings.length === 1 ? `1 rating` : `${this.props.currentRecipeRatings.length} ratings`);
 
 
     return (
       <div>
-        <section className = "ratings-bar" onMouseLeave={this.removeHoverBox}>
+        <section className="ratings-bar" onMouseLeave={this.removeHoverBox}>
           <div className='hoverBox' style={this.ratingHoverTransitionStyle[this.state.hoverStatus]}>
             <ul className='hoverStars' onMouseLeave={this.mouseLeave}>
               {hoverStars}
@@ -166,8 +161,6 @@ class RatingsIndex extends React.Component {
     </div>
     );
   }
-
-
 }
 
 export default RatingsIndex;

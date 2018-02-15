@@ -12,10 +12,11 @@ const mapStateToProps = (state,ownProps) => {
 
   let currentRatingNum = currentRating.length !== 0 ? currentRating[0].rating : 0 ;
   let averageRating = 0;
-  if(currentRecipeRatings.length > 1) {
+  if(currentRecipeRatings.length >= 1) {
   for (let i = 0; i < currentRecipeRatings.length; i++) {
      averageRating += currentRecipeRatings[i].rating;
   }
+  debugger
   averageRating = Math.ceil(averageRating/currentRecipeRatings.length);
 }
 
