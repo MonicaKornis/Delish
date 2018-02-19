@@ -15,6 +15,9 @@ html, body {
   margin-top: 20px;
 }
 
+#saveButton {
+  margin-top: 2%
+}
 
 @media (max-width: 699px) {
   #DIV_1 {
@@ -25,7 +28,7 @@ html, body {
     transform-origin: 500px 275.918px;
     border: 0px none #222222;
     font: Georgia, "Times New Roman", serif;
-    margin-top: 20px;
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
   }
@@ -143,17 +146,7 @@ html, body {
 }
 
 #description {
-    // box-sizing: border-box;
-    // height: 427.5px;
-    // width: 343.691px;
-    // perspective-origin: 171.836px 213.75px;
-    // transform-origin: 171.836px 213.75px;
-    // margin: 0px 0px 15px;
-    // font-family: 'Domine', serif;
-    // font-size: 12px;
-    // font-weight: normal;
-    // width: 200px;
-    // padding-top: 40px;
+
 
     @media (min-width: 700px) {
       box-sizing: border-box;
@@ -165,7 +158,7 @@ html, body {
       font-family: 'Domine', serif;
       font-weight: normal;
       width: 200px;
-      padding-top: 40px;
+      padding-top: 9%;
       font-family: 'Domine', serif;
       font-size: 16px;
       font-weight: bold;
@@ -201,7 +194,7 @@ html, body {
   line-height: 32px;
   position: relative;
   word-spacing: -.15em;
-  margin-top: 20px;
+  margin-top: 12px;
   cursor: pointer;
 }
 
