@@ -1,6 +1,7 @@
 import * as RecipeApiUtil from '../util/recipe_util';
 export const RECEIVE_ALL_RECIPES = 'RECEIVE_ALL_RECIPES';
 export const RECEIVE_RECIPE = 'RECEIVE_RECIPE';
+export const REMOVE_RECIPE = 'REMOVE_RECIPE';
 export const RECEIVE_RECIPE_ERRORS = 'RECEIVE_RECIPE_ERRORS';
 export const RECEIVE_RECIPE_LIKE = 'RECEIVE_RECIPE_LIKE';
 export const RECEIVE_RECIPE_UNLIKE = 'RECEIVE_RECIPE_UNLIKE';
@@ -21,10 +22,16 @@ const receiveRecipe = ({recipe, comments}) => {
 };
 
 const receiveRecipeErrors = (errors) => {
-// 
   return {
     type: RECEIVE_RECIPE_ERRORS,
     errors
+  };
+};
+
+const removeRecipe = (payload) => {
+  return {
+    type: REMOVE_RECIPE,
+    payload
   };
 };
 
@@ -62,10 +69,10 @@ export const fetchRecipe = (id) => dispatch => {
 
 export const createRecipe = (recipe) => dispatch => {
   return RecipeApiUtil.createRecipe(recipe).then(recipe => {
-    
+
     return dispatch(receiveRecipe(recipe));
   }, errors => {
-    // 
+    //
     return dispatch(receiveRecipeErrors(errors.responseJSON));
   }
   );
@@ -78,6 +85,14 @@ export const updateRecipe = (recipe) => dispatch => {
     return dispatch(receiveRecipeErrors(errors.responseJSON));
   }
   );
+};
+
+export const deleteRecipe = (recipeId) => dispatch => {
+  return RecipeApiUtil.deleteRecipe(recipeId).then( payload => {
+    return dispatch(removeRecipe(payload));
+  }, errors => {
+    return dispatch(receiveRecipeErrors(errors.responseJSON));
+  });
 };
 
 export const likeRecipe = (recipeId) => dispatch => {

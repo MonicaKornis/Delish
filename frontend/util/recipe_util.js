@@ -39,6 +39,15 @@ export const updateRecipe = (recipe) => {
   );
 };
 
+export const deleteRecipe = (recipeId) => {
+  return(
+    $.ajax({
+      method: 'DELETE',
+      url: `api/recipes/${recipeId}`
+    })
+  );
+};
+
 export const likeRecipe = (recipeId) => {
   return (
     $.ajax({

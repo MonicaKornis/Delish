@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_RECIPE_LIKE, RECEIVE_RECIPE_UNLIKE, RECEIVE_RECIPE } from '../actions/recipe_actions';
+import { RECEIVE_RECIPE_LIKE, RECEIVE_RECIPE_UNLIKE, RECEIVE_RECIPE, REMOVE_RECIPE} from '../actions/recipe_actions';
 import { RECEIVE_COMMENT_LIKE, REMOVE_COMMENT_LIKE } from '../actions/comment_actions';
+import merge from 'lodash/merge';
 
 
 const _nullUser = Object.freeze({
@@ -9,6 +10,7 @@ const _nullUser = Object.freeze({
 
 const sessionsReducer = (state = _nullUser, action) => {
   Object.freeze(state);
+  debugger
   let currentUser;
   switch(action.type) {
     case RECEIVE_CURRENT_USER:

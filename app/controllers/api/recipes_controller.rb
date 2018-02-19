@@ -15,9 +15,6 @@ class Api::RecipesController < ApplicationController
     @recipe.author_id = current_user.id
     if @recipe.save
       render :show
-    # else
-    #
-    #   render json: ['please fill out all fields'], status: 422
     end
   end
 
@@ -33,6 +30,14 @@ class Api::RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    if @recipe
+      @recipe.destroy!
+    end
+    render :show
   end
 
   def likes

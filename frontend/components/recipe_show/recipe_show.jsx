@@ -9,6 +9,7 @@ class RecipeShow extends React.Component {
     super(props);
     this.state = { buttonMessage: this.props.buttonMessage};
     this.handleLike = this.handleLike.bind(this);
+    this.deleteRecipe = this.deleteRecipe.bind(this);
   }
 
   componentDidMount(){
@@ -39,6 +40,10 @@ class RecipeShow extends React.Component {
     }
   }
 
+  deleteRecipe(e,recipeId) {
+    e.preventDefault();
+    this.props.deleteRecipe(recipeId).then(() => this.props.history.push(`/recipes/recipe-box`));
+  }
 
 
 
@@ -99,7 +104,8 @@ class RecipeShow extends React.Component {
         			 <span id="SPAN_15">Time</span> <span id="SPAN_16">{`  ${recipe.cooking_time} minutes`}</span>
         			</li>
               <div id='saveButton'>
-                <span onClick={this.handleLike(this.props.recipe.id)} id='recipeSave'>{this.state.buttonMessage}</span>
+                <span onClick={this.handleLike(this.props.recipe.id)} id='recipeSave'>{this.state.buttonMessage}</span> <br/>
+                <span onClick={(e) => this.deleteRecipe(e,this.props.recipe.id)} id={ this.props.currentUser === this.props.recipe.authorId ? 'recipeSave' : 'displayNone'}>    Delete Recipe    </span>
               </div>
         		</ul>
 

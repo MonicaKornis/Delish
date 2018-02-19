@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import RecipeShow from './recipe_show.jsx';
-import { fetchRecipe, likeRecipe, unlikeRecipe } from '../../actions/recipe_actions';
+import { withRouter } from 'react-router-dom';
+import { fetchRecipe, likeRecipe, unlikeRecipe, deleteRecipe } from '../../actions/recipe_actions';
 import { likeComment, unlikeComment} from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,8 +13,9 @@ const mapStateToProps = (state, ownProps) => {
   return {
   recipes: Object.values(state.entities.recipes),
   recipe: state.entities.recipes[ownProps.match.params.recipeId],
+  currentUser: state.session.currentUser.id,
   likedRecipes: state.session.currentUser.likedRecipeIds,
-  buttonMessage: buttonMessage,
+  buttonMessage: buttonMessage
   };
 };
 
@@ -23,10 +25,11 @@ const mapDispatchToProps = dispatch => {
   fetchRecipe: id => dispatch(fetchRecipe(id)),
   likeRecipe: id => dispatch(likeRecipe(id)),
   unlikeRecipe: id => dispatch(unlikeRecipe(id)),
+  deleteRecipe: id => dispatch(deleteRecipe(id))
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(RecipeShow);
+)(RecipeShow));
