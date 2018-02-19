@@ -15,6 +15,7 @@ class RatingsIndex extends React.Component {
     this.hoverStatus = 'unhover';
     this.renderHoverBox = this.renderHoverBox.bind(this);
     this.removeHoverBox = this.removeHoverBox.bind(this);
+    this.removeRating = this.removeRating.bind(this);
 
     this.ratingHoverTransitionStyle = {
       'hover': {
@@ -62,7 +63,7 @@ class RatingsIndex extends React.Component {
   }
 
   handleSubmit(e,num) {
-    if(this.props.currentRatingNum !== 0) {
+    if(this.state.currentRating !== 0) {
     this.props.updateRating({"rating": num, "recipe_id": this.props.currentRecipe.id, id: this.props.currentRating[0].id});
       this.setState({currentRating: num});
     } else {
@@ -71,6 +72,13 @@ class RatingsIndex extends React.Component {
     }
       this.setState({hoverStatus: 'saved'});
       this.setState({classNames: ['savedRatingFill','savedRatingFill','savedRatingFill','savedRatingFill','savedRatingFill']});
+  }
+
+  removeRating(e,id) {
+    if(id) {
+      this.props.deleteRating(id);
+      this.setState({currentRating: 0});
+    }
   }
 
   handleHover(e,num) {
@@ -105,6 +113,7 @@ class RatingsIndex extends React.Component {
     let currentRating = this.props.currentRecipeRatings.filter((rating) =>
                         rating.user_id === this.props.currentUserId);
     let currentRatingId = currentRating.length !== 0 ? currentRating[0].id : 0;
+    currentRatingId = currentRating.length !== 0 ? currentRating[0].id : 0;
     currentRating = currentRating.length !== 0 ? currentRating[0].rating : 0;
     let action = currentRating === 0  ? this.props.createRating : this.props.updateRating;
     let actionString = currentRating === 0  ? "createRating" : "updateRating";
@@ -147,12 +156,15 @@ class RatingsIndex extends React.Component {
             <h4>{this.currentText}</h4>
           </div>
 
-          <div className='ratingItems' onMouseEnter={this.renderHoverBox}>
+          <div className='ratingItems'>
+            <div className='rating-section' onMouseEnter={this.renderHoverBox}>
             <h3 className='ratingNumber'>{displayText}</h3>
 
             <ul className='currentRating'>
               {displayRating}
             </ul>
+          </div>
+            <button onMouseEnter={this.removeHoverBox} onClick={(e) => this.removeRating(e,currentRatingId)}id='remove-rating'>Remove Rating</button>
           </div>
         </section>
 

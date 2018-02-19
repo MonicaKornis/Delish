@@ -62,6 +62,7 @@
 .currentRating {
   display: flex;
   padding-left: 9px;
+  margin-top: 5px;
 }
 
 .ratingGone {
@@ -90,4 +91,18 @@
   align-items: center;
   margin-top: 14.5%;
   transition: none;
+}
+
+#remove-rating {
+  text-decoration: none;
+  border: none;
+  margin-left: 15px;
+  color: black;
+  font-family: 'franklin-300';
+}
+
+.rating-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
