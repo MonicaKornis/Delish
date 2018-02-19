@@ -108,7 +108,7 @@ html, body {
       max-width: 500px;
       margin-right: 400px;
       margin-top: 100px;
-      margin-right: 55%;
+      margin-right: 48%;
     }
 
     @media (min-width: 1700px ) {
@@ -116,7 +116,7 @@ html, body {
       max-width: 500px;
       margin-right: 400px;
       margin-top: 100px;
-      margin-right: 55%;
+      margin-right: 53%;
     }
 
     @media (min-width: 2000px ) {
@@ -124,16 +124,40 @@ html, body {
       max-width: 500px;
       margin-right: 400px;
       margin-top: 100px;
-      margin-right: 58%;
+      margin-right: 51%;
     }
 
 
-    @media (min-width: 3000px ) {
+    @media (min-width: 1800px ) {
       width: 62.63158%;
       max-width: 500px;
       margin-right: 400px;
       margin-top: 100px;
-      margin-right: 55%;
+      margin-right: 60%;
+    }
+
+    @media (min-width: 2200px ) {
+      width: 62.63158%;
+      max-width: 500px;
+      margin-right: 400px;
+      margin-top: 100px;
+      margin-right: 58%;
+    }
+
+    @media (min-width: 2800px ) {
+      width: 62.63158%;
+      max-width: 500px;
+      margin-right: 400px;
+      margin-top: 100px;
+      margin-right: 62%;
+    }
+
+    @media (min-width: 3100px ) {
+      width: 62.63158%;
+      max-width: 500px;
+      margin-right: 400px;
+      margin-top: 100px;
+      margin-right: 67%;
     }
   }
 // }
