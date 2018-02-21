@@ -1,4 +1,5 @@
 import { createRating, updateRating, deleteRating } from '../../actions/rating_actions';
+import { fetchRecipes } from '../../actions/recipe_actions';
 import {connect} from 'react-redux';
 import RatingsIndex from './ratings_index';
 import React from 'react';
@@ -9,7 +10,7 @@ const mapStateToProps = (state,ownProps) => {
   let currentRecipeRatings = currentRecipe.ratings;
   let currentRating = currentRecipeRatings.length === 0 ? [] : currentRecipeRatings.filter((rating) =>
                         rating.user_id === state.session.currentUser.id);
-
+debugger
   let currentRatingNum = currentRating.length !== 0 ? currentRating[0].rating : 0 ;
   let averageRating = 0;
   if(currentRecipeRatings.length >= 1) {
@@ -35,7 +36,8 @@ const mapDispatchToProps = (dispatch,ownProps) => {
   return {
     deleteRating: (ratingId) => dispatch(deleteRating(ratingId)),
     createRating: (rating) => dispatch(createRating(rating)),
-    updateRating: (rating) => dispatch(updateRating(rating))
+    updateRating: (rating) => dispatch(updateRating(rating)),
+    fetchRecipes: () => dispatch(fetchRecipes())
   };
 };
 

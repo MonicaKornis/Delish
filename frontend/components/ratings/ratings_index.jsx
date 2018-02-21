@@ -63,8 +63,9 @@ class RatingsIndex extends React.Component {
   }
 
   handleSubmit(e,num) {
+    // debugger
     if(this.state.currentRating !== 0) {
-    this.props.updateRating({"rating": num, "recipe_id": this.props.currentRecipe.id, id: this.props.currentRating[0].id});
+      this.props.updateRating({"rating": num, "recipe_id": this.props.currentRecipe.id, id: this.props.currentRating[0].id});
       this.setState({currentRating: num});
     } else {
       this.props.createRating({"rating": num, "recipe_id": this.props.currentRecipe.id});
@@ -72,12 +73,15 @@ class RatingsIndex extends React.Component {
     }
       this.setState({hoverStatus: 'saved'});
       this.setState({classNames: ['savedRatingFill','savedRatingFill','savedRatingFill','savedRatingFill','savedRatingFill']});
+      this.props.fetchRecipes();
   }
 
   removeRating(e,id) {
+    // debugger
     if(id) {
       this.props.deleteRating(id);
       this.setState({currentRating: 0});
+      this.props.fetchRecipes();
     }
   }
 
