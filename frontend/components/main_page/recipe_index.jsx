@@ -49,15 +49,19 @@ class RecipeIndex extends React.Component {
   }
 
   handleImageClick(e,id) {
+    if(this.props.currentUser !== undefined ) {
     this.props.history.push(`/recipes/${id}`);
+    } else {
+        this.props.history.push(`/login`);
+    }
   }
 
   handleLike(recipeId){
-    if(this.props.likedRecipes.includes(recipeId)) {
+    if(this.props.likedRecipes.includes(recipeId) && this.props.currentUser !== undefined ) {
       return (e) => {
         return this.props.unlikeRecipe(recipeId);
       };
-    } else {
+    } else if (this.props.currentUser !== undefined ){
       return (e) => {
         return this.props.likeRecipe(recipeId);
       };
@@ -106,7 +110,7 @@ class RecipeIndex extends React.Component {
           <div id='recipe-circle' onClick={this.handleFeature}>RECIPE <br/>OF THE DAY</div>
           <div id='recipe-title' onClick={this.handleFeature}>
             <h2>Tumeric Tea</h2>
-            <div id='feature-description'>A falvorful drink to warm the <br/> body and soul.</div>
+            <div id='feature-description'>A flavorful drink to warm the <br/> body and soul.</div>
             <h3>Monica Kornis</h3>
           </div>
         </div>
