@@ -4,7 +4,6 @@ import { RECEIVE_RATING, REMOVE_RATING } from '../actions/rating_actions';
 import merge from 'lodash/merge';
 
 const recipesReducer = (oldState={}, action) => {
-  debugger
   let newState = {};
   switch (action.type) {
     case RECEIVE_ALL_RECIPES:

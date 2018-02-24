@@ -70,7 +70,6 @@
   display: block;
   font-weight: 500;
   display: block;
-  cursor: pointer;
 }
 
 .title-wrapper {
@@ -98,6 +97,7 @@
   text-decoration: none;
   color: black;
   height: 44px;
+  cursor: pointer;
 }
 
 #author {
@@ -324,3 +324,7 @@
       font-size: 28px;
     }
   }
+
+.fa-bookmark-o {
+  cursor: pointer;
+}

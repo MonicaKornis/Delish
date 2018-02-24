@@ -4,6 +4,7 @@ import RecipeIndexItem from './recipe_index_item';
 import SessionFormContainer from '../session/session_form_container';
 import RecipeFormContainer from '../recipe_form/recipe_form_container';
 // const Modal = require('react-modal');
+import { LastLocationProvider } from 'react-router-last-location';
 import Modal from 'react-modal';
 
 const customStyles = {
@@ -44,6 +45,8 @@ class RecipeIndex extends React.Component {
   }
 
   componentDidMount(){
+    debugger
+    let loc = JSON.stringify(this.props.lastLocation);
     window.scrollTo(0, 0);
     this.props.fetchRecipes();
   }
