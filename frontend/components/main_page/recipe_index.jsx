@@ -45,7 +45,7 @@ class RecipeIndex extends React.Component {
   }
 
   componentDidMount(){
-    debugger
+
     let loc = JSON.stringify(this.props.lastLocation);
     window.scrollTo(0, 0);
     this.props.fetchRecipes();

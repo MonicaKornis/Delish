@@ -63,7 +63,7 @@ class RatingsIndex extends React.Component {
   }
 
   handleSubmit(e,num) {
-    // debugger
+    // 
     if(this.state.currentRating !== 0) {
       this.props.updateRating({"rating": num, "recipe_id": this.props.currentRecipe.id, id: this.props.currentRating[0].id});
       this.setState({currentRating: num});
@@ -77,7 +77,7 @@ class RatingsIndex extends React.Component {
   }
 
   removeRating(e,id) {
-    // debugger
+    // 
     if(id) {
       this.props.deleteRating(id);
       this.setState({currentRating: 0});

@@ -16,7 +16,7 @@ const mapStateToProps = (state) => {
    }
  });
 
- debugger
+ 
 
   return {
     recipes: recipes,
