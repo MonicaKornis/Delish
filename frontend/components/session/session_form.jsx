@@ -74,11 +74,11 @@ class SessionForm extends React.Component {
 
             <div id='session-input'>
             <label> Email:
-              <input id='modal-input' placeholder='Email' type="text" value={this.state.email} onChange={this.update('email')}/>
+              <input className='modal-input' placeholder='Email' type="text" value={this.state.email} onChange={this.update('email')}/>
             </label>
 
             <label> Password:
-              <input id='modal-input' placeholder='Password' type="password" value={this.state.password} onChange={this.update('password')}/>
+              <input className='modal-input' placeholder='Password' type="password" value={this.state.password} onChange={this.update('password')}/>
             </label>
              <br/>
           <input className='button' type="submit" value={buttonVal}/>
