@@ -118,7 +118,7 @@ class RecipeShow extends React.Component {
 
                   <div id="DIV_1">
 
-                       <div id="recipeImage">
+                       <div id="recipeImage" >
                          <img id='img' src={recipe.image_url} />
                        </div>
 
