@@ -32,16 +32,20 @@
 .flex-recipe-grid {
   background-color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  padding: 30px;
-  width: 80%;
-  margin: auto;
+  padding: 0px;
+  width: 100%;
 }
-// .flex-recipe-grid > * {
-//   margin: 1em;
-//   width: 140px;
-// }
+
+.index-recipe-grid {
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0px;
+  width: 100%;
+}
 
 .col-recipe-index {
   padding: 4px;
@@ -332,4 +336,14 @@
 #indexImageWrapper {
   overflow: hidden;
   max-height: 98px;
+}
+
+.gridWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 11vw;
+  padding-right: 5vw;
+  align-self: center;
+  margin: auto;
 }

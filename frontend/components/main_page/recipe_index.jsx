@@ -100,10 +100,13 @@ class RecipeIndex extends React.Component {
     let authoredRecipes = this.props.authoredRecipes || [];
     let AuthoredRecipeItems = (<div></div>);
     let mainClass;
+    let mainGrid;
     let containerId;
 
     if(this.props.match.path !== '/recipes/recipe-box') {
+      mainGrid = 'gridWrapper';
       mainClass = 'flex-recipe-grid';
+      // flexGrid = 'index-recipe-grid';
       containerId = 'main';
       recipeIndexHeader = (
       <div>
@@ -127,6 +130,7 @@ class RecipeIndex extends React.Component {
       );
     } else {
       containerId = 'recipe-box-container';
+      mainGrid = '';
       mainClass = 'recipe-box';
       recipeIndexHeader = (
         <div className='recipeBoxHeader'>
@@ -191,26 +195,28 @@ class RecipeIndex extends React.Component {
         <div className='index-header'>
         </div>
 
-          <div className={mainClass}>
+        <div className={mainGrid}>
+            <div className={mainClass}>
 
 
-            {
-              this.props.recipes.map( (recipe,index) =>
-                <RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
-              )
-            }
+              {
+                this.props.recipes.map( (recipe,index) =>
+                  <RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
+                )
+              }
+            </div>
+          {recipeIndexFooter}
+
+          <div className='index-header'>
           </div>
-        {recipeIndexFooter}
-
-        <div className='index-header'>
-        </div>
-
-        <br></br>
-        <br></br>
-
-        {AuthoredRecipeItems}
 
           <br></br>
+          <br></br>
+
+          {AuthoredRecipeItems}
+
+            <br></br>
+        </div>
       </div>
     );
   }
