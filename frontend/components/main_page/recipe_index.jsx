@@ -195,7 +195,7 @@ class RecipeIndex extends React.Component {
         <div className='index-header'>
         </div>
 
-        <div className={mainGrid}>
+        <div id={mainGrid}>
             <div className={mainClass}>
 
 
