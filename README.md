@@ -22,6 +22,10 @@
   * Users can upload their favorite recipes to share with others. 
   
        ![Bilby Stampede](https://i.imgur.com/6m8745X.png)
+       
+  * Users can search recipes based on title. 
+  * Implemented star ratings so users can rate recipes on a scale from 1-5. 
+  
  
 ## Technologies 
   * Ruby on Rails 
@@ -30,7 +34,5 @@
   * PostgreSQL
   
 ## Future Implementations 
-  * Search bar that enables users to search for recipes based on title, ingredient, or cooking technique. 
-  * Star Ratings 
   * Tags/Categories that users can apply to each recipe and are displayed on each recipe's show page. 
   * 'Cooking Guides' that showcase specific how-tos and cooking techniques. 
