@@ -20,13 +20,29 @@
 
 #index-text-id {
   margin: auto;
-  width: 35%
+  width: 85%;
+  border-bottom: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#index-text-id:hover {
-  // border-bottom: 2px solid black;
-  box-shadow: inset 0px 0px 0px 3px black;
-  box-sizing: border-box;
+#index-text-id img {
+  width: 45%;
+  // margin-bottom: 5%;
+}
+
+#index-text-id p {
+  font-size: .8em;
+  margin-bottom: 5%;
+}
+
+
+#index-text-id img:hover {
+  border-bottom: 1px solid black;
+  // box-shadow: inset 0px 0px 0px 3px black;
+  // box-sizing: border-box;
 }
 
 .flex-recipe-grid {
@@ -38,6 +54,7 @@
   width: 100%;
   flex-grow: 1;
   margin-left: 3vh;
+  // background-color: blue;
 }
 
 .index-recipe-grid {

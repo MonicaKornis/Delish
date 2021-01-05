@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import RecipeIndexItem from './recipe_index_item';
 import SessionFormContainer from '../session/session_form_container';
 import RecipeFormContainer from '../recipe_form/recipe_form_container';
-// const Modal = require('react-modal');
 import { LastLocationProvider } from 'react-router-last-location';
 import Modal from 'react-modal';
 
@@ -124,6 +123,7 @@ class RecipeIndex extends React.Component {
 
           <div id='index-text-id'>
             <img src={window.staticImages.indexText}/>
+            <p>RECIPES, GUIDES AND MORE FOR THE WEEK OF JANUARY 3RD</p>
           </div>
 
         </div>

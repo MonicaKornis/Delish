@@ -19,7 +19,7 @@
     "webpack": "^3.10.0"
   },
   "devDependencies": {
-    "redux-logger": "^3.0.6"
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -47,8 +47,5 @@
   "bugs": {
     "url": "https://github.com/MonicaKornis/Delish/issues"
   },
-  "homepage": "https://github.com/MonicaKornis/Delish#readme",
-  "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0"
-  }
+  "homepage": "https://github.com/MonicaKornis/Delish#readme"
 }
