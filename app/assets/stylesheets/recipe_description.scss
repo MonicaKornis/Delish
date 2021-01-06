@@ -16,7 +16,10 @@ html, body {
 }
 
 #saveButton {
-  margin-top: 2%
+  margin-top: 2%;
+  display: flex;
+  width:  53%;
+  justify-content: flex-end;
 }
 
 @media (max-width: 699px) {
@@ -38,8 +41,8 @@ html, body {
     width: 50.63158%;
     width: 80%;
     max-height: 100%;
-    margin-top: 20%;
-    margin-right: 190px;
+    // margin-top: 20%;
+    // margin-right: 190px;
   }
 
   #description {
@@ -53,7 +56,7 @@ html, body {
     font-size: 18px;
     font-weight: normal;
     width: 80%;
-    padding-top: 0%;
+    // padding-top: 0%;
     font-family: 'Domine', serif;
     font-size: 15px;
     font-weight: bold;
@@ -93,7 +96,7 @@ html, body {
       overflow: hidden;
       max-height: 100%;
       max-width: 500px;
-      margin-top: 100px;
+      // margin-top: 8%;
       margin-right: 190px;
     }
 
@@ -104,7 +107,7 @@ html, body {
       overflow: hidden;
       margin-right: 400px;
       max-height: 100%;
-      margin-top: 100px;
+      // margin-top: 100px;
       margin-right: 32%;
     }
 
@@ -201,7 +204,7 @@ html, body {
       font-family: 'Domine', serif;
       font-weight: normal;
       width: 200px;
-      padding-top: 9%;
+      // padding-top: 9%;
       font-family: 'Domine', serif;
       font-size: 16px;
       font-weight: bold;
@@ -239,6 +242,7 @@ html, body {
   word-spacing: -.15em;
   margin-top: 12px;
   cursor: pointer;
+  margin-left: 1em;
 }
 
 

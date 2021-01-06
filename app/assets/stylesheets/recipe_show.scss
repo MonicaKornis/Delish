@@ -190,7 +190,7 @@
     letter-spacing: 0.5px;
     text-align: left;
     text-decoration: none solid rgb(34, 34, 34);
-    width: 716.25px;
+    width: 95%;
     column-rule-color: rgb(34, 34, 34);
     perspective-origin: 358.125px 25.7422px;
     transform-origin: 358.125px 25.7422px;
@@ -199,7 +199,13 @@
     margin: 0px;
     outline: rgb(34, 34, 34) none 0px;
     padding: 0px;
+    display: flex;
+    justify-content: space-between;
 }/*#UL_9*/
+
+.time-and-servings {
+  width: 50%;
+}
 
 #yield-and-servings {
     box-sizing: border-box;

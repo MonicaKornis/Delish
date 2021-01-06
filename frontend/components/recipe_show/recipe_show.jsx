@@ -96,18 +96,20 @@ class RecipeShow extends React.Component {
         		</h3>
           </div>
 
-        		<ul id="subHeader">
-        			<li id="yield-and-servings">
-        				 <span id="SPAN_11">Yield</span> <span id="SPAN_12"> 4 servings</span>
-        			</li>
-        			<li id="LI_13">
-        			 <span id="SPAN_15">Time</span> <span id="SPAN_16">{`  ${recipe.cooking_time} minutes`}</span>
-        			</li>
+        		<div id="subHeader">
+              <div class='time-and-servings'>
+          			<div id="yield-and-servings">
+          				 <span id="SPAN_11">Yield</span> <span id="SPAN_12"> 4 servings</span>
+          			</div>
+          			<div id="LI_13">
+          			 <span id="SPAN_15">Time</span> <span id="SPAN_16">{`  ${recipe.cooking_time} minutes`}</span>
+          			</div>
+              </div>
               <div id='saveButton'>
                 <span onClick={this.handleLike(this.props.recipe.id)} id='recipeSave'>{this.state.buttonMessage}</span> <br/>
                 <span onClick={(e) => this.deleteRecipe(e,this.props.recipe.id)} id={ this.props.currentUser === this.props.recipe.authorId ? 'recipeSave' : 'displayNone'}>    Delete Recipe    </span>
               </div>
-        		</ul>
+        		</div>
 
 
 
