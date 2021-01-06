@@ -13,6 +13,9 @@ html, body {
   font: Georgia, "Times New Roman", serif;
   justify-content: space-between;
   margin-top: 20px;
+  width: 95%;
+  flex-direction: row-reverse;
+  display: flex;
 }
 
 #saveButton {
@@ -97,7 +100,7 @@ html, body {
       max-height: 100%;
       max-width: 500px;
       // margin-top: 8%;
-      margin-right: 190px;
+      // margin-right: 190px;
     }
 
     @media (min-width: 1100px) {
@@ -105,10 +108,10 @@ html, body {
       max-width: 550px;
       // margin-right: 300px;
       overflow: hidden;
-      margin-right: 400px;
+      // margin-right: 400px;
       max-height: 100%;
-      // margin-top: 100px;
-      margin-right: 32%;
+      // // margin-top: 100px;
+      // margin-right: 32%;
     }
 
     @media (min-width: 1500px ) {
