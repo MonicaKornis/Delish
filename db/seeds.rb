@@ -30,9 +30,10 @@ titles = ['','Cinnamon Rolls With Icing', 'Soy-Sauce-Pickled Eggs','Omelet With 
 
  (1..30).each do |num|
    # path = "./app/assets/images/#{num}.jpg"
+   author = num.even? ? 'Anthony@gmail.com' : 'Gordon@gmail.com'
    recipe = Recipe.new(title: titles[num],
                 description: "Easy, healthful and infinitely adaptable, grain bowls are equally ideal for feeding a family (picky eaters can build it to suit their own tastes) and using up leftovers in the fridge. You could also cook up the ingredients at the beginning of the week, and mix and match ingredients at will as the week progresses",
-                author_id: User.find_by(email: 'MonicaKornis@gmail.com').id,
+                author_id: User.find_by(email: author ).id,
                 cooking_time: rand(32..59),
                 steps: ['Working with a mixer or by hand, beat the butter and sugar together until creamy and light. Beat in the almond flour and the salt. Mix in 1 whole egg, then the white from the second egg.',
                 'Mix the yolk with 1 teaspoon cold water; cover, and refrigerate until needed.',
