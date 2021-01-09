@@ -30,7 +30,7 @@ titles = ['','Cinnamon Rolls With Icing', 'Soy-Sauce-Pickled Eggs','Omelet With 
 
  (1..30).each do |num|
    # path = "./app/assets/images/#{num}.jpg"
-   author = num.even? ? 'Anthony@gmail.com' : 'Gordon@gmail.com'
+   author = num % 3 === 0 ? 'Marco@gmail.com' : num.even? ? 'Anthony@gmail.com' : 'Gordon@gmail.com'
    recipe = Recipe.new(title: titles[num],
                 description: "Easy, healthful and infinitely adaptable, grain bowls are equally ideal for feeding a family (picky eaters can build it to suit their own tastes) and using up leftovers in the fridge. You could also cook up the ingredients at the beginning of the week, and mix and match ingredients at will as the week progresses",
                 author_id: User.find_by(email: author ).id,
