@@ -101,10 +101,16 @@ class RecipeIndex extends React.Component {
     let mainClass;
     let mainGrid;
     let containerId;
+    let recipeIndexItems  = this.props.recipes ? this.props.recipes.map( (recipe,index) =>
+      <RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
+    ) : [];
+    let recipeCarousel = [];
+
 
     if(this.props.match.path !== '/recipes/recipe-box') {
       mainGrid = 'gridWrapper';
       mainClass = 'flex-recipe-grid';
+
       // flexGrid = 'index-recipe-grid';
       containerId = 'main';
       recipeIndexHeader = (
@@ -128,6 +134,10 @@ class RecipeIndex extends React.Component {
 
         </div>
       );
+
+      recipeCarousel = (
+        <div class='carousel-container' style={{backgroundColor: 'pink', width: '50vh', height: '20vh'}}></div>
+      )
     } else {
       containerId = 'recipe-box-container';
       mainGrid = '';
@@ -210,6 +220,8 @@ class RecipeIndex extends React.Component {
           <div className='index-header'>
           </div>
 
+
+
           <br></br>
           <br></br>
 
@@ -217,6 +229,7 @@ class RecipeIndex extends React.Component {
 
             <br></br>
         </div>
+          {recipeCarousel}
       </div>
     );
   }
