@@ -102,8 +102,7 @@ class RecipeIndex extends React.Component {
     let mainGrid;
     let containerId;
     let recipeIndexItems  = this.props.recipes ? this.props.recipes.map( (recipe,index) =>
-      <RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/>
-    ) : [];
+      <div className={index > 4 ? 'carousel-item' : 'carousel-item visible'}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : [];
     let recipeCarousel = [];
 
 
@@ -136,7 +135,13 @@ class RecipeIndex extends React.Component {
       );
 
       recipeCarousel = (
-        <div class='carousel-container' style={{backgroundColor: 'pink', width: '50vh', height: '20vh'}}></div>
+        <div className='carousel' style={{backgroundColor: 'pink', width: '50vh', height: '20vh'}}>
+          <div className='carousel-actions'>
+            <button id='carousel-button-prev' aria-label='previous recipies'>PREV</button>
+            <button id='carousel-button-next' aria-label='next recipies'>NEXT</button>
+          </div>
+          {recipeIndexItems}
+        </div>
       )
     } else {
       containerId = 'recipe-box-container';
