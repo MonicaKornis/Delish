@@ -366,8 +366,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding-left: 11vw;
-  // padding-right: 5vw;
   align-self: center;
   margin: auto;
   width: 63%;
@@ -377,11 +375,13 @@
 // -----------------------------
 
 .carousel  {
-  width: 70%;
+  width: 71%;
   display: flex;
-  // justify-content: space-between;
   overflow: hidden;
-  max-width: 900px;
+  max-width: 850px;
+  min-width: 477px;
+  margin: 0px;
+  position: relative;
 }
 
 .carousel-item {
@@ -398,10 +398,7 @@
   width: 100%;
   overflow: hidden;
   position: relative;
-  // background-image: image-url('right.png');
-  // background-repeat: repeat-y;
-  // border-image: url('right.png') 100 round;
-  // border-image-width: 88px;
+  max-width: 900px;
 }
 
 #carousel-button-next {
@@ -411,39 +408,48 @@
   font-weight: bold;
   display: none;
   height: 100%;
+  position: absolute;
+  left: 92%;
+  width: 48px;
+  z-index: 12;
+
 }
 
-#adjacent {
+#adjacent-2 {
   width: 2%;
-  // height: 100%;
+  position: absolute;
   content: '  ';
   z-index: 7;
   float: left;
   float: flex;
-  align-items: center;
-  // background-image: image-url('right.png');
-  // background-repeat: repeat-y;
-  // width: 88px;
-}
-
-.carousel-item-container::after  {
+  left: 90%;
+  justify-content: flex-end;
   background-image: image-url('right.png');
   background-repeat: repeat-y;
-  width: 88px;
-  content: '';
-  display: inline-block;
+  width: 95px;
+  height: 100%;
 }
 
-.carousel-item-container::before  {
-  background-image: image-url('left.png');
-  background-repeat: repeat-y;
-  width: 88px;
-  content: '';
-  display: inline-block;
-}
+// .carousel-item-container::after  {
+//   background-image: image-url('right.png');
+//   background-repeat: repeat-y;
+//   width: 88px;
+//   content: '';
+//   display: inline-block;
+// }
 
-#adjacent:hover #carousel-button-next{
-  display: inline-block;
+// .carousel-item-container::before  {
+//   background-image: image-url('left.png');
+//   background-repeat: repeat-y;
+//   width: 88px;
+//   content: '';
+//   display: inline-block;
+// }
+
+.carousel:hover #carousel-button-next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #carousel-button-prev {

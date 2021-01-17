@@ -135,12 +135,13 @@ class RecipeIndex extends React.Component {
       );
 
       recipeCarousel = (
-        <div className='carousel' style={{backgroundColor: 'pink'}}>
-          <span id='adjacent'></span><button id='carousel-button-prev' aria-label='previous recipies'>{'<'}</button>
+        <div className='carousel'>
+          <span id='adjacent-1'></span><button id='carousel-button-prev' aria-label='previous recipies'>{'<'}</button>
           <div className='carousel-item-container'>
             {recipeIndexItems}
           </div>
-          <span id='adjacent'><button id='carousel-button-next' aria-label='next recipies'>{'>'}</button></span>
+          <button id='carousel-button-next' className='carousel-button-next' aria-label='next recipies'>{'>'}</button>
+          <span id='adjacent-2'></span>
         </div>
       )
     } else {
