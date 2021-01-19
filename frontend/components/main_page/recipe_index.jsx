@@ -28,6 +28,7 @@ class RecipeIndex extends React.Component {
     this.openRecipeModal = this.openRecipeModal.bind(this);
     this.handleFeature = this.handleFeature.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   closeRecipeModal() {
@@ -46,7 +47,10 @@ class RecipeIndex extends React.Component {
   componentDidMount(){
     // let loc = JSON.stringify(this.props.lastLocation);
     window.scrollTo(0, 0);
+    this.setState({ width: 0, height: 0, carouselItems: 5})
     this.props.fetchRecipes();
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
   }
 
   handleImageClick(e,id) {
@@ -56,6 +60,26 @@ class RecipeIndex extends React.Component {
         this.props.history.push(`/login`);
     }
   }
+
+updateWindowDimensions () {
+  debugger
+  let numberOfCaroselItems = 0
+  switch (true) {
+    case window.innerWidth <= 850 && window.innerWidth >= 600:
+      numberOfCaroselItems = 3;
+    case window.innerWidth < 600 && window.innerWidth > 400 :
+      numberOfCaroselItems = 2;
+    case window.innerWidth < 400:
+      numberOfCaroselItems = 1;
+      break;
+    default:
+    numberOfCaroselItems = 4;
+  }
+
+  console.log(`${window.innerWidth} width ${numberOfCaroselItems} items`)
+  debugger
+  this.setState({ width: window.innerWidth, height: window.innerHeight, numberOfCaroselItems: numberOfCaroselItems});
+}
 
   handleLike(recipeId){
     if(this.props.likedRecipes.includes(recipeId) && this.props.currentUser !== undefined ) {
@@ -102,7 +126,7 @@ class RecipeIndex extends React.Component {
     let mainGrid;
     let containerId;
     let recipeIndexItems  = this.props.recipes ? this.props.recipes.map( (recipe,index) =>
-      <div className={index > 4 ? 'carousel-item' : 'carousel-item visible'}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : [];
+      <div className={index > this.state.numberOfCaroselItems ? 'carousel-item' : 'carousel-item visible'}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : [];
     let recipeCarousel = [];
 
 
