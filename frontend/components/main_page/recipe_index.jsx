@@ -62,21 +62,26 @@ class RecipeIndex extends React.Component {
   }
 
 updateWindowDimensions () {
-  debugger
+
   let numberOfCaroselItems = 0
   switch (true) {
-    case window.innerWidth <= 850 && window.innerWidth >= 600:
+    case window.innerWidth <= 880 && window.innerWidth >= 700:
+    debugger
       numberOfCaroselItems = 3;
-    case window.innerWidth < 600 && window.innerWidth > 400 :
+      break
+    case window.innerWidth < 700 && window.innerWidth > 550 :
+    debugger
       numberOfCaroselItems = 2;
-    case window.innerWidth < 400:
+      break
+    case window.innerWidth < 550:
+    debugger
       numberOfCaroselItems = 1;
       break;
     default:
     numberOfCaroselItems = 4;
   }
 
-  console.log(`${window.innerWidth} width ${numberOfCaroselItems} items`)
+  console.log(`${window.innerWidth} width ${numberOfCaroselItems} items`);
   debugger
   this.setState({ width: window.innerWidth, height: window.innerHeight, numberOfCaroselItems: numberOfCaroselItems});
 }
