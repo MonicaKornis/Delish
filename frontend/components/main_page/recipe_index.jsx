@@ -65,20 +65,20 @@ updateWindowDimensions () {
 
   let numberOfCaroselItems = 0
   switch (true) {
-    case window.innerWidth <= 880 && window.innerWidth >= 700:
+    case window.innerWidth > 850:
+    debugger
+      numberOfCaroselItems = 5;
+      break
+    case window.innerWidth >= 500 && window.innerWidth <= 850 :
+    debugger
+      numberOfCaroselItems = 4;
+      break
+    case window.innerWidth < 500:
     debugger
       numberOfCaroselItems = 3;
-      break
-    case window.innerWidth < 700 && window.innerWidth > 550 :
-    debugger
-      numberOfCaroselItems = 2;
-      break
-    case window.innerWidth < 550:
-    debugger
-      numberOfCaroselItems = 1;
       break;
     default:
-    numberOfCaroselItems = 4;
+    numberOfCaroselItems = 5;
   }
 
   console.log(`${window.innerWidth} width ${numberOfCaroselItems} items`);
