@@ -53,7 +53,6 @@
   padding: 0px;
   width: 100%;
   flex-grow: 1;
-  // margin-left: 3vh;
   // background-color: blue;
 }
 
@@ -76,7 +75,7 @@
   margin-bottom: 12px;
   // flex-basis: 112px;
   // flex-grow: 1;
-  width: 146px;
+  width: 163px;
   // width: 235px;
   // height: 210px;
   display: block;
@@ -359,7 +358,12 @@
 
 #indexImageWrapper {
   overflow: hidden;
-  max-height: 98px;
+  max-height: 125px;
+}
+
+.recipeIndexImage {
+  cursor: pointer;
+  min-height: 125px;
 }
 
 #gridWrapper {
@@ -369,6 +373,7 @@
   align-self: center;
   margin: auto;
   width: 63%;
+  display: none;
 }
 
 
@@ -380,8 +385,8 @@
   overflow: hidden;
   max-width: 850px;
   // min-width: 477px;
-  margin: 0px;
   position: relative;
+  margin: 0 auto;
 }
 
 .carousel-item {
@@ -409,10 +414,10 @@
   display: none;
   height: 100%;
   position: absolute;
-  left: 92%;
-  width: 48px;
+  left: 95%;
+  width: 35px;
   z-index: 12;
-
+  top: -21px;
 }
 
 #adjacent-2 {
@@ -422,11 +427,11 @@
   z-index: 7;
   float: left;
   float: flex;
-  left: 90%;
+  left: 94%;
   justify-content: flex-end;
   background-image: image-url('right.png');
   background-repeat: repeat-y;
-  width: 95px;
+  width: 46px;
   height: 100%;
   font-family: 'franklin-700';
 }
@@ -439,4 +444,14 @@
 
 #carousel-button-prev {
   display: none;
+}
+
+@media(max-width: 550px) {
+  #adjacent-2 {
+    left: 89%;
+  }
+
+  #carousel-button-next {
+    left: 90%;
+  }
 }

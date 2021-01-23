@@ -81,7 +81,7 @@ updateWindowDimensions () {
     numberOfCaroselItems = 5;
   }
 
-  carouselWidth = (numberOfCaroselItems * 155) - widthDecrease;
+  carouselWidth = (numberOfCaroselItems * 168) - widthDecrease;
   console.log(`${window.innerWidth} width ${numberOfCaroselItems} items, actual width ${carouselWidth}`);
   debugger
   this.setState({ width: window.innerWidth, height: window.innerHeight, numberOfCaroselItems: numberOfCaroselItems, carouselWidth: carouselWidth});
@@ -128,12 +128,13 @@ updateWindowDimensions () {
     let authoredCount = this.props.authoredRecipeIds ? this.props.authoredRecipeIds.length : 0;
     let authoredRecipes = this.props.authoredRecipes || [];
     let AuthoredRecipeItems = (<div></div>);
+    let carouselRecipes = this.props.recipes ? this.props.recipes.slice(3,8) : []
     let mainClass;
     let mainGrid;
     let containerId;
       debugger
-    let recipeIndexItems  = this.props.recipes ? this.props.recipes.map( (recipe,index) =>
-      <div className={index >= this.state.numberOfCaroselItems ? 'carousel-item' : 'carousel-item visible'}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : [];
+    let recipeIndexItems  = this.props.recipes ? carouselRecipes.map( (recipe,index) =>
+      <div className={index >= this.state.numberOfCaroselItems ? 'carousel-item' : 'carousel-item visible'}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : []
     let recipeCarousel = [];
 
     debugger
