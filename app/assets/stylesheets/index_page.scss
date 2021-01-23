@@ -375,18 +375,18 @@
 // -----------------------------
 
 .carousel  {
-  width: 71%;
+  // width: 71%;
   display: flex;
   overflow: hidden;
   max-width: 850px;
-  min-width: 477px;
+  // min-width: 477px;
   margin: 0px;
   position: relative;
 }
 
 .carousel-item {
   display: none;
-  width: 31%;
+  width: 47%;
 }
 
 .visible {
@@ -430,22 +430,6 @@
   height: 100%;
   font-family: 'franklin-700';
 }
-
-// .carousel-item-container::after  {
-//   background-image: image-url('right.png');
-//   background-repeat: repeat-y;
-//   width: 88px;
-//   content: '';
-//   display: inline-block;
-// }
-
-// .carousel-item-container::before  {
-//   background-image: image-url('left.png');
-//   background-repeat: repeat-y;
-//   width: 88px;
-//   content: '';
-//   display: inline-block;
-// }
 
 .carousel:hover #carousel-button-next{
     display: flex;

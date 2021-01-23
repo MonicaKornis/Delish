@@ -63,27 +63,28 @@ class RecipeIndex extends React.Component {
 
 updateWindowDimensions () {
 
-  let numberOfCaroselItems = 0
+  let numberOfCaroselItems = 0;
+  let carouselWidth = 0;
+  let widthDecrease = 100;
   switch (true) {
     case window.innerWidth > 850:
-    debugger
       numberOfCaroselItems = 5;
       break
-    case window.innerWidth >= 500 && window.innerWidth <= 850 :
-    debugger
+    case window.innerWidth >= 550 && window.innerWidth <= 850 :
       numberOfCaroselItems = 4;
       break
-    case window.innerWidth < 500:
-    debugger
+    case window.innerWidth < 550:
       numberOfCaroselItems = 3;
+      widthDecrease = 110;
       break;
     default:
     numberOfCaroselItems = 5;
   }
 
-  console.log(`${window.innerWidth} width ${numberOfCaroselItems} items`);
+  carouselWidth = (numberOfCaroselItems * 155) - widthDecrease;
+  console.log(`${window.innerWidth} width ${numberOfCaroselItems} items, actual width ${carouselWidth}`);
   debugger
-  this.setState({ width: window.innerWidth, height: window.innerHeight, numberOfCaroselItems: numberOfCaroselItems});
+  this.setState({ width: window.innerWidth, height: window.innerHeight, numberOfCaroselItems: numberOfCaroselItems, carouselWidth: carouselWidth});
 }
 
   handleLike(recipeId){
@@ -130,11 +131,12 @@ updateWindowDimensions () {
     let mainClass;
     let mainGrid;
     let containerId;
+      debugger
     let recipeIndexItems  = this.props.recipes ? this.props.recipes.map( (recipe,index) =>
-      <div className={index > this.state.numberOfCaroselItems ? 'carousel-item' : 'carousel-item visible'}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : [];
+      <div className={index >= this.state.numberOfCaroselItems ? 'carousel-item' : 'carousel-item visible'}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : [];
     let recipeCarousel = [];
 
-
+    debugger
     if(this.props.match.path !== '/recipes/recipe-box') {
       mainGrid = 'gridWrapper';
       mainClass = 'flex-recipe-grid';
@@ -164,7 +166,7 @@ updateWindowDimensions () {
       );
 
       recipeCarousel = (
-        <div className='carousel'>
+        <div className='carousel' style={{width: this.state.carouselWidth}}>
           <span id='adjacent-1'></span><button id='carousel-button-prev' aria-label='previous recipies'>{'<'}</button>
           <div className='carousel-item-container'>
             {recipeIndexItems}
