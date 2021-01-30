@@ -23,12 +23,14 @@ class RecipeIndex extends React.Component {
     super(props);
     this.handleLike= this.handleLike.bind(this);
     this.handleColor = this.handleColor.bind(this);
-    this.state = { recipeModalOpen: false };
+    this.state = { recipeModalOpen: false, width: 0, height: 0, carouselItems: 5, carouselOneIndexStart: 8, carouselOneIndexEnd: 13};
     this.closeRecipeModal = this.closeRecipeModal.bind(this);
     this.openRecipeModal = this.openRecipeModal.bind(this);
     this.handleFeature = this.handleFeature.bind(this);
     this.handleImageClick = this.handleImageClick.bind(this);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.rotateCarouselForward = this.rotateCarouselForward.bind(this);
+    this.rotateCarouselBack = this.rotateCarouselBack.bind(this);
   }
 
   closeRecipeModal() {
@@ -44,10 +46,20 @@ class RecipeIndex extends React.Component {
     Modal.setAppElement('body');
   }
 
+  rotateCarouselForward(e) {
+    let carouselShift = this.state.numberOfCaroselItems - 1;
+    let carouselOneIndexStart = this.state.carouselOneIndexStart + carouselShift;
+    let carouselOneIndexEnd = carouselOneIndexStart + this.state.numberOfCaroselItems;
+    this.setState({carouselOneIndexStart: carouselOneIndexStart, carouselOneIndexEnd: carouselOneIndexEnd})
+  }
+
+  rotateCarouselBack() {
+
+  }
+
+
   componentDidMount(){
-    // let loc = JSON.stringify(this.props.lastLocation);
     window.scrollTo(0, 0);
-    this.setState({ width: 0, height: 0, carouselItems: 5})
     this.props.fetchRecipes();
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
@@ -82,9 +94,10 @@ updateWindowDimensions () {
   }
 
   carouselWidth = (numberOfCaroselItems * 168) - widthDecrease;
-  console.log(`${window.innerWidth} width ${numberOfCaroselItems} items, actual width ${carouselWidth}`);
-  debugger
-  this.setState({ width: window.innerWidth, height: window.innerHeight, numberOfCaroselItems: numberOfCaroselItems, carouselWidth: carouselWidth});
+  let carouselOneIndexEnd = this.state.carouselOneIndexStart + carouselWidth;
+
+
+  this.setState({ width: window.innerWidth, height: window.innerHeight, numberOfCaroselItems: numberOfCaroselItems, carouselWidth: carouselWidth, carouselOneIndexEnd: carouselOneIndexEnd});
 }
 
   handleLike(recipeId){
@@ -128,7 +141,9 @@ updateWindowDimensions () {
     let authoredCount = this.props.authoredRecipeIds ? this.props.authoredRecipeIds.length : 0;
     let authoredRecipes = this.props.authoredRecipes || [];
     let AuthoredRecipeItems = (<div></div>);
-    let carouselRecipes = this.props.recipes ? this.props.recipes.slice(3,8) : []
+    let carouselOneStart  = this.state.carouselOneIndexStart;
+    let carouselOneEnd = this.state.carouselOneIndexEnd;
+    let carouselRecipes = this.props.recipes ? this.props.recipes.slice(carouselOneStart,carouselOneEnd) : [];
     let mainClass;
     let mainGrid;
     let containerId;
@@ -172,7 +187,7 @@ updateWindowDimensions () {
           <div className='carousel-item-container'>
             {recipeIndexItems}
           </div>
-          <button id='carousel-button-next' className='carousel-button-next' aria-label='next recipies'>{'>'}</button>
+          <button id='carousel-button-next' onClick={this.rotateCarouselForward}className='carousel-button-next' aria-label='next recipies'>{'>'}</button>
           <span id='adjacent-2'></span>
         </div>
       )
