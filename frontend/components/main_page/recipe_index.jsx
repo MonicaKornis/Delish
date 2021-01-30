@@ -47,6 +47,8 @@ class RecipeIndex extends React.Component {
   }
 
   rotateCarouselForward(e) {
+
+    console.log(e.target.parentElement)
     let carouselShift = this.state.numberOfCaroselItems - 1;
     let carouselOneIndexStart = this.state.carouselOneIndexStart + carouselShift;
     let carouselOneIndexEnd = carouselOneIndexStart + this.state.numberOfCaroselItems;
@@ -149,8 +151,11 @@ updateWindowDimensions () {
     let containerId;
       debugger
     let recipeIndexItems  = this.props.recipes ? carouselRecipes.map( (recipe,index) =>
-      <div className={index >= this.state.numberOfCaroselItems ? 'carousel-item' : 'carousel-item visible'}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : []
+      <div className={index >= this.state.numberOfCaroselItems ? 'carousel-item' : 'carousel-item visible'} key={index}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : []
     let recipeCarousel = [];
+    let hiddenClassOne =  this.state.carouselOneIndexStart === 8 ? ' hidden' : '';
+    let moveCarousel = this.state.carouselOneIndexStart !== 8 ? ' moved' : '';
+    console.log(this.state.carouselOneIndexStart)
 
     debugger
     if(this.props.match.path !== '/recipes/recipe-box') {
@@ -183,11 +188,12 @@ updateWindowDimensions () {
 
       recipeCarousel = (
         <div className='carousel' style={{width: this.state.carouselWidth}}>
-          <span id='adjacent-1'></span><button id='carousel-button-prev' aria-label='previous recipies'>{'<'}</button>
-          <div className='carousel-item-container'>
+          <span id='adjacent-1' className={'adjacent-1'}></span>
+          <button id='carousel-button-next' onClick={this.rotateCarouselBack} className={'carousel-button-back' + hiddenClassOne} aria-label='prevous recipes'>{'<'}</button>
+          <div className={'carousel-item-container' + moveCarousel}>
             {recipeIndexItems}
           </div>
-          <button id='carousel-button-next' onClick={this.rotateCarouselForward}className='carousel-button-next' aria-label='next recipies'>{'>'}</button>
+          <button id='carousel-button-next' onClick={this.rotateCarouselForward} className='carousel-button-next' aria-label='next recipies'>{'>'}</button>
           <span id='adjacent-2'></span>
         </div>
       )
