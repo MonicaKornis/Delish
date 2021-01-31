@@ -47,7 +47,7 @@ class RecipeIndex extends React.Component {
   }
 
   rotateCarouselForward(e) {
-    let carouselShift = this.state.numberOfCaroselItems - 1;
+    let carouselShift = this.state.numberOfCaroselItems;
     let carouselOneIndexStart = this.state.carouselOneIndexStart + carouselShift;
     let carouselOneIndexEnd = carouselOneIndexStart + this.state.numberOfCaroselItems;
     this.setState({carouselOneIndexStart: carouselOneIndexStart, carouselOneIndexEnd: carouselOneIndexEnd})
@@ -80,20 +80,20 @@ updateWindowDimensions () {
   let widthDecrease = 100;
   switch (true) {
     case window.innerWidth > 850:
-      numberOfCaroselItems = 5;
-      break
-    case window.innerWidth >= 550 && window.innerWidth <= 850 :
       numberOfCaroselItems = 4;
       break
-    case window.innerWidth < 550:
+    case window.innerWidth >= 550 && window.innerWidth <= 850 :
       numberOfCaroselItems = 3;
+      break
+    case window.innerWidth < 550:
+      numberOfCaroselItems = 2;
       widthDecrease = 110;
       break;
     default:
-    numberOfCaroselItems = 5;
+    numberOfCaroselItems = 4;
   }
 
-  carouselWidth = (numberOfCaroselItems * 168) - widthDecrease;
+  carouselWidth = (numberOfCaroselItems * 176);
   let carouselOneIndexEnd = this.state.carouselOneIndexStart + carouselWidth;
 
 
@@ -151,6 +151,7 @@ updateWindowDimensions () {
     let recipeIndexItems  = this.props.recipes ? carouselRecipes.map( (recipe,index) =>
       <div className={index >= this.state.numberOfCaroselItems ? 'carousel-item' : 'carousel-item visible'}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : []
     let recipeCarousel = [];
+    let carouselBackAvailable =  this.state.carouselOneIndexStart === 8 ? '' : ' back-available';
 
     debugger
     if(this.props.match.path !== '/recipes/recipe-box') {
@@ -182,12 +183,12 @@ updateWindowDimensions () {
       );
 
       recipeCarousel = (
-        <div className='carousel' style={{width: this.state.carouselWidth}}>
+        <div className={'carousel' + carouselBackAvailable} style={{width: this.state.carouselWidth}}>
           <span id='adjacent-1'></span><button id='carousel-button-prev' aria-label='previous recipies'>{'<'}</button>
           <div className='carousel-item-container'>
             {recipeIndexItems}
           </div>
-          <button id='carousel-button-next' onClick={this.rotateCarouselForward}className='carousel-button-next' aria-label='next recipies'>{'>'}</button>
+          <button id='carousel-button-next' onClick={this.rotateCarouselForward} className='carousel-button-next' aria-label='next recipies'>{'>'}</button>
           <span id='adjacent-2'></span>
         </div>
       )

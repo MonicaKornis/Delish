@@ -384,7 +384,8 @@
   display: flex;
   overflow: hidden;
   max-width: 850px;
-  // min-width: 477px;
+  padding-left: 16px;
+  padding-right: 16px;
   position: relative;
   margin: 0 auto;
 }
@@ -406,7 +407,7 @@
   max-width: 900px;
 }
 
-#carousel-button-next {
+#carousel-button-next, #carousel-button-prev {
   background: none;
   border: none;
   cursor: pointer;
@@ -414,26 +415,41 @@
   display: none;
   height: 100%;
   position: absolute;
-  left: 95%;
   width: 35px;
   z-index: 12;
   top: -21px;
+  font-size: 17px;
 }
 
+#carousel-button-next {
+  right: -9px;
+}
+
+#carousel-button-prev {
+  left: -9px;
+}
+
+// #adjacent-2 {
+//   width: 2%;
+//   position: absolute;
+//   content: '  ';
+//   z-index: 7;
+//   float: left;
+//   float: flex;
+//   justify-content: flex-end;
+//   background-image: image-url('right.png');
+//   background-repeat: repeat-y;
+//   width: 46px;
+//   height: 100%;
+//   font-family: 'franklin-700';
+// }
+
 #adjacent-2 {
-  width: 2%;
-  position: absolute;
-  content: '  ';
-  z-index: 7;
-  float: left;
-  float: flex;
   left: 94%;
-  justify-content: flex-end;
-  background-image: image-url('right.png');
-  background-repeat: repeat-y;
-  width: 46px;
-  height: 100%;
-  font-family: 'franklin-700';
+}
+
+#adjacent-1  {
+  display: none;
 }
 
 .carousel:hover #carousel-button-next{
@@ -442,9 +458,12 @@
     align-items: center;
 }
 
-#carousel-button-prev {
-  display: none;
+.back-available:hover #carousel-button-prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 @media(max-width: 550px) {
   #adjacent-2 {
