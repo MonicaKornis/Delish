@@ -54,7 +54,11 @@ class RecipeIndex extends React.Component {
   }
 
   rotateCarouselBack() {
-
+    if(this.state.carouselOneIndexStart > 8) {
+      let carouselOneIndexStart = this.state.carouselOneIndexStart - this.state.numberOfCaroselItems;
+      let carouselOneIndexEnd = carouselOneIndexStart + this.state.numberOfCaroselItems;
+      this.setState({carouselOneIndexStart: carouselOneIndexStart, carouselOneIndexEnd: carouselOneIndexEnd})
+    }
   }
 
 
@@ -184,7 +188,7 @@ updateWindowDimensions () {
 
       recipeCarousel = (
         <div className={'carousel' + carouselBackAvailable} style={{width: this.state.carouselWidth}}>
-          <span id='adjacent-1'></span><button id='carousel-button-prev' aria-label='previous recipies'>{'<'}</button>
+          <span id='adjacent-1'></span><button id='carousel-button-prev' onClick={this.rotateCarouselBack} aria-label='previous recipies'>{'<'}</button>
           <div className='carousel-item-container'>
             {recipeIndexItems}
           </div>
