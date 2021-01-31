@@ -155,6 +155,7 @@ updateWindowDimensions () {
     let recipeIndexItems  = this.props.recipes ? carouselRecipes.map( (recipe,index) =>
       <div className={index >= this.state.numberOfCaroselItems ? 'carousel-item' : 'carousel-item visible'}><RecipeIndexItem imageAction={(e) => this.handleImageClick(e,recipe.id)} currentUser={this.props.currentUser} author={recipe.author} recipe={recipe} key={index+1} id={recipe.id} action={this.handleLike} color={this.handleColor(recipe.id)}/></div>) : []
     let recipeCarousel = [];
+    let carouselForwardAvailable = this.state.carouselOneIndexStart > (this.props.recipes.length - this.state.carouselItems) ? '' : ' forward-available';
     let carouselBackAvailable =  this.state.carouselOneIndexStart === 8 ? '' : ' back-available';
 
     debugger
@@ -187,7 +188,7 @@ updateWindowDimensions () {
       );
 
       recipeCarousel = (
-        <div className={'carousel' + carouselBackAvailable} style={{width: this.state.carouselWidth}}>
+        <div className={'carousel' + carouselBackAvailable + carouselForwardAvailable} style={{width: this.state.carouselWidth}}>
           <span id='adjacent-1'></span><button id='carousel-button-prev' onClick={this.rotateCarouselBack} aria-label='previous recipies'>{'<'}</button>
           <div className='carousel-item-container'>
             {recipeIndexItems}
