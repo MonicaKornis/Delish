@@ -56,6 +56,7 @@ class RecipeIndex extends React.Component {
   rotateCarouselBack() {
     if(this.state.carouselOneIndexStart > 8) {
       let carouselOneIndexStart = this.state.carouselOneIndexStart - this.state.numberOfCaroselItems;
+      carouselOneIndexStart = carouselOneIndexStart < 8 ? 8 : carouselOneIndexStart;
       let carouselOneIndexEnd = carouselOneIndexStart + this.state.numberOfCaroselItems;
       this.setState({carouselOneIndexStart: carouselOneIndexStart, carouselOneIndexEnd: carouselOneIndexEnd})
     }

@@ -27,7 +27,7 @@ class CommentForm extends React.Component {
           </h3>
 
           <h3>
-          <textarea id='input' placeholder='Body' onChange={this.update('body')} value={this.state.body}/>
+          <textarea id='input' placeholder='Share your notes with other cooks' onChange={this.update('body')} value={this.state.body}/>
           </h3>
 
 

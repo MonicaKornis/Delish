@@ -7,7 +7,7 @@
   font-family: 'franklin-300';
   width: 100%;
   margin-bottom: 10px;
-
+  border: 1px solid #ddd;
 }
 
 #form-input {
@@ -28,12 +28,13 @@ textarea {
 
 section.comments-container {
   clear: both;
-  width: 70%;
+  width: 90%;
   margin-top: -60px;
   margin-left: 40%;
   border: 1px solid #ccc;
   width: 80%;
   height: 200px;
+  background-color: #f7f7f5;
 
 @media (min-width: 2400px ) {
   clear: both;
@@ -47,8 +48,9 @@ section.comments-container {
 }
 
 .commentsSection {
-  margin-left: 30px;
-  margin-right: 20px;
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
 }
 
 #cooking-notes {
@@ -81,17 +83,16 @@ section.comments-container {
 }
 
 #input.form-button {
-  width: 80%;
-  margin-left: 70px;
-  margin-right: 20px;
+  width: 40%;
+  position: absolute;
   // margin: auto;
   font-family: 'franklin-300';
   font-style: lighter;
   // foncolor: grey;
-  background-color: white;
+  background-color: #f7f7f5;
   float: bottom;
-  border: 1px solid #ccc
-
+  border: none;
+  right: 0px;
 }
 
 .cooking-notes-container {
