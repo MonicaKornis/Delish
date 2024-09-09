@@ -5,7 +5,8 @@
   
 
 ## Features 
-  * Secure User Authentication 
+  * Secure User Authentication
+     ![Bilby Stampede](https://imgur.com/a/2NjP2F9)
     
   * Each user has a recipe box where they are able to view their bookmarked and authored recipes. 
   
